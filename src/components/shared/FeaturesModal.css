@@ -2,14 +2,14 @@
   width: 100%;
   max-width: 980px;
   max-height: 85vh;
-  background: #11151c;
+  background: #ffffff;
   border: 1px solid #283344;
   border-radius: 20px;
   padding: 28px;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 30px 80px rgba(255, 32, 32, 0.08);
   animation: modal-pop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -34,14 +34,14 @@
 .features-modal-top p {
   margin: 0;
   font-size: 13px;
-  color: #94a3b8;
+  color: #cc5555;
 }
 
 .features-search-bar {
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #161c26;
+  background: #ffffff;
   border: 1px solid #283344;
   border-radius: 10px;
   padding: 6px 14px;
@@ -70,8 +70,8 @@
 
 .cat-pill {
   border: 1px solid #283344;
-  background: #161c26;
-  color: #94a3b8;
+  background: #ffffff;
+  color: #cc5555;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 11px;
@@ -106,7 +106,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background: #161c26;
+  background: #ffffff;
   border: 1px solid #242c3b;
   border-radius: 8px;
   padding: 10px 12px;
@@ -138,12 +138,12 @@
 .feature-name {
   font-size: 12px;
   font-weight: 600;
-  color: #e2e8f0;
+  color: #fee2e2;
 }
 
 .feature-cat-tag {
   font-size: 9px;
-  color: #64748b;
+  color: #b30000;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -160,7 +160,7 @@
   border-top: 1px solid #232c3a;
   padding-top: 16px;
   font-size: 12px;
-  color: #94a3b8;
+  color: #cc5555;
 }
 
 @media (max-width: 860px) {

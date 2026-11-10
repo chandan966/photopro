@@ -122,7 +122,7 @@ function Header({ page, navigate, openEditor, onOpenFeaturesModal, onOpenLegalMo
               onClick={() => go("pdf")}
               title="Open PDF Studio & Document Maker"
             >
-              <FileText size={13} className="tab-icon blue-icon" />
+              <FileText size={13} className="tab-icon ruby-icon" />
               <span>PDF Studio</span>
             </button>
 
@@ -366,7 +366,7 @@ function Header({ page, navigate, openEditor, onOpenFeaturesModal, onOpenLegalMo
                 className={`mobile-studio-card ${page === "pdf" ? "active" : ""}`}
                 onClick={() => go("pdf")}
               >
-                <div className="mobile-card-icon blue">
+                <div className="mobile-card-icon ruby">
                   <FileText size={18} />
                 </div>
                 <div className="mobile-card-info">

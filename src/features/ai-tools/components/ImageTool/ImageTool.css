@@ -11,12 +11,12 @@
 
 .preview-heading b {
   font-size: 13px;
-  color: #0f172a;
+  color: #800000;
 }
 
 .preview-heading span {
   font-size: 11px;
-  color: #64748b;
+  color: #b30000;
 }
 
 .before-after-grid {
@@ -29,10 +29,10 @@
   height: 270px;
   display: grid;
   place-items: center;
-  border: 1.5px solid #e2e8f0;
+  border: 1.5px solid #fee2e2;
   border-radius: 10px;
   overflow: hidden;
-  background: #f1f5f9;
+  background: #fff5f5;
 }
 
 .preview-frame img {
@@ -45,13 +45,13 @@
   padding: 18px;
   text-align: center;
   font-size: 11px;
-  color: #64748b;
+  color: #b30000;
 }
 
 .preview-caption {
   font-size: 9px;
   letter-spacing: 1.2px;
-  color: #64748b;
+  color: #b30000;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -61,11 +61,11 @@
   gap: 5px;
   margin-top: 14px;
   padding: 12px;
-  border: 1.5px solid #e2e8f0;
+  border: 1.5px solid #fee2e2;
   border-radius: 8px;
-  color: #334155;
+  color: #990000;
   font-size: 11px;
-  background: #f8fafc;
+  background: #ffffff;
 }
 
 .batch-files span {
@@ -78,8 +78,8 @@
 .file-stats {
   display: grid;
   gap: 8px;
-  border-top: 1.5px solid #e2e8f0;
-  border-bottom: 1.5px solid #e2e8f0;
+  border-top: 1.5px solid #fee2e2;
+  border-bottom: 1.5px solid #fee2e2;
   padding: 14px 0;
   margin: 14px 0;
 }
@@ -87,17 +87,17 @@
 .file-stats span {
   display: flex;
   justify-content: space-between;
-  color: #64748b;
+  color: #b30000;
   font-size: 11px;
 }
 
 .file-stats b {
-  color: #0f172a;
+  color: #800000;
 }
 
 .dimensions-info {
   font-size: 11px;
-  color: #334155;
+  color: #990000;
   border: 1px solid #283344;
   background: #ffffff;
   border-radius: 8px;
@@ -135,7 +135,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 10px 30px rgba(255, 32, 32, 0.08);
 }
 
 .spin {

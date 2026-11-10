@@ -2,7 +2,7 @@
   position: fixed;
   z-index: 60;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(255, 32, 32, 0.08);
   backdrop-filter: blur(8px);
   display: grid;
   place-items: center;
@@ -11,11 +11,11 @@
 
 .export-modal {
   width: min(450px, 100%);
-  background: #11151c;
+  background: #ffffff;
   border: 1px solid #283344;
   border-radius: 18px;
   padding: 24px;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 30px 90px rgba(255, 32, 32, 0.08);
 }
 
 .modal-heading {
@@ -36,10 +36,10 @@
   gap: 14px;
   padding: 12px;
   border-radius: 10px;
-  background: #161c26;
+  background: #ffffff;
   margin-bottom: 16px;
   border: 1px solid #242c3b;
-  color: #94a3b8;
+  color: #cc5555;
   font-size: 11px;
 }
 
@@ -48,7 +48,7 @@
   width: 80px;
   height: 52px;
   object-fit: contain;
-  background: #090c10;
+  background: #fff5f5;
   border: 1px solid #283344;
   border-radius: 6px;
 }

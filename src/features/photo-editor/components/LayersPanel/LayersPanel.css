@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100%;
   background: #0f1218;
-  color: #1e293b;
+  color: #800000;
   user-select: none;
 }
 
@@ -23,15 +23,15 @@
 
 .layers-select-label {
   font-size: 11px;
-  color: #64748b;
+  color: #b30000;
   width: 50px;
 }
 
 .layers-blend-select {
   flex: 1;
-  background: #f8fafc;
-  border: 1.5px solid #e2e8f0;
-  color: #0f172a;
+  background: #ffffff;
+  border: 1.5px solid #fee2e2;
+  color: #800000;
   font-size: 12px;
   padding: 4px 8px;
   border-radius: 4px;
@@ -48,7 +48,7 @@
   align-items: center;
   gap: 8px;
   font-size: 11px;
-  color: #64748b;
+  color: #b30000;
 }
 
 .layers-slider-group input[type="range"] {
@@ -60,7 +60,7 @@
 .layers-slider-val {
   font-family: monospace;
   font-size: 11px;
-  color: #1e293b;
+  color: #800000;
   width: 32px;
   text-align: right;
 }
@@ -79,7 +79,7 @@
   align-items: center;
   gap: 8px;
   padding: 6px 8px;
-  background: #f8fafc;
+  background: #ffffff;
   border: 1px solid transparent;
   border-radius: 6px;
   cursor: pointer;
@@ -103,8 +103,8 @@
   position: relative;
   width: 36px;
   height: 36px;
-  background: #f1f5f9;
-  border: 1.5px solid #e2e8f0;
+  background: #fff5f5;
+  border: 1.5px solid #fee2e2;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -128,9 +128,9 @@
 }
 
 .layer-name-input {
-  background: #f1f5f9;
+  background: #fff5f5;
   border: 1px solid #ff2020;
-  color: #0f172a;
+  color: #800000;
   font-size: 12px;
   padding: 2px 4px;
   border-radius: 3px;
@@ -141,7 +141,7 @@
 .layer-name-text {
   font-size: 12px;
   font-weight: 500;
-  color: #0f172a;
+  color: #800000;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -149,7 +149,7 @@
 
 .layer-meta-badge {
   font-size: 10px;
-  color: #64748b;
+  color: #b30000;
   text-transform: capitalize;
 }
 
@@ -162,7 +162,7 @@
 .layer-action-icon-btn {
   background: transparent;
   border: none;
-  color: #64748b;
+  color: #b30000;
   width: 22px;
   height: 22px;
   display: flex;
@@ -175,7 +175,7 @@
 
 .layer-action-icon-btn:hover {
   background: #283344;
-  color: #1e293b;
+  color: #800000;
 }
 
 .layer-action-icon-btn.active {
@@ -194,7 +194,7 @@
 .layers-footer-btn {
   background: transparent;
   border: 1px solid transparent;
-  color: #64748b;
+  color: #b30000;
   width: 28px;
   height: 28px;
   border-radius: 4px;
@@ -207,8 +207,8 @@
 
 .layers-footer-btn:hover:not(:disabled) {
   background: #fff1f2;
-  color: #0f172a;
-  border-color: #334155;
+  color: #800000;
+  border-color: #990000;
 }
 
 .layers-footer-btn:disabled {

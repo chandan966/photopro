@@ -5,14 +5,14 @@
   background: #0f1218;
   padding: 12px;
   border-radius: 8px;
-  color: #1e293b;
+  color: #800000;
   user-select: none;
 }
 
 .shapes-panel-title {
   font-size: 13px;
   font-weight: 700;
-  color: #0f172a;
+  color: #800000;
 }
 
 .shapes-grid {
@@ -27,9 +27,9 @@
   align-items: center;
   justify-content: center;
   gap: 4px;
-  background: #f8fafc;
-  border: 1.5px solid #e2e8f0;
-  color: #334155;
+  background: #ffffff;
+  border: 1.5px solid #fee2e2;
+  color: #990000;
   padding: 10px 4px;
   border-radius: 6px;
   cursor: pointer;
@@ -40,7 +40,7 @@
 .shape-picker-btn:hover {
   background: #1f2937;
   border-color: #ff2020;
-  color: #0f172a;
+  color: #800000;
 }
 
 .shape-prop-row {
@@ -54,7 +54,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: 11px;
-  color: #64748b;
+  color: #b30000;
 }
 
 .shape-slider {

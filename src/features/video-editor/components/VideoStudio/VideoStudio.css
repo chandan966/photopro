@@ -16,7 +16,7 @@
   gap: 16px;
   background: #ffffff;
   backdrop-filter: blur(20px);
-  border: 1.5px solid #e2e8f0;
+  border: 1.5px solid #fee2e2;
   border-radius: 16px;
   padding: 10px 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -35,7 +35,7 @@
   gap: 8px;
   font-size: 13.5px;
   font-weight: 700;
-  color: #0f172a;
+  color: #800000;
 }
 
 .text-ruby {
@@ -61,8 +61,8 @@
 
 .tb-btn {
   background: rgba(255, 255, 255, 0.04);
-  border: 1.5px solid #e2e8f0;
-  color: #1e293b;
+  border: 1.5px solid #fee2e2;
+  color: #800000;
   padding: 7px 13px;
   border-radius: 9px;
   font-size: 12px;
@@ -89,7 +89,7 @@
 
 .header-export-btn {
   background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
-  color: #0f172a;
+  color: #ffffff;
   box-shadow: 0 4px 16px rgba(225, 29, 72, 0.4);
 }
 
@@ -104,17 +104,17 @@
 /* TOOLS SIDEBAR */
 .video-tools-sidebar {
   display: flex;
-  background: #10141b;
-  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  border: 1.5px solid #fee2e2;
   border-radius: 18px;
   overflow: hidden;
   min-height: 600px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 50px rgba(255, 32, 32, 0.08);
 }
 
 .tools-nav-rail {
   width: 90px;
-  background: rgba(0, 0, 0, 0.35);
+  background: #fff5f5;
   border-right: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
@@ -132,7 +132,7 @@
   border-radius: 9px;
   border: 0;
   background: transparent;
-  color: #64748b;
+  color: #b30000;
   font-size: 10px;
   font-weight: 700;
   cursor: pointer;
@@ -141,12 +141,12 @@
 }
 
 .tool-nav-btn:hover {
-  color: #0f172a;
+  color: #800000;
   background: rgba(255, 255, 255, 0.05);
 }
 
 .tool-nav-btn.active {
-  color: #0f172a;
+  color: #800000;
   background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
   box-shadow: 0 2px 10px rgba(225, 29, 72, 0.4);
 }
@@ -160,13 +160,13 @@
 .tool-pane-content h3 {
   font-size: 18px;
   font-weight: 800;
-  color: #0f172a;
+  color: #800000;
   margin: 0 0 8px;
 }
 
 .tool-desc {
   font-size: 12px;
-  color: #64748b;
+  color: #b30000;
   line-height: 1.5;
   margin: 0 0 16px;
 }
@@ -187,7 +187,7 @@
 .setting-block label {
   font-size: 12px;
   font-weight: 700;
-  color: #334155;
+  color: #990000;
 }
 
 .text-btn {
@@ -205,9 +205,9 @@
 
 .setting-block select,
 .setting-block input[type="text"] {
-  background: #141923;
-  border: 1.5px solid #e2e8f0;
-  color: #0f172a;
+  background: #fff5f5;
+  border: 1.5px solid #fee2e2;
+  color: #800000;
   padding: 9px 12px;
   border-radius: 9px;
   font-size: 12.5px;
@@ -238,9 +238,9 @@
   gap: 6px;
   padding: 8px 10px;
   border-radius: 8px;
-  border: 1.5px solid #e2e8f0;
+  border: 1.5px solid #fee2e2;
   background: rgba(255, 255, 255, 0.04);
-  color: #64748b;
+  color: #b30000;
   font-size: 11.5px;
   font-weight: 700;
   cursor: pointer;
@@ -248,14 +248,14 @@
 }
 
 .toggle-chip:hover {
-  color: #0f172a;
+  color: #800000;
   background: rgba(255, 255, 255, 0.08);
 }
 
 .toggle-chip.active {
   background: rgba(225, 29, 72, 0.2);
   border-color: rgba(244, 63, 94, 0.45);
-  color: #0f172a;
+  color: #800000;
 }
 
 .speed-pills-row {
@@ -267,7 +267,7 @@
 .speed-pill {
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.03);
-  color: #334155;
+  color: #990000;
   font-size: 11px;
   font-weight: 800;
   padding: 5px 10px;
@@ -278,7 +278,7 @@
 .speed-pill.active {
   background: #e11d48;
   border-color: #e11d48;
-  color: #0f172a;
+  color: #800000;
 }
 
 /* Transitions Grid */
@@ -295,9 +295,9 @@
   gap: 6px;
   padding: 14px 10px;
   border-radius: 10px;
-  border: 1.5px solid #e2e8f0;
+  border: 1.5px solid #fee2e2;
   background: rgba(255, 255, 255, 0.03);
-  color: #334155;
+  color: #990000;
   cursor: pointer;
   text-align: center;
 }
@@ -305,7 +305,7 @@
 .trans-card.active {
   border-color: #f43f5e;
   background: rgba(225, 29, 72, 0.18);
-  color: #0f172a;
+  color: #800000;
 }
 
 .trans-card strong {
@@ -322,9 +322,9 @@
 .sfx-chip {
   padding: 10px 12px;
   border-radius: 8px;
-  border: 1.5px solid #e2e8f0;
+  border: 1.5px solid #fee2e2;
   background: rgba(255, 255, 255, 0.04);
-  color: #0f172a;
+  color: #800000;
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
@@ -351,7 +351,7 @@
   gap: 10px;
   padding: 10px 12px;
   border-radius: 10px;
-  border: 1.5px solid #e2e8f0;
+  border: 1.5px solid #fee2e2;
   background: rgba(255, 255, 255, 0.03);
   cursor: pointer;
 }
@@ -375,18 +375,18 @@
 
 .clip-meta strong {
   font-size: 12.5px;
-  color: #0f172a;
+  color: #800000;
 }
 
 .clip-meta small {
   font-size: 10.5px;
-  color: #64748b;
+  color: #b30000;
 }
 
 .clip-del-btn {
   border: 0;
   background: transparent;
-  color: #64748b;
+  color: #b30000;
   cursor: pointer;
 }
 
@@ -404,19 +404,19 @@
 .canvas-wrapper-box {
   min-height: 420px;
   background: #080a0e;
-  border: 1.5px solid #e2e8f0;
+  border: 1.5px solid #fee2e2;
   border-radius: 18px;
   display: grid;
   place-items: center;
   padding: 16px;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 2px 8px rgba(255, 32, 32, 0.08);
 }
 
 .video-studio-canvas {
   max-width: 100%;
   max-height: 460px;
   border-radius: 8px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 16px 40px rgba(255, 32, 32, 0.08);
 }
 
 /* SCRUBBER BAR */
@@ -424,7 +424,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  background: #10141b;
+  background: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 10px 16px;
@@ -449,8 +449,8 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background: #10141b;
-  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  border: 1.5px solid #fee2e2;
   border-radius: 16px;
   padding: 14px;
 }
@@ -473,7 +473,7 @@
   gap: 6px;
   font-size: 11px;
   font-weight: 800;
-  color: #64748b;
+  color: #b30000;
   text-transform: uppercase;
 }
 
@@ -492,7 +492,7 @@
   border: 1px solid rgba(244, 63, 94, 0.4);
   border-radius: 6px;
   padding: 6px 12px;
-  color: #0f172a;
+  color: #800000;
   font-size: 11px;
   font-weight: 700;
   cursor: pointer;
@@ -514,8 +514,8 @@
 
 .text-overlay-block {
   background: rgba(56, 189, 248, 0.18);
-  border: 1px solid rgba(56, 189, 248, 0.4);
-  color: #7dd3fc;
+  border: 1px solid rgba(255, 32, 32, 0.4);
+  color: #ff6666;
 }
 
 .audio-music-block {
@@ -532,7 +532,7 @@
 
 .timeline-empty-lane {
   font-size: 10.5px;
-  color: #475569;
+  color: #b30000;
   font-style: italic;
 }
 

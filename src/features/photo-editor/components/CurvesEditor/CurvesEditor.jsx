@@ -28,7 +28,7 @@ export default function CurvesEditor({ curves = DEFAULT_CURVES, onChange, histog
     ctx.clearRect(0, 0, w, h);
 
     // 1. Grid lines (4x4)
-    ctx.strokeStyle = "#1e2430";
+    ctx.strokeStyle = "#fee2e2";
     ctx.lineWidth = 1;
     for (let i = 1; i <= 3; i++) {
       const pos = Math.round((i / 4) * w);
@@ -44,7 +44,7 @@ export default function CurvesEditor({ curves = DEFAULT_CURVES, onChange, histog
     }
 
     // 2. Diagonal neutral baseline
-    ctx.strokeStyle = "#2d3748";
+    ctx.strokeStyle = "#fecdd3";
     ctx.setLineDash([4, 4]);
     ctx.beginPath();
     ctx.moveTo(0, h);
@@ -54,7 +54,7 @@ export default function CurvesEditor({ curves = DEFAULT_CURVES, onChange, histog
 
     // 3. Draw Histogram in background if available
     if (histogram && histogram.lumHist && histogram.maxCount > 0) {
-      ctx.fillStyle = "rgba(100, 116, 139, 0.25)";
+      ctx.fillStyle = "rgba(255, 32, 32, 0.12)";
       ctx.beginPath();
       ctx.moveTo(0, h);
       for (let i = 0; i < 256; i++) {
@@ -69,10 +69,10 @@ export default function CurvesEditor({ curves = DEFAULT_CURVES, onChange, histog
 
     // 4. Calculate Spline LUT and plot curve
     const lut = buildSplineLUT(currentPoints);
-    let curveColor = "#ffffff";
+    let curveColor = "#ff2020";
     if (activeChannel === "red") curveColor = "#ef4444";
     if (activeChannel === "green") curveColor = "#22c55e";
-    if (activeChannel === "blue") curveColor = "#3b82f6";
+    if (activeChannel === "blue") curveColor = "#e11d48";
 
     ctx.strokeStyle = curveColor;
     ctx.lineWidth = 2.5;
@@ -94,7 +94,7 @@ export default function CurvesEditor({ curves = DEFAULT_CURVES, onChange, histog
       ctx.arc(px, py, 5, 0, Math.PI * 2);
       ctx.fillStyle = curveColor;
       ctx.fill();
-      ctx.strokeStyle = "#090b0e";
+      ctx.strokeStyle = "#ffffff";
       ctx.lineWidth = 2;
       ctx.stroke();
     });

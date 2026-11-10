@@ -3,10 +3,10 @@ import { Check, X } from "lucide-react";
 import "./ColorPickerModal.css";
 
 const PRESET_SWATCHES = [
-  "#ffffff", "#f8fafc", "#94a3b8", "#475569", "#1e293b", "#000000",
-  "#ef4444", "#f97316", "#f59e0b", "#eab308", "#84cc16", "#22c55e",
-  "#10b981", "#14b8a6", "#06b6d4", "#0ea5e9", "#3b82f6", "#6366f1",
-  "#8b5cf6", "#a855f7", "#d946ef", "#ec4899", "#f43f5e", "#e11d48",
+  "#ffffff", "#fff5f5", "#ffe4e6", "#fecdd3", "#fda4af", "#fb7185",
+  "#ff4040", "#ff2020", "#e60000", "#cc0000", "#b30000", "#800000",
+  "#fff1f2", "#ffe4e6", "#f43f5e", "#e11d48", "#be123c", "#9f1239",
+  "#ff6666", "#ff5555", "#ff3333", "#ff1a1a", "#d90429", "#4d0000",
 ];
 
 export default function ColorPickerModal({
@@ -57,7 +57,7 @@ export default function ColorPickerModal({
             style={{
               width: "100%",
               height: "40px",
-              border: "1px solid #2d3748",
+              border: "1.5px solid #fee2e2",
               borderRadius: "6px",
               cursor: "pointer",
               background: "transparent",
@@ -69,7 +69,7 @@ export default function ColorPickerModal({
 
         {/* Preset Color Swatches */}
         <div>
-          <span style={{ fontSize: "10px", color: "#64748b", textTransform: "uppercase", display: "block", marginBottom: "6px" }}>
+          <span style={{ fontSize: "10px", color: "#b30000", textTransform: "uppercase", display: "block", marginBottom: "6px" }}>
             Palette Swatches
           </span>
           <div className="color-swatches-grid">

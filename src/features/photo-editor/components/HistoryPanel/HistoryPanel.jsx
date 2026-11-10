@@ -15,7 +15,7 @@ export default function HistoryPanel({
 
       <div className="history-items-list">
         {history.length === 0 ? (
-          <div style={{ textAlign: "center", color: "#64748b", fontSize: "11px", marginTop: "20px" }}>
+          <div style={{ textAlign: "center", color: "#b30000", fontSize: "11px", marginTop: "20px" }}>
             No history states yet.
           </div>
         ) : (

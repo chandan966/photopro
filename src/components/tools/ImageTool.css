@@ -16,7 +16,7 @@
 
 .preview-heading span {
   font-size: 11px;
-  color: #94a3b8;
+  color: #cc5555;
 }
 
 .before-after-grid {
@@ -29,10 +29,10 @@
   height: 270px;
   display: grid;
   place-items: center;
-  border: 1px solid #232b3a;
+  border: 1px solid #fee2e2;
   border-radius: 10px;
   overflow: hidden;
-  background: #090c10;
+  background: #fff5f5;
 }
 
 .preview-frame img {
@@ -45,13 +45,13 @@
   padding: 18px;
   text-align: center;
   font-size: 11px;
-  color: #64748b;
+  color: #b30000;
 }
 
 .preview-caption {
   font-size: 9px;
   letter-spacing: 1.2px;
-  color: #94a3b8;
+  color: #cc5555;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -61,11 +61,11 @@
   gap: 5px;
   margin-top: 14px;
   padding: 12px;
-  border: 1px solid #232b3a;
+  border: 1px solid #fee2e2;
   border-radius: 8px;
-  color: #cbd5e1;
+  color: #fecdd3;
   font-size: 11px;
-  background: #141820;
+  background: #ffffff;
 }
 
 .batch-files span {
@@ -78,8 +78,8 @@
 .file-stats {
   display: grid;
   gap: 8px;
-  border-top: 1px solid #232b3a;
-  border-bottom: 1px solid #232b3a;
+  border-top: 1px solid #fee2e2;
+  border-bottom: 1px solid #fee2e2;
   padding: 14px 0;
   margin: 14px 0;
 }
@@ -87,7 +87,7 @@
 .file-stats span {
   display: flex;
   justify-content: space-between;
-  color: #94a3b8;
+  color: #cc5555;
   font-size: 11px;
 }
 
@@ -97,9 +97,9 @@
 
 .dimensions-info {
   font-size: 11px;
-  color: #cbd5e1;
+  color: #fecdd3;
   border: 1px solid #283344;
-  background: #161c26;
+  background: #ffffff;
   border-radius: 8px;
   padding: 10px 12px;
   margin: 14px 0;
@@ -125,7 +125,7 @@
   top: 24px;
   left: 50%;
   transform: translateX(-50%);
-  background: #161c26;
+  background: #ffffff;
   border: 1px solid var(--primary);
   border-radius: 10px;
   padding: 12px 20px;
@@ -135,7 +135,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 10px 30px rgba(255, 32, 32, 0.08);
 }
 
 .spin {

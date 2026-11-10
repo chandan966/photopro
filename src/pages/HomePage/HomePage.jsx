@@ -299,7 +299,7 @@ function HomePage({ navigate, openEditor, onUpload, notify, onOpenFeaturesModal 
                   <button
                     key={p.name}
                     className="platform-preset-pill"
-                    onClick={() => openEditor({ name: `${platform.name} ${p.name}`, width: p.width, height: p.height, category: platform.name, color: "#141820" })}
+                    onClick={() => openEditor({ name: `${platform.name} ${p.name}`, width: p.width, height: p.height, category: platform.name, color: "#ffffff" })}
                   >
                     <span>{p.name}</span>
                     <small>{p.label}</small>
@@ -309,7 +309,7 @@ function HomePage({ navigate, openEditor, onUpload, notify, onOpenFeaturesModal 
 
               <button
                 className="button button-outline full-width social-launch-btn"
-                onClick={() => openEditor({ name: `${platform.name} Canvas`, width: platform.presets[0].width, height: platform.presets[0].height, category: platform.name, color: "#141820" })}
+                onClick={() => openEditor({ name: `${platform.name} Canvas`, width: platform.presets[0].width, height: platform.presets[0].height, category: platform.name, color: "#ffffff" })}
               >
                 Create For {platform.name} <ArrowUpRight size={14} />
               </button>

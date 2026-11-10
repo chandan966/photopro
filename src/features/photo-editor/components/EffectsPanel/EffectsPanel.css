@@ -9,7 +9,7 @@
   margin: 0;
   font-size: 13px;
   font-weight: 700;
-  color: #0f172a;
+  color: #800000;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -32,8 +32,8 @@
   align-items: center;
   gap: 12px;
   padding: 10px 12px;
-  background: #f8fafc;
-  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  border: 1.5px solid #fee2e2;
   border-radius: 10px;
   text-align: left;
   transition: all 0.18s;
@@ -60,7 +60,7 @@
 .effect-card-info strong {
   display: block;
   font-size: 12px;
-  color: #0f172a;
+  color: #800000;
 }
 
 .effect-card-info small {

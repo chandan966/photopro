@@ -919,7 +919,7 @@ export default function EditorPage({
         else if (effectType === "hdr") applyHDREffect(c);
         else if (effectType === "sepia") applySepiaEffect(c);
         else if (effectType === "glitch") applyGlitchEffect(c);
-        else if (effectType === "duotone") applyDuotoneEffect(c, "#e11d48", "#090b0e");
+        else if (effectType === "duotone") applyDuotoneEffect(c, "#ff2020", "#ffffff");
         else if (effectType === "pixelate") applyPixelateEffect(c, 14);
         else if (effectType === "emboss") applyEmbossEffect(c);
 
@@ -1219,7 +1219,7 @@ export default function EditorPage({
   };
 
   const handleResetColors = () => {
-    setForegroundColor("#000000");
+    setForegroundColor("#ff2020");
     setBackgroundColor("#ffffff");
   };
 

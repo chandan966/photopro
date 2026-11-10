@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100%;
   background: #0f1218;
-  color: #1e293b;
+  color: #800000;
   user-select: none;
 }
 
@@ -12,7 +12,7 @@
   border-bottom: 1px solid #1e2430;
   font-size: 12px;
   font-weight: 600;
-  color: #0f172a;
+  color: #800000;
 }
 
 .history-items-list {
@@ -33,7 +33,7 @@
   background: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #334155;
+  color: #990000;
   font-size: 12px;
   cursor: pointer;
   text-align: left;
@@ -42,7 +42,7 @@
 
 .history-item-btn:hover {
   background: #1c2230;
-  color: #0f172a;
+  color: #800000;
 }
 
 .history-item-btn.active {
@@ -55,6 +55,6 @@
 .history-step-num {
   font-family: monospace;
   font-size: 10px;
-  color: #64748b;
+  color: #b30000;
   width: 18px;
 }

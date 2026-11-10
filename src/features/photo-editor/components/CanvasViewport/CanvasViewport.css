@@ -13,7 +13,7 @@
 
 .canvas-viewport-stage {
   position: relative;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 10px 40px rgba(255, 32, 32, 0.08);
   transform-origin: center center;
   transition: transform 0.05s ease-out;
 }
@@ -54,7 +54,7 @@
   left: 0;
   width: 20px;
   height: 20px;
-  background: #f1f5f9;
+  background: #fff5f5;
   border-right: 1px solid #1e2430;
   border-bottom: 1px solid #1e2430;
   z-index: 31;

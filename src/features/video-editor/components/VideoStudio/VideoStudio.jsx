@@ -170,9 +170,9 @@ function VideoStudio({ notify }) {
     const drawDemoFrame = () => {
       frame++;
       const grad = ctx.createLinearGradient(0, 0, 640, 360);
-      grad.addColorStop(0, "#090b0e");
-      grad.addColorStop(0.5, "#1e0b12");
-      grad.addColorStop(1, "#3b0d18");
+      grad.addColorStop(0, "#ffffff");
+      grad.addColorStop(0.5, "#fff5f5");
+      grad.addColorStop(1, "#fee2e2");
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, 640, 360);
 
@@ -187,11 +187,11 @@ function VideoStudio({ notify }) {
       ctx.arc(orbX, orbY, 90, 0, Math.PI * 2);
       ctx.fill();
 
-      ctx.fillStyle = "#ffffff";
+      ctx.fillStyle = "#800000";
       ctx.font = "800 24px 'Manrope', sans-serif";
       ctx.textAlign = "center";
       ctx.fillText("PHOTOPRO VIDEO STUDIO", 320, 170);
-      ctx.fillStyle = "#fda4af";
+      ctx.fillStyle = "#ff2020";
       ctx.font = "600 13px 'Manrope', sans-serif";
       ctx.fillText("100% In-Browser Multi-Track Timeline & Chroma Key", 320, 200);
     };
@@ -425,11 +425,11 @@ function VideoStudio({ notify }) {
       // 1. Clear background
       if (enableChromaKey && chromaBgType === "gradient") {
         const bgGrad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-        bgGrad.addColorStop(0, "#0f172a");
-        bgGrad.addColorStop(1, "#e11d48");
+        bgGrad.addColorStop(0, "#ffffff");
+        bgGrad.addColorStop(1, "#ff2020");
         ctx.fillStyle = bgGrad;
       } else {
-        ctx.fillStyle = "#090b0e";
+        ctx.fillStyle = "#ffffff";
       }
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -510,11 +510,11 @@ function VideoStudio({ notify }) {
             ctx.fillStyle = `rgba(225, 29, 72, ${(1 - transAmount) * 0.75})`;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
           } else if (transitionType === "dissolve") {
-            ctx.fillStyle = `rgba(18, 22, 28, ${(1 - transAmount) * 0.85})`;
+            ctx.fillStyle = `rgba(255, 32, 32, ${(1 - transAmount) * 0.5})`;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
           } else if (transitionType === "wipe") {
             const wipeWidth = canvas.width * (1 - transAmount);
-            ctx.fillStyle = "#090b0e";
+            ctx.fillStyle = "#ffffff";
             ctx.fillRect(0, 0, wipeWidth, canvas.height);
           } else if (transitionType === "vignette") {
             const grad = ctx.createRadialGradient(
@@ -522,7 +522,7 @@ function VideoStudio({ notify }) {
               canvas.width / 2, canvas.height / 2, canvas.width * 0.7
             );
             grad.addColorStop(0, "transparent");
-            grad.addColorStop(1, `rgba(0, 0, 0, ${1 - transAmount})`);
+            grad.addColorStop(1, `rgba(128, 0, 0, ${(1 - transAmount) * 0.5})`);
             ctx.fillStyle = grad;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
           }

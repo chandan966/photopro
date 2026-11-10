@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: space-between;
   height: 48px;
-  background-color: #0f172a;
-  border-bottom: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #fee2e2;
   padding: 0 12px;
   user-select: none;
   z-index: 50;
@@ -21,9 +21,9 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #f8fafc;
-  border: 1.5px solid #e2e8f0;
-  color: #1e293b;
+  background: #ffffff;
+  border: 1.5px solid #fee2e2;
+  color: #800000;
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 13px;
@@ -33,9 +33,9 @@
 }
 
 .topbar-nav-btn:hover {
-  background: #232c3b;
+  background: #fff5f5;
   border-color: #ff2020;
-  color: #0f172a;
+  color: #800000;
 }
 
 .topbar-menus {
@@ -51,7 +51,7 @@
 .topbar-menu-btn {
   background: transparent;
   border: none;
-  color: #334155;
+  color: #990000;
   font-size: 13px;
   padding: 6px 10px;
   border-radius: 4px;
@@ -61,8 +61,8 @@
 
 .topbar-menu-btn:hover,
 .topbar-menu-btn.active {
-  background: #1e2430;
-  color: #0f172a;
+  background: #fff5f5;
+  color: #800000;
 }
 
 .topbar-dropdown-menu {
@@ -71,10 +71,10 @@
   left: 0;
   margin-top: 4px;
   min-width: 220px;
-  background: #12161f;
-  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  border: 1.5px solid #fee2e2;
   border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 25px rgba(255, 32, 32, 0.08);
   padding: 6px;
   z-index: 1000;
   animation: fadeInFast 0.15s ease-out;
@@ -89,7 +89,7 @@
   background: transparent;
   border: none;
   border-radius: 4px;
-  color: #1e293b;
+  color: #800000;
   font-size: 12.5px;
   cursor: pointer;
   text-align: left;
@@ -107,18 +107,18 @@
 
 .dropdown-item:disabled:hover {
   background: transparent;
-  color: #1e293b;
+  color: #800000;
 }
 
 .dropdown-divider {
   height: 1px;
-  background: #232c3b;
+  background: #fff5f5;
   margin: 4px 0;
 }
 
 .item-shortcut {
   font-size: 11px;
-  color: #64748b;
+  color: #b30000;
   font-family: monospace;
 }
 
@@ -135,7 +135,7 @@
 .project-name-input {
   background: transparent;
   border: 1px solid transparent;
-  color: #0f172a;
+  color: #800000;
   font-size: 13px;
   font-weight: 600;
   padding: 4px 8px;
@@ -146,12 +146,12 @@
 }
 
 .project-name-input:hover {
-  border-color: #334155;
-  background: #f8fafc;
+  border-color: #990000;
+  background: #ffffff;
 }
 
 .project-name-input:focus {
-  background: #f8fafc;
+  background: #ffffff;
   border-color: #ff2020;
   outline: none;
 }
@@ -170,7 +170,7 @@
   height: 32px;
   background: transparent;
   border: 1px solid transparent;
-  color: #64748b;
+  color: #b30000;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.15s;
@@ -178,8 +178,8 @@
 
 .topbar-icon-btn:hover:not(:disabled) {
   background: #fff1f2;
-  color: #0f172a;
-  border-color: #334155;
+  color: #800000;
+  border-color: #990000;
 }
 
 .topbar-icon-btn.active {
@@ -204,7 +204,7 @@
   align-items: center;
   gap: 6px;
   background: linear-gradient(135deg, #ff2020 0%, #be123c 100%);
-  color: #0f172a;
+  color: #800000;
   border: none;
   font-size: 13px;
   font-weight: 600;

@@ -162,14 +162,14 @@ export async function compositeCanvas(targetCanvas, state, options = {}) {
 /**
  * Render Background surface (Transparent checkerboard, Solid color, or Gradient)
  */
-export function renderBackground(ctx, width, height, bgType = "solid", color = "#090b0e", gradient = null) {
+export function renderBackground(ctx, width, height, bgType = "solid", color = "#ffffff", gradient = null) {
   ctx.save();
   if (bgType === "transparent") {
-    // Render classic transparency checkerboard pattern
+    // Render classic transparency checkerboard pattern in light theme
     const size = 16;
     for (let y = 0; y < height; y += size) {
       for (let x = 0; x < width; x += size) {
-        ctx.fillStyle = ((x / size) + (y / size)) % 2 === 0 ? "#1e2430" : "#141820";
+        ctx.fillStyle = ((x / size) + (y / size)) % 2 === 0 ? "#ffffff" : "#fff1f2";
         ctx.fillRect(x, y, size, size);
       }
     }
@@ -180,8 +180,8 @@ export function renderBackground(ctx, width, height, bgType = "solid", color = "
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, width, height);
   } else {
-    // Solid color
-    ctx.fillStyle = color || "#090b0e";
+    // Solid color (defaults to pure white)
+    ctx.fillStyle = color || "#ffffff";
     ctx.fillRect(0, 0, width, height);
   }
   ctx.restore();
@@ -277,7 +277,7 @@ function renderTextContent(ctx, layer, w, h) {
 
   // Stroke Outline
   if (layer.strokeWidth > 0) {
-    ctx.strokeStyle = layer.strokeColor || "#000000";
+    ctx.strokeStyle = layer.strokeColor || "#ff2020";
     ctx.lineWidth = layer.strokeWidth;
     ctx.strokeText(text, 0, 0);
   }

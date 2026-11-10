@@ -330,7 +330,7 @@ export const convertPDFToWordDoc = async (pdfFile) => {
     </head>
     <body>
       <h2>PhotoPro Extracted Document</h2>
-      <p style="color: #64748b; font-size: 9pt;">Extracted on ${new Date().toLocaleDateString()}</p>
+      <p style="color: #b30000; font-size: 9pt;">Extracted on ${new Date().toLocaleDateString()}</p>
       <hr/>
       ${fullText
         .split("\n\n")

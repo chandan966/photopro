@@ -249,21 +249,21 @@ export const BLEND_MODES = [
 ];
 
 export const GRADIENT_PRESETS = [
-  { id: "crimson-ruby", label: "Crimson Ruby", stops: ["#e11d48", "#881337"] },
-  { id: "rose-gold", label: "Rose Gold", stops: ["#f43f5e", "#fbbf24"] },
-  { id: "deep-onyx", label: "Deep Onyx", stops: ["#0f1217", "#1a212d"] },
+  { id: "crimson-ruby", label: "Crimson Ruby", stops: ["#ff4040", "#800000"] },
+  { id: "rose-gold", label: "Rose Gold", stops: ["#f43f5e", "#ff8080"] },
+  { id: "white-rose", label: "White Rose", stops: ["#ffffff", "#fee2e2"] },
   { id: "sunset-fire", label: "Sunset Fire", stops: ["#ff512f", "#dd2476"] },
-  { id: "cyber-neon", label: "Cyber Neon", stops: ["#00f2fe", "#4facfe"] },
-  { id: "purple-bliss", label: "Purple Bliss", stops: ["#7f00ff", "#e100ff"] },
-  { id: "golden-hour", label: "Golden Hour", stops: ["#f6d365", "#fda085"] },
-  { id: "oceanic", label: "Oceanic Blue", stops: ["#00c6ff", "#0072ff"] },
+  { id: "ruby-gradient", label: "Vibrant Ruby", stops: ["#ff2020", "#b30000"] },
+  { id: "blush-pink", label: "Soft Blush", stops: ["#fff5f5", "#fecdd3"] },
+  { id: "deep-garnet", label: "Deep Garnet", stops: ["#990000", "#4d0000"] },
+  { id: "cherry-pop", label: "Cherry Pop", stops: ["#ff3366", "#e60000"] },
 ];
 
 export const SOLID_COLORS = [
-  "#090b0e", "#12151b", "#1e2430", "#ffffff",
-  "#e11d48", "#f43f5e", "#be123c", "#f59e0b",
-  "#eab308", "#10b981", "#06b6d4", "#3b82f6",
-  "#8b5cf6", "#ec4899", "#64748b", "#334155",
+  "#ffffff", "#fff5f5", "#ffe4e6", "#fecdd3",
+  "#ff6666", "#ff4040", "#ff2020", "#e60000",
+  "#cc0000", "#b30000", "#990000", "#800000",
+  "#4d0000", "#f43f5e", "#fda4af", "#be123c",
 ];
 
 export const FONT_OPTIONS = [
@@ -290,7 +290,7 @@ export const SHAPE_OPTIONS = [
 ];
 
 export const STICKER_LIBRARY = [
-  { id: "verified", label: "Verified", icon: "✓", color: "#38bdf8" },
+  { id: "verified", label: "Verified", icon: "✓", color: "#ff2020" },
   { id: "fire", label: "Hot Fire", icon: "🔥", color: "#f97316" },
   { id: "sparkles", label: "Sparkles", icon: "✨", color: "#fbbf24" },
   { id: "sale", label: "SALE! Tag", icon: "🏷️", color: "#e11d48", text: "SALE!" },
@@ -299,9 +299,9 @@ export const STICKER_LIBRARY = [
   { id: "star", label: "Gold Star", icon: "⭐", color: "#eab308" },
   { id: "discount", label: "-50% OFF", icon: "🎯", color: "#be123c", text: "-50% OFF" },
   { id: "crown", label: "VIP Crown", icon: "👑", color: "#f59e0b" },
-  { id: "thunder", label: "Flash Bolt", icon: "⚡", color: "#38bdf8" },
+  { id: "thunder", label: "Flash Bolt", icon: "⚡", color: "#ff4040" },
   { id: "warning", label: "Alert", icon: "⚠️", color: "#facc15" },
-  { id: "diamond", label: "Pro Gem", icon: "💎", color: "#60a5fa" },
+  { id: "diamond", label: "Pro Gem", icon: "💎", color: "#ff6666" },
 ];
 
 export const FILTER_PRESETS = [

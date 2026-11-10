@@ -1,7 +1,7 @@
 .color-picker-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(255, 32, 32, 0.08);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -10,10 +10,10 @@
 }
 
 .color-picker-dialog {
-  background: #12161f;
-  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  border: 1.5px solid #fee2e2;
   border-radius: 10px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 16px 36px rgba(255, 32, 32, 0.08);
   width: 280px;
   padding: 14px;
   display: flex;
@@ -31,19 +31,19 @@
 .color-picker-title {
   font-size: 13px;
   font-weight: 600;
-  color: #0f172a;
+  color: #800000;
 }
 
 .color-picker-close-btn {
   background: transparent;
   border: none;
-  color: #64748b;
+  color: #b30000;
   cursor: pointer;
   padding: 2px;
 }
 
 .color-picker-close-btn:hover {
-  color: #0f172a;
+  color: #800000;
 }
 
 .color-picker-preview-row {
@@ -56,8 +56,8 @@
   width: 48px;
   height: 48px;
   border-radius: 6px;
-  border: 1px solid #334155;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  border: 1.5px solid #fee2e2;
+  box-shadow: 0 2px 6px rgba(255, 32, 32, 0.08);
 }
 
 .color-hex-input-group {
@@ -69,14 +69,14 @@
 
 .color-hex-label {
   font-size: 10px;
-  color: #64748b;
+  color: #b30000;
   text-transform: uppercase;
 }
 
 .color-hex-field {
-  background: #f1f5f9;
-  border: 1.5px solid #e2e8f0;
-  color: #0f172a;
+  background: #fff5f5;
+  border: 1.5px solid #fee2e2;
+  color: #800000;
   font-family: monospace;
   font-size: 13px;
   padding: 6px 8px;
@@ -97,12 +97,12 @@
 .color-swatch-item {
   aspect-ratio: 1;
   border-radius: 4px;
-  border: 1.5px solid #e2e8f0;
+  border: 1.5px solid #fee2e2;
   cursor: pointer;
   transition: transform 0.1s;
 }
 
 .color-swatch-item:hover {
   transform: scale(1.15);
-  border-color: #0f172a;
+  border-color: #800000;
 }

@@ -107,7 +107,7 @@ export default function FiltersPanel({
         {/* Special Optical Blurs & Sharpening Actions */}
         {(selectedCat === "all" || selectedCat === "blur") && (
           <div style={{ marginTop: "12px", display: "flex", flexDirection: "column", gap: "6px" }}>
-            <span style={{ fontSize: "11px", fontWeight: "700", color: "#64748b", textTransform: "uppercase" }}>
+            <span style={{ fontSize: "11px", fontWeight: "700", color: "#b30000", textTransform: "uppercase" }}>
               Optical Blurs & Sharpen
             </span>
             <button

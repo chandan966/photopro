@@ -61,9 +61,9 @@ export default function TextPanel({
               rows={2}
               style={{
                 width: "100%",
-                background: "#090b0e",
-                border: "1px solid #2d3748",
-                color: "#ffffff",
+                background: "#ffffff",
+                border: "1.5px solid #fee2e2",
+                color: "#800000",
                 fontSize: "12px",
                 padding: "6px",
                 borderRadius: "4px",
@@ -158,7 +158,7 @@ export default function TextPanel({
               style={{
                 width: "100%",
                 height: "32px",
-                border: "1px solid #2d3748",
+                border: "1.5px solid #fee2e2",
                 borderRadius: "4px",
                 cursor: "pointer",
                 background: "transparent",

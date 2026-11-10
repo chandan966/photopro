@@ -5,14 +5,14 @@
   background: #0f1218;
   padding: 12px;
   border-radius: 8px;
-  color: #1e293b;
+  color: #800000;
   user-select: none;
 }
 
 .text-panel-title {
   font-size: 13px;
   font-weight: 700;
-  color: #0f172a;
+  color: #800000;
 }
 
 .text-quick-add-group {
@@ -26,9 +26,9 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background: #f8fafc;
-  border: 1.5px solid #e2e8f0;
-  color: #0f172a;
+  background: #ffffff;
+  border: 1.5px solid #fee2e2;
+  color: #800000;
   padding: 8px;
   border-radius: 6px;
   cursor: pointer;
@@ -53,14 +53,14 @@
   align-items: center;
   justify-content: space-between;
   font-size: 11px;
-  color: #64748b;
+  color: #b30000;
 }
 
 .text-font-select {
   width: 100%;
-  background: #f8fafc;
-  border: 1.5px solid #e2e8f0;
-  color: #0f172a;
+  background: #ffffff;
+  border: 1.5px solid #fee2e2;
+  color: #800000;
   font-size: 12px;
   padding: 6px 8px;
   border-radius: 4px;
@@ -79,9 +79,9 @@
 
 .text-style-toggle-btn {
   flex: 1;
-  background: #f8fafc;
-  border: 1.5px solid #e2e8f0;
-  color: #64748b;
+  background: #ffffff;
+  border: 1.5px solid #fee2e2;
+  color: #b30000;
   font-size: 11.5px;
   font-weight: 600;
   padding: 6px;
@@ -95,7 +95,7 @@
 
 .text-style-toggle-btn:hover {
   background: #1f2937;
-  color: #0f172a;
+  color: #800000;
 }
 
 .text-style-toggle-btn.active {
