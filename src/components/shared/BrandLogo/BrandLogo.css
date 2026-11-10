@@ -1,0 +1,85 @@
+/* ==========================================================================
+   PhotoPro Master Brand Logo & Chrome-Ruby Emblem
+   ========================================================================== */
+
+.brand-logo-component {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  user-select: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.brand-icon-root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 4px 16px rgba(225, 29, 72, 0.45));
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.brand-vector-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 4px 16px rgba(225, 29, 72, 0.45));
+  transition: filter 0.25s ease;
+}
+
+.brand-logo-component:hover .brand-icon-root {
+  transform: translateY(-1.5px) scale(1.05);
+}
+
+.brand-logo-component:hover .brand-logo-img,
+.brand-logo-component:hover .brand-vector-svg {
+  filter: drop-shadow(0 6px 26px rgba(255, 32, 78, 0.75)) brightness(1.06);
+}
+
+.brand-text-stack {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.brand-title-text {
+  font-family: var(--font-display, "Manrope", sans-serif);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.6px;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+}
+
+.brand-ruby-highlight {
+  background: linear-gradient(135deg, #ff335c 0%, #e11d48 45%, #9f1239 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(255, 32, 78, 0.5);
+  margin-left: 2px;
+  font-weight: 900;
+}
+
+.brand-suite-subtitle {
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  color: #94a3b8;
+  margin-top: 1.5px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,233 @@
+.small-note {
+  font-size: 10px;
+  color: #8392a5;
+  line-height: 1.6;
+}
+
+.slider-control {
+  display: grid;
+  gap: 6px;
+}
+
+.slider-control > span {
+  display: flex;
+  justify-content: space-between;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.slider-control output {
+  color: #ffffff;
+}
+
+.slider-control input {
+  width: 100%;
+  height: 4px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.field-label {
+  display: grid;
+  gap: 6px;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.field-label input:not([type=color]),
+.field-label select {
+  width: 100%;
+  border: 1px solid #232b3a;
+  background: #141820;
+  border-radius: 8px;
+  color: #ffffff;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.field-label input[type=color] {
+  height: 34px;
+  width: 100%;
+  border: 1px solid #232b3a;
+  border-radius: 8px;
+  background: #141820;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.tool-page {
+  max-width: 1180px;
+  min-height: calc(100vh - 220px);
+  margin: 0 auto;
+  padding: 55px 36px 75px;
+}
+
+.tool-page-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 32px;
+}
+
+.tool-page-icon {
+  height: 52px;
+  width: 52px;
+  display: grid;
+  place-items: center;
+  background: rgba(225, 29, 72, 0.15);
+  color: var(--primary-hover);
+  border: 1px solid rgba(225, 29, 72, 0.35);
+  border-radius: 14px;
+}
+
+.tool-page-heading h1 {
+  font: 800 30px var(--font-display);
+  letter-spacing: -1px;
+  margin: 4px 0 4px;
+  color: #ffffff;
+}
+
+.tool-page-heading p {
+  font-size: 13px;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.dropzone {
+  min-height: 290px;
+  border: 1px dashed #3a4559;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #12161f, #0d1015);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #ffffff;
+  transition: all 0.2s;
+}
+
+.dropzone.dragging {
+  border-color: var(--primary);
+  background: #181f2a;
+}
+
+.drop-icon {
+  height: 52px;
+  width: 52px;
+  border-radius: 14px;
+  background: rgba(225, 29, 72, 0.15);
+  color: var(--primary-hover);
+  display: grid;
+  place-items: center;
+  margin-bottom: 4px;
+}
+
+.dropzone > b {
+  font-size: 15px;
+}
+
+.dropzone > span:not(.drop-icon) {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.dropzone small {
+  font-size: 10px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.dropzone .button {
+  margin-top: 6px;
+}
+
+.tool-workspace-card {
+  border: 1px solid #232b3a;
+  background: #11151c;
+  border-radius: 16px;
+  padding: 22px;
+}
+
+.tool-workspace-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1e2533;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+
+.image-tool-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+  gap: 24px;
+}
+
+.checkerboard {
+  background-color: #0f1217;
+  background-image: linear-gradient(45deg, #171d27 25%, transparent 25%),
+    linear-gradient(-45deg, #171d27 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #171d27 75%),
+    linear-gradient(-45deg, transparent 75%, #171d27 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+}
+
+.tool-controls {
+  border: 1px solid #232b3a;
+  background: #141820;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.tool-controls h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.tool-controls > p {
+  font-size: 10px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.tool-controls .button {
+  font-size: 12px;
+  padding: 10px;
+}
+
+.space-top {
+  margin-top: 10px;
+}
+
+.error-banner {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #3b1915;
+  border: 1px solid #753328;
+  color: #ffc4ba;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.status-note {
+  color: #4ade80 !important;
+  margin: 10px 0 !important;
+}
+
+@media (max-width: 760px) {
+  .tool-page {
+    padding: 38px 20px 55px;
+  }
+  .image-tool-layout {
+    grid-template-columns: 1fr;
+  }
+}

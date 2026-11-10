@@ -1,0 +1,71 @@
+/* EffectsPanel Component Styles */
+.effects-panel-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.effects-panel-header h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.effects-panel-header p {
+  margin: 4px 0 0;
+  font-size: 10px;
+  color: #8392a5;
+}
+
+.effects-action-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.effect-action-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: #141820;
+  border: 1px solid #232b3a;
+  border-radius: 10px;
+  text-align: left;
+  transition: all 0.18s;
+  cursor: pointer;
+}
+
+.effect-action-card:hover {
+  background: #1c222e;
+  border-color: var(--primary, #e11d48);
+  transform: translateX(2px);
+}
+
+.effect-card-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(225, 29, 72, 0.15);
+  color: var(--primary-hover, #ff204e);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.effect-card-info strong {
+  display: block;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.effect-card-info small {
+  display: block;
+  font-size: 10px;
+  color: #8392a5;
+  margin-top: 1px;
+}

@@ -1,0 +1,70 @@
+/* LightroomPanel Component Styles */
+.lightroom-panel-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lr-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lr-header-row h4, .lr-hsl-header h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lr-sliders-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lr-hsl-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hsl-note {
+  font-size: 10px;
+  color: #8392a5;
+}
+
+.hsl-color-chips {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.hsl-chip {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.hsl-chip:hover, .hsl-chip.active {
+  transform: scale(1.2);
+  border-color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.hsl-active-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  background: #141820;
+  padding: 12px;
+  border-radius: 8px;
+}
