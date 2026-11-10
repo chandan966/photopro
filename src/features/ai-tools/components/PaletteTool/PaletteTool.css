@@ -26,15 +26,15 @@
 .palette-demo-btn:hover {
   background: rgba(225, 29, 72, 0.15);
   border-color: var(--primary);
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .palette-workspace {
   display: grid;
   grid-template-columns: 360px 1fr;
   gap: 32px;
-  background: #11151c;
-  border: 1px solid #232b3a;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
   border-radius: 18px;
   padding: 26px;
 }
@@ -49,9 +49,9 @@
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  background: #090c10;
+  background: #f1f5f9;
   aspect-ratio: 4 / 3;
-  border: 1px solid #232b3a;
+  border: 1.5px solid #e2e8f0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +70,7 @@
   background: rgba(18, 22, 28, 0.88);
   backdrop-filter: blur(8px);
   border: 1px solid #3b475c;
-  color: #ffffff;
+  color: #0f172a;
   font-size: 11px;
   padding: 6px 12px;
   border-radius: 6px;
@@ -84,7 +84,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #94a3b8;
+  color: #64748b;
   font-size: 11px;
 }
 
@@ -102,7 +102,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #1e2533;
+  border-bottom: 1px solid #f1f5f9;
   padding-bottom: 14px;
 }
 
@@ -110,13 +110,13 @@
   margin: 0;
   font-size: 18px;
   font-weight: 700;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .results-header p {
   margin: 4px 0 0;
   font-size: 11px;
-  color: #94a3b8;
+  color: #64748b;
 }
 
 .palette-actions {
@@ -154,7 +154,7 @@
 }
 
 .theme-light {
-  color: #ffffff;
+  color: #0f172a;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 

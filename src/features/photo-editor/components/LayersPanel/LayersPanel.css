@@ -3,7 +3,7 @@
   flex-direction: column;
   height: 100%;
   background: #0f1218;
-  color: #e2e8f0;
+  color: #1e293b;
   user-select: none;
 }
 
@@ -23,15 +23,15 @@
 
 .layers-select-label {
   font-size: 11px;
-  color: #94a3b8;
+  color: #64748b;
   width: 50px;
 }
 
 .layers-blend-select {
   flex: 1;
-  background: #161b22;
-  border: 1px solid #2d3748;
-  color: #f8fafc;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  color: #0f172a;
   font-size: 12px;
   padding: 4px 8px;
   border-radius: 4px;
@@ -40,7 +40,7 @@
 }
 
 .layers-blend-select:focus {
-  border-color: #e11d48;
+  border-color: #ff2020;
 }
 
 .layers-slider-group {
@@ -48,19 +48,19 @@
   align-items: center;
   gap: 8px;
   font-size: 11px;
-  color: #94a3b8;
+  color: #64748b;
 }
 
 .layers-slider-group input[type="range"] {
   flex: 1;
-  accent-color: #e11d48;
+  accent-color: #ff2020;
   height: 4px;
 }
 
 .layers-slider-val {
   font-family: monospace;
   font-size: 11px;
-  color: #e2e8f0;
+  color: #1e293b;
   width: 32px;
   text-align: right;
 }
@@ -79,7 +79,7 @@
   align-items: center;
   gap: 8px;
   padding: 6px 8px;
-  background: #141820;
+  background: #f8fafc;
   border: 1px solid transparent;
   border-radius: 6px;
   cursor: pointer;
@@ -92,7 +92,7 @@
 
 .layer-item.active {
   background: #232c3d;
-  border-color: #e11d48;
+  border-color: #ff2020;
 }
 
 .layer-item.locked {
@@ -103,8 +103,8 @@
   position: relative;
   width: 36px;
   height: 36px;
-  background: #090b0e;
-  border: 1px solid #2d3748;
+  background: #f1f5f9;
+  border: 1.5px solid #e2e8f0;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -128,9 +128,9 @@
 }
 
 .layer-name-input {
-  background: #090b0e;
-  border: 1px solid #e11d48;
-  color: #ffffff;
+  background: #f1f5f9;
+  border: 1px solid #ff2020;
+  color: #0f172a;
   font-size: 12px;
   padding: 2px 4px;
   border-radius: 3px;
@@ -141,7 +141,7 @@
 .layer-name-text {
   font-size: 12px;
   font-weight: 500;
-  color: #f1f5f9;
+  color: #0f172a;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -175,7 +175,7 @@
 
 .layer-action-icon-btn:hover {
   background: #283344;
-  color: #e2e8f0;
+  color: #1e293b;
 }
 
 .layer-action-icon-btn.active {
@@ -194,7 +194,7 @@
 .layers-footer-btn {
   background: transparent;
   border: 1px solid transparent;
-  color: #94a3b8;
+  color: #64748b;
   width: 28px;
   height: 28px;
   border-radius: 4px;
@@ -206,8 +206,8 @@
 }
 
 .layers-footer-btn:hover:not(:disabled) {
-  background: #1c2331;
-  color: #ffffff;
+  background: #fff1f2;
+  color: #0f172a;
   border-color: #334155;
 }
 

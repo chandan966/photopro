@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: #141820;
+  background: #f8fafc;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #1e2430;
@@ -21,8 +21,8 @@
 
 .curves-tab-btn {
   background: #1c2230;
-  border: 1px solid #2d3748;
-  color: #94a3b8;
+  border: 1.5px solid #e2e8f0;
+  color: #64748b;
   font-size: 11px;
   font-weight: 600;
   padding: 3px 8px;
@@ -33,31 +33,31 @@
 .curves-tab-btn.active-rgb {
   background: #ffffff;
   color: #090b0e;
-  border-color: #ffffff;
+  border-color: #0f172a;
 }
 
 .curves-tab-btn.active-red {
   background: #ef4444;
-  color: #ffffff;
+  color: #0f172a;
   border-color: #f87171;
 }
 
 .curves-tab-btn.active-green {
   background: #22c55e;
-  color: #ffffff;
+  color: #0f172a;
   border-color: #4ade80;
 }
 
 .curves-tab-btn.active-blue {
   background: #3b82f6;
-  color: #ffffff;
+  color: #0f172a;
   border-color: #60a5fa;
 }
 
 .curves-reset-btn {
   background: transparent;
   border: none;
-  color: #94a3b8;
+  color: #64748b;
   font-size: 11px;
   cursor: pointer;
   padding: 2px 6px;
@@ -73,8 +73,8 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1;
-  background: #090b0e;
-  border: 1px solid #2d3748;
+  background: #f1f5f9;
+  border: 1.5px solid #e2e8f0;
   border-radius: 6px;
   overflow: hidden;
   cursor: crosshair;

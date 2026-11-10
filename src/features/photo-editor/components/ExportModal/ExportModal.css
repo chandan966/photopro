@@ -11,7 +11,7 @@
 
 .export-modal {
   width: min(450px, 100%);
-  background: #11151c;
+  background: #ffffff;
   border: 1px solid #283344;
   border-radius: 18px;
   padding: 24px;
@@ -27,7 +27,7 @@
 .modal-heading h2 {
   font: 800 22px var(--font-display);
   margin: 6px 0 14px;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .export-preview {
@@ -39,7 +39,7 @@
   background: #161c26;
   margin-bottom: 16px;
   border: 1px solid #242c3b;
-  color: #94a3b8;
+  color: #64748b;
   font-size: 11px;
 }
 
@@ -48,7 +48,7 @@
   width: 80px;
   height: 52px;
   object-fit: contain;
-  background: #090c10;
+  background: #f1f5f9;
   border: 1px solid #283344;
   border-radius: 6px;
 }

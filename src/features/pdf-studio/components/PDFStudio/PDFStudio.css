@@ -24,12 +24,12 @@
   font-weight: 800;
   letter-spacing: -1.2px;
   margin: 14px 0 12px;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .pdf-header-hero p {
   font-size: 15px;
-  color: #94a3b8;
+  color: #64748b;
   line-height: 1.65;
   margin: 0 0 28px;
 }
@@ -40,8 +40,8 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
-  background: rgba(17, 21, 28, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
   border-radius: 16px;
   padding: 6px;
 }
@@ -49,7 +49,7 @@
 .pdf-nav-tab {
   border: 0;
   background: transparent;
-  color: #94a3b8;
+  color: #64748b;
   padding: 9px 16px;
   border-radius: 10px;
   font-size: 13px;
@@ -63,12 +63,12 @@
 }
 
 .pdf-nav-tab:hover {
-  color: #ffffff;
+  color: #0f172a;
   background: rgba(255, 255, 255, 0.05);
 }
 
 .pdf-nav-tab.active {
-  color: #ffffff;
+  color: #0f172a;
   background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
   box-shadow: 0 2px 14px rgba(225, 29, 72, 0.45);
 }
@@ -76,7 +76,7 @@
 /* Workspace Card */
 .pdf-panel-card {
   background: #10141b;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1.5px solid #e2e8f0;
   border-radius: 20px;
   padding: 32px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
@@ -97,13 +97,13 @@
 .panel-header h2 {
   font-size: 22px;
   font-weight: 800;
-  color: #ffffff;
+  color: #0f172a;
   margin: 0 0 6px;
 }
 
 .panel-header p {
   font-size: 13px;
-  color: #94a3b8;
+  color: #64748b;
   margin: 0;
 }
 
@@ -132,7 +132,7 @@
 .subtab-btn {
   border: 0;
   background: transparent;
-  color: #94a3b8;
+  color: #64748b;
   font-size: 12px;
   font-weight: 700;
   padding: 6px 14px;
@@ -142,12 +142,12 @@
 }
 
 .subtab-btn:hover {
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .subtab-btn.active {
   background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  color: #0f172a;
 }
 
 /* Dropzone */
@@ -178,7 +178,7 @@
 
 .pdf-dropzone strong {
   font-size: 15px;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .pdf-dropzone span {
@@ -202,7 +202,7 @@
   margin-bottom: 12px;
   font-size: 12px;
   font-weight: 700;
-  color: #94a3b8;
+  color: #64748b;
   text-transform: uppercase;
 }
 
@@ -244,7 +244,7 @@
 
 .img-thumbnail-item p {
   font-size: 12px;
-  color: #e2e8f0;
+  color: #1e293b;
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -293,7 +293,7 @@
 .file-name {
   font-size: 13px;
   font-weight: 600;
-  color: #ffffff;
+  color: #0f172a;
   flex: 1;
 }
 
@@ -335,15 +335,15 @@
 .field-group span {
   font-size: 12px;
   font-weight: 700;
-  color: #cbd5e1;
+  color: #334155;
 }
 
 .field-group input,
 .field-group select,
 .field-group textarea {
   background: #141923;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  color: #0f172a;
   padding: 10px 14px;
   border-radius: 10px;
   font-size: 13px;
@@ -380,14 +380,14 @@
 
 .result-metric span {
   font-size: 11px;
-  color: #94a3b8;
+  color: #64748b;
   text-transform: uppercase;
   font-weight: 700;
 }
 
 .result-metric strong {
   font-size: 16px;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .result-arrow {
@@ -420,12 +420,12 @@
 
 .split-summary-text {
   font-size: 13px;
-  color: #94a3b8;
+  color: #64748b;
   margin-top: 12px;
 }
 
 .split-summary-text strong {
-  color: #ffffff;
+  color: #0f172a;
 }
 
 /* Page Selection Matrix (Delete & Reorder) */
@@ -444,7 +444,7 @@
   margin-bottom: 14px;
   font-size: 12px;
   font-weight: 700;
-  color: #94a3b8;
+  color: #64748b;
 }
 
 .pages-grid {
@@ -460,7 +460,7 @@
   gap: 6px;
   padding: 14px 10px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1.5px solid #e2e8f0;
   background: rgba(255, 255, 255, 0.03);
   cursor: pointer;
   transition: all 0.18s;
@@ -484,7 +484,7 @@
   display: grid;
   place-items: center;
   background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .page-chip-card.kept .page-chip-badge {
@@ -493,12 +493,12 @@
 
 .page-chip-card strong {
   font-size: 12.5px;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .page-chip-card small {
   font-size: 10px;
-  color: #94a3b8;
+  color: #64748b;
 }
 
 /* Edit Controls Suite */
@@ -523,7 +523,7 @@
 
 .image-stamp-box span {
   font-size: 13px;
-  color: #cbd5e1;
+  color: #334155;
   font-weight: 600;
 }
 
@@ -537,7 +537,7 @@
 
 .rendered-page-card {
   background: #141923;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1.5px solid #e2e8f0;
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -558,7 +558,7 @@
   padding: 10px 14px;
   font-size: 12px;
   font-weight: 700;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 /* Signature Pad */
@@ -577,13 +577,13 @@
   margin-bottom: 10px;
   font-size: 12.5px;
   font-weight: 700;
-  color: #cbd5e1;
+  color: #334155;
 }
 
 .sig-draw-canvas {
   width: 100%;
-  background: #090b0e;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
   border-radius: 10px;
   cursor: crosshair;
 }

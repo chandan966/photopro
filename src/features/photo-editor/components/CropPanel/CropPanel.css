@@ -5,20 +5,20 @@
   background: #0f1218;
   padding: 14px;
   border-radius: 8px;
-  color: #e2e8f0;
+  color: #1e293b;
   user-select: none;
 }
 
 .crop-panel-title {
   font-size: 13px;
   font-weight: 700;
-  color: #f8fafc;
+  color: #0f172a;
 }
 
 .crop-section-label {
   font-size: 11px;
   font-weight: 600;
-  color: #94a3b8;
+  color: #64748b;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 6px;
@@ -31,9 +31,9 @@
 }
 
 .crop-ratio-btn {
-  background: #161b22;
-  border: 1px solid #2d3748;
-  color: #cbd5e1;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  color: #334155;
   font-size: 11px;
   padding: 8px 4px;
   border-radius: 6px;
@@ -44,14 +44,13 @@
 
 .crop-ratio-btn:hover {
   background: #1f2937;
-  color: #ffffff;
+  color: #0f172a;
   border-color: #4b5563;
 }
 
 .crop-ratio-btn.active {
-  background: #e11d48;
-  color: #ffffff;
-  border-color: #ff204e;
+  background: #ff2020; color: #ffffff;
+  border-color: #ff4040;
   font-weight: 600;
 }
 
@@ -66,12 +65,12 @@
   align-items: center;
   justify-content: space-between;
   font-size: 11.5px;
-  color: #cbd5e1;
+  color: #334155;
 }
 
 .crop-slider {
   width: 100%;
-  accent-color: #e11d48;
+  accent-color: #ff2020;
   height: 4px;
   cursor: pointer;
 }
@@ -87,9 +86,9 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background: #161b22;
-  border: 1px solid #2d3748;
-  color: #cbd5e1;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  color: #334155;
   font-size: 11px;
   padding: 8px;
   border-radius: 6px;
@@ -99,7 +98,7 @@
 
 .crop-transform-btn:hover {
   background: #1f2937;
-  color: #ffffff;
+  color: #0f172a;
   border-color: #4b5563;
 }
 
@@ -111,8 +110,8 @@
 
 .crop-apply-btn {
   flex: 1;
-  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #ff2020 0%, #be123c 100%);
+  color: #0f172a;
   border: none;
   font-size: 12px;
   font-weight: 600;
@@ -123,14 +122,14 @@
 }
 
 .crop-apply-btn:hover {
-  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+  background: linear-gradient(135deg, #f43f5e 0%, #ff2020 100%);
 }
 
 .crop-cancel-btn {
   flex: 1;
   background: #1e2430;
-  border: 1px solid #2d3748;
-  color: #cbd5e1;
+  border: 1.5px solid #e2e8f0;
+  color: #334155;
   font-size: 12px;
   font-weight: 500;
   padding: 8px;
@@ -141,5 +140,5 @@
 
 .crop-cancel-btn:hover {
   background: #283344;
-  color: #ffffff;
+  color: #0f172a;
 }

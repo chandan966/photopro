@@ -9,7 +9,7 @@
   margin: 0;
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: #0f172a;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -32,8 +32,8 @@
   align-items: center;
   gap: 12px;
   padding: 10px 12px;
-  background: #141820;
-  border: 1px solid #232b3a;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
   border-radius: 10px;
   text-align: left;
   transition: all 0.18s;
@@ -42,7 +42,7 @@
 
 .effect-action-card:hover {
   background: #1c222e;
-  border-color: var(--primary, #e11d48);
+  border-color: var(--primary, #ff2020);
   transform: translateX(2px);
 }
 
@@ -51,7 +51,7 @@
   height: 34px;
   border-radius: 8px;
   background: rgba(225, 29, 72, 0.15);
-  color: var(--primary-hover, #ff204e);
+  color: var(--primary-hover, #ff4040);
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -60,7 +60,7 @@
 .effect-card-info strong {
   display: block;
   font-size: 12px;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .effect-card-info small {

@@ -11,7 +11,7 @@
 
 .color-picker-dialog {
   background: #12161f;
-  border: 1px solid #2d3748;
+  border: 1.5px solid #e2e8f0;
   border-radius: 10px;
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
   width: 280px;
@@ -31,19 +31,19 @@
 .color-picker-title {
   font-size: 13px;
   font-weight: 600;
-  color: #f8fafc;
+  color: #0f172a;
 }
 
 .color-picker-close-btn {
   background: transparent;
   border: none;
-  color: #94a3b8;
+  color: #64748b;
   cursor: pointer;
   padding: 2px;
 }
 
 .color-picker-close-btn:hover {
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .color-picker-preview-row {
@@ -74,9 +74,9 @@
 }
 
 .color-hex-field {
-  background: #090b0e;
-  border: 1px solid #2d3748;
-  color: #ffffff;
+  background: #f1f5f9;
+  border: 1.5px solid #e2e8f0;
+  color: #0f172a;
   font-family: monospace;
   font-size: 13px;
   padding: 6px 8px;
@@ -85,7 +85,7 @@
 }
 
 .color-hex-field:focus {
-  border-color: #e11d48;
+  border-color: #ff2020;
 }
 
 .color-swatches-grid {
@@ -97,12 +97,12 @@
 .color-swatch-item {
   aspect-ratio: 1;
   border-radius: 4px;
-  border: 1px solid #2d3748;
+  border: 1.5px solid #e2e8f0;
   cursor: pointer;
   transition: transform 0.1s;
 }
 
 .color-swatch-item:hover {
   transform: scale(1.15);
-  border-color: #ffffff;
+  border-color: #0f172a;
 }

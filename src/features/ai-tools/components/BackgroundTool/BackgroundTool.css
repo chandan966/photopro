@@ -6,13 +6,13 @@
 
 .remover-preview {
   min-height: 380px;
-  border: 1px solid #232b3a;
+  border: 1.5px solid #e2e8f0;
   border-radius: 12px;
   overflow: hidden;
   display: grid;
   place-items: center;
   padding: 15px;
-  background: #090c10;
+  background: #f1f5f9;
 }
 
 .remover-preview canvas {
@@ -27,7 +27,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 3px;
-  background: #141820;
+  background: #f8fafc;
   border-radius: 8px;
   margin: 10px 0;
 }
@@ -35,7 +35,7 @@
 .segmented-control button {
   border: 0;
   background: transparent;
-  color: #94a3b8;
+  color: #64748b;
   border-radius: 6px;
   padding: 8px;
   font-size: 11px;
@@ -43,8 +43,7 @@
 }
 
 .segmented-control button.selected {
-  background: var(--primary);
-  color: #ffffff;
+  background: var(--primary); color: #ffffff;
 }
 
 .background-options {
@@ -66,7 +65,7 @@
   width: 32px;
   height: 30px;
   border: 1px solid #283344;
-  background: #141820;
+  background: #f8fafc;
   border-radius: 6px;
   padding: 2px;
 }

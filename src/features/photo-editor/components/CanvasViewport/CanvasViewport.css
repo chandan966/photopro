@@ -54,7 +54,7 @@
   left: 0;
   width: 20px;
   height: 20px;
-  background: #090b0e;
+  background: #f1f5f9;
   border-right: 1px solid #1e2430;
   border-bottom: 1px solid #1e2430;
   z-index: 31;
@@ -75,7 +75,7 @@
 .viewport-crop-overlay {
   position: absolute;
   inset: 0;
-  border: 2px dashed #e11d48;
+  border: 2px dashed #ff2020;
   pointer-events: none;
 }
 

@@ -9,7 +9,7 @@
   margin: 0;
   font-size: 13px;
   font-weight: 700;
-  color: #ffffff;
+  color: #0f172a;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -25,11 +25,11 @@
   margin: 0 0 8px;
   font-size: 12px;
   font-weight: 700;
-  color: #cbd5e1;
+  color: #334155;
 }
 
 .retouch-control-box {
-  background: #141820;
+  background: #f8fafc;
   padding: 12px;
   border-radius: 8px;
   display: flex;
@@ -53,18 +53,18 @@
   justify-content: center;
   gap: 6px;
   padding: 8px;
-  background: #141820;
-  border: 1px solid #232b3a;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
   border-radius: 6px;
   font-size: 11px;
   font-weight: 600;
-  color: #cbd5e1;
+  color: #334155;
   cursor: pointer;
   transition: all 0.18s;
 }
 
 .tool-pill.active {
-  background: var(--primary, #e11d48);
-  color: #ffffff;
-  border-color: var(--primary, #e11d48);
+  background: var(--primary, #ff2020);
+  color: #0f172a;
+  border-color: var(--primary, #ff2020);
 }

@@ -125,7 +125,7 @@ export default function EditorPage({
   const [projectName, setProjectName] = useState("Untitled Project");
   const [preset, setPreset] = useState(initialPreset);
   const [bgType, setBgType] = useState(initialGradient ? "gradient" : "solid");
-  const [canvasColor, setCanvasColor] = useState("#090b0e");
+  const [canvasColor, setCanvasColor] = useState("#ffffff");
   const [activeGradient, setActiveGradient] = useState(initialGradient || GRADIENT_PRESETS[0]);
 
   // Layers & Selection

@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: space-between;
   height: 48px;
-  background-color: #0c0e12;
-  border-bottom: 1px solid #1a202c;
+  background-color: #0f172a;
+  border-bottom: 1px solid #e2e8f0;
   padding: 0 12px;
   user-select: none;
   z-index: 50;
@@ -21,9 +21,9 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #161b22;
-  border: 1px solid #2d3748;
-  color: #e2e8f0;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  color: #1e293b;
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 13px;
@@ -34,8 +34,8 @@
 
 .topbar-nav-btn:hover {
   background: #232c3b;
-  border-color: #e11d48;
-  color: #ffffff;
+  border-color: #ff2020;
+  color: #0f172a;
 }
 
 .topbar-menus {
@@ -51,7 +51,7 @@
 .topbar-menu-btn {
   background: transparent;
   border: none;
-  color: #cbd5e1;
+  color: #334155;
   font-size: 13px;
   padding: 6px 10px;
   border-radius: 4px;
@@ -62,7 +62,7 @@
 .topbar-menu-btn:hover,
 .topbar-menu-btn.active {
   background: #1e2430;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .topbar-dropdown-menu {
@@ -72,7 +72,7 @@
   margin-top: 4px;
   min-width: 220px;
   background: #12161f;
-  border: 1px solid #2d3748;
+  border: 1.5px solid #e2e8f0;
   border-radius: 8px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
   padding: 6px;
@@ -89,7 +89,7 @@
   background: transparent;
   border: none;
   border-radius: 4px;
-  color: #e2e8f0;
+  color: #1e293b;
   font-size: 12.5px;
   cursor: pointer;
   text-align: left;
@@ -97,8 +97,7 @@
 }
 
 .dropdown-item:hover {
-  background: #e11d48;
-  color: #ffffff;
+  background: #ff2020; color: #ffffff;
 }
 
 .dropdown-item:disabled {
@@ -108,7 +107,7 @@
 
 .dropdown-item:disabled:hover {
   background: transparent;
-  color: #e2e8f0;
+  color: #1e293b;
 }
 
 .dropdown-divider {
@@ -119,7 +118,7 @@
 
 .item-shortcut {
   font-size: 11px;
-  color: #94a3b8;
+  color: #64748b;
   font-family: monospace;
 }
 
@@ -136,7 +135,7 @@
 .project-name-input {
   background: transparent;
   border: 1px solid transparent;
-  color: #f1f5f9;
+  color: #0f172a;
   font-size: 13px;
   font-weight: 600;
   padding: 4px 8px;
@@ -148,12 +147,12 @@
 
 .project-name-input:hover {
   border-color: #334155;
-  background: #141820;
+  background: #f8fafc;
 }
 
 .project-name-input:focus {
-  background: #141820;
-  border-color: #e11d48;
+  background: #f8fafc;
+  border-color: #ff2020;
   outline: none;
 }
 
@@ -171,22 +170,22 @@
   height: 32px;
   background: transparent;
   border: 1px solid transparent;
-  color: #94a3b8;
+  color: #64748b;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.15s;
 }
 
 .topbar-icon-btn:hover:not(:disabled) {
-  background: #1c2331;
-  color: #f8fafc;
+  background: #fff1f2;
+  color: #0f172a;
   border-color: #334155;
 }
 
 .topbar-icon-btn.active {
   background: rgba(225, 29, 72, 0.2);
-  color: #ff204e;
-  border-color: #e11d48;
+  color: #ff4040;
+  border-color: #ff2020;
 }
 
 .topbar-icon-btn:disabled {
@@ -204,8 +203,8 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #ff2020 0%, #be123c 100%);
+  color: #0f172a;
   border: none;
   font-size: 13px;
   font-weight: 600;
@@ -217,7 +216,7 @@
 }
 
 .topbar-export-btn:hover {
-  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+  background: linear-gradient(135deg, #f43f5e 0%, #ff2020 100%);
   box-shadow: 0 4px 14px rgba(225, 29, 72, 0.5);
   transform: translateY(-1px);
 }

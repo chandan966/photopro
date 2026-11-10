@@ -1,6 +1,6 @@
 .site-footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: #090b0e;
+  border-top: 1px solid #e2e8f0;
+  background: #ffffff;
   padding: 50px 36px 0;
   max-width: 1360px;
   width: 100%;
@@ -31,7 +31,7 @@
 .footer-brand-block > p {
   font-size: 13px;
   line-height: 1.6;
-  color: #94a3b8;
+  color: #64748b;
   margin: 14px 0 16px;
   max-width: 320px;
 }
@@ -46,14 +46,14 @@
 .footer-privacy {
   font-size: 11px;
   font-weight: 600;
-  color: #fda4af;
+  color: #ff2020;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(225, 29, 72, 0.1);
+  background: #fff1f2;
   padding: 6px 12px;
   border-radius: 12px;
-  border: 1px solid rgba(225, 29, 72, 0.25);
+  border: 1px solid #fecdd3;
 }
 
 .footer-contact-cta {
@@ -102,14 +102,14 @@
   background: none;
   text-align: left;
   padding: 0;
-  color: #94a3b8;
+  color: #64748b;
   font-size: 13px;
   transition: color 0.18s;
   cursor: pointer;
 }
 
 .footer-links button:hover {
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .footer-bottom {
@@ -131,7 +131,7 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 5px 14px;
   border-radius: 20px;
-  color: #cbd5e1;
+  color: #475569;
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
@@ -141,7 +141,7 @@
 .footer-developer-instagram:hover {
   background: linear-gradient(135deg, rgba(225, 48, 108, 0.2) 0%, rgba(131, 58, 180, 0.2) 100%);
   border-color: rgba(225, 48, 108, 0.5);
-  color: #ffffff;
+  color: #0f172a;
   transform: translateY(-1px);
   box-shadow: 0 4px 16px rgba(225, 48, 108, 0.3);
 }

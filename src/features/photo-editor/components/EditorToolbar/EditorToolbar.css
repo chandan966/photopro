@@ -3,8 +3,8 @@
   flex-direction: column;
   align-items: center;
   width: 48px;
-  background-color: #0c0e12;
-  border-right: 1px solid #1a202c;
+  background-color: #0f172a;
+  border-right: 1px solid #e2e8f0;
   padding: 8px 0;
   user-select: none;
   z-index: 40;
@@ -29,22 +29,21 @@
   height: 36px;
   background: transparent;
   border: 1px solid transparent;
-  color: #94a3b8;
+  color: #64748b;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .toolbar-btn:hover {
-  background: #1c2331;
-  color: #f8fafc;
+  background: #fff1f2;
+  color: #0f172a;
   border-color: #2d3748;
 }
 
 .toolbar-btn.active {
-  background: #e11d48;
-  color: #ffffff;
-  border-color: #ff204e;
+  background: #ff2020; color: #ffffff;
+  border-color: #ff4040;
   box-shadow: 0 0 10px rgba(225, 29, 72, 0.4);
 }
 
@@ -114,9 +113,9 @@
   position: absolute;
   top: -6px;
   right: -6px;
-  background: #161b22;
+  background: #f8fafc;
   border: 1px solid #334155;
-  color: #cbd5e1;
+  color: #334155;
   border-radius: 50%;
   width: 15px;
   height: 15px;
@@ -130,17 +129,16 @@
 }
 
 .swatch-swap-btn:hover {
-  background: #e11d48;
-  color: #ffffff;
+  background: #ff2020; color: #ffffff;
 }
 
 .swatch-reset-btn {
   position: absolute;
   bottom: -6px;
   left: -4px;
-  background: #161b22;
+  background: #f8fafc;
   border: 1px solid #334155;
-  color: #cbd5e1;
+  color: #334155;
   border-radius: 3px;
   width: 12px;
   height: 12px;
@@ -154,6 +152,5 @@
 }
 
 .swatch-reset-btn:hover {
-  background: #e11d48;
-  color: #ffffff;
+  background: #ff2020; color: #ffffff;
 }

@@ -5,14 +5,14 @@
   background: #0f1218;
   padding: 12px;
   border-radius: 8px;
-  color: #e2e8f0;
+  color: #1e293b;
   user-select: none;
 }
 
 .text-panel-title {
   font-size: 13px;
   font-weight: 700;
-  color: #f8fafc;
+  color: #0f172a;
 }
 
 .text-quick-add-group {
@@ -26,9 +26,9 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background: #161b22;
-  border: 1px solid #2d3748;
-  color: #ffffff;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  color: #0f172a;
   padding: 8px;
   border-radius: 6px;
   cursor: pointer;
@@ -39,7 +39,7 @@
 
 .text-add-btn:hover {
   background: #1f2937;
-  border-color: #e11d48;
+  border-color: #ff2020;
 }
 
 .text-prop-row {
@@ -53,14 +53,14 @@
   align-items: center;
   justify-content: space-between;
   font-size: 11px;
-  color: #94a3b8;
+  color: #64748b;
 }
 
 .text-font-select {
   width: 100%;
-  background: #161b22;
-  border: 1px solid #2d3748;
-  color: #f8fafc;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  color: #0f172a;
   font-size: 12px;
   padding: 6px 8px;
   border-radius: 4px;
@@ -69,7 +69,7 @@
 }
 
 .text-font-select:focus {
-  border-color: #e11d48;
+  border-color: #ff2020;
 }
 
 .text-styles-row {
@@ -79,9 +79,9 @@
 
 .text-style-toggle-btn {
   flex: 1;
-  background: #161b22;
-  border: 1px solid #2d3748;
-  color: #94a3b8;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  color: #64748b;
   font-size: 11.5px;
   font-weight: 600;
   padding: 6px;
@@ -95,18 +95,17 @@
 
 .text-style-toggle-btn:hover {
   background: #1f2937;
-  color: #ffffff;
+  color: #0f172a;
 }
 
 .text-style-toggle-btn.active {
-  background: #e11d48;
-  color: #ffffff;
-  border-color: #ff204e;
+  background: #ff2020; color: #ffffff;
+  border-color: #ff4040;
 }
 
 .text-slider {
   width: 100%;
-  accent-color: #e11d48;
+  accent-color: #ff2020;
   height: 4px;
   cursor: pointer;
 }
