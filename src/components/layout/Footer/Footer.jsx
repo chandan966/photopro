@@ -8,7 +8,7 @@ const CONTACT_EMAIL = "contactchandan0101@gmail.com";
 const MAILTO_LINK = `mailto:${CONTACT_EMAIL}?subject=PhotoPro%20Studio%20Inquiry%20%26%20Feedback&body=Hi%20Chandan,%0D%0A%0D%0AI%20am%20reaching%20out%20regarding%20PhotoPro...`;
 const INSTAGRAM_URL = "https://www.instagram.com/trigger_toofan?vrfl=N3JjMTFrZjVwempj";
 
-function Footer({ navigate }) {
+function Footer({ navigate, onOpenLegalModal }) {
   const [legal, setLegal] = useState("");
 
   const showTemplates = () => {
@@ -39,7 +39,7 @@ function Footer({ navigate }) {
             </p>
             <div className="footer-brand-actions">
               <span className="footer-privacy">
-                <LockKeyhole size={14} /> 100% Private & Client-Side
+                <LockKeyhole size={14} /> 100% Private &amp; Client-Side
               </span>
               {/* Prominent Contact Us Button */}
               <a
@@ -56,30 +56,36 @@ function Footer({ navigate }) {
           <div className="footer-links">
             <div>
               <b>STUDIO</b>
-              <button onClick={() => navigate("editor")}>PhotoPro Studio (100)</button>
-              <button onClick={() => navigate("pdf")}>PDF Maker & Studio (60)</button>
+              <button onClick={() => navigate("editor")}>Photo Studio (Photoshop)</button>
+              <button onClick={() => navigate("design")}>Canva Design Studio</button>
+              <button onClick={() => navigate("pdf")}>PDF Maker &amp; Studio (60)</button>
               <button onClick={() => navigate("video")}>Video Studio (91–100)</button>
               <button onClick={() => navigate("background")}>AI Background Remover</button>
             </div>
             <div>
               <b>PRO TOOLS</b>
-              <button onClick={() => navigate("enhancer")}>AI Image Enhancer (4K)</button>
-              <button onClick={() => navigate("palette")}>Color Palette Extractor</button>
               <button onClick={() => navigate("compressor")}>Smart Compressor</button>
               <button onClick={() => navigate("converter")}>Format Converter</button>
+              <button onClick={() => navigate("resizer")}>Image Resizer</button>
+              <button onClick={() => navigate("brand-kit")}>Brand Kit Manager</button>
+              <button onClick={() => navigate("enhancer")}>AI Image Enhancer (4K)</button>
+              <button onClick={() => navigate("palette")}>Color Palette Extractor</button>
               <button onClick={showTemplates}>Canvas Templates</button>
             </div>
             <div>
-              <b>PHOTOPRO</b>
+              <b>TRUST &amp; COMPLIANCE</b>
               <button onClick={showAbout}>About Studio</button>
-              <button onClick={() => setLegal("Privacy policy")}>Privacy Policy</button>
-              <button onClick={() => setLegal("Terms & conditions")}>Terms & Conditions</button>
+              <button onClick={() => onOpenLegalModal ? onOpenLegalModal("privacy") : setLegal("Privacy policy")}>Privacy Policy</button>
+              <button onClick={() => onOpenLegalModal ? onOpenLegalModal("terms") : setLegal("Terms & conditions")}>Terms of Service</button>
+              <button onClick={() => onOpenLegalModal && onOpenLegalModal("security")}>Security &amp; Sandboxing</button>
+              <button onClick={() => onOpenLegalModal && onOpenLegalModal("faq")}>Help &amp; FAQ</button>
+              <button onClick={() => onOpenLegalModal && onOpenLegalModal("contact")}>Contact &amp; Support</button>
             </div>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} PhotoPro AI Studio. All rights reserved.</span>
+          <span>&copy; {new Date().getFullYear()} PhotoPro AI Studio. All rights reserved.</span>
 
           {/* Center Developer Instagram Link */}
           <a
@@ -96,7 +102,7 @@ function Footer({ navigate }) {
           </a>
 
           <div className="footer-bottom-links">
-            <span>Zero Server Uploads • 100 Photo + 60 PDF + 10 Video</span>
+            <span>Zero Server Uploads &bull; 100 Photo + 60 PDF + 10 Video</span>
           </div>
         </div>
       </footer>

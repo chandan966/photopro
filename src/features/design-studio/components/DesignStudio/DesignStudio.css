@@ -1,0 +1,295 @@
+/* PhotoPro Canva-Style Design Studio Styling */
+
+.design-studio-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #090b0e;
+  color: #f1f5f9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.design-header {
+  height: 60px;
+  background: #0d1015;
+  border-bottom: 1px solid #1f2530;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  flex-shrink: 0;
+  gap: 20px;
+}
+
+.design-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.design-exit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid #28303f;
+  color: #94a3b8;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.design-exit-btn:hover {
+  color: #ffffff;
+  border-color: #475569;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.design-title-wrap h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.design-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  color: #f43f5e;
+  background: rgba(244, 63, 94, 0.1);
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-top: 2px;
+}
+
+.design-search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #141820;
+  border: 1px solid #232b38;
+  border-radius: 8px;
+  padding: 8px 14px;
+  width: 320px;
+  color: #94a3b8;
+}
+
+.design-search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 12.5px;
+  width: 100%;
+}
+
+.design-content-container {
+  flex: 1;
+  padding: 24px;
+  max-width: 1320px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Platform Nav Strip */
+.platform-nav-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+
+.platform-nav-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.platform-pill {
+  background: #12151b;
+  border: 1px solid #232b38;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.platform-pill:hover {
+  color: #ffffff;
+  border-color: #3e4b63;
+}
+
+.platform-pill.active {
+  background: #e11d48;
+  border-color: #e11d48;
+  color: #ffffff;
+}
+
+/* Templates Showcase Grid */
+.templates-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+
+.template-card {
+  background: #0d1015;
+  border: 1px solid #1f2530;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.template-card:hover {
+  border-color: #e11d48;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.template-canvas-preview {
+  width: 100%;
+  max-height: 220px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.template-card-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: #fda4af;
+  backdrop-filter: blur(4px);
+}
+
+.preview-mockup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+  max-width: 90%;
+  z-index: 1;
+}
+
+.mockup-badge {
+  display: inline-block;
+  align-self: center;
+  background: #e11d48;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.mockup-title {
+  font-size: 16px;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.mockup-sub {
+  font-size: 10.5px;
+  color: #e2e8f0;
+  opacity: 0.9;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.template-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 11, 14, 0.75);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  z-index: 2;
+}
+
+.template-card:hover .template-hover-overlay {
+  opacity: 1;
+}
+
+.edit-btn {
+  background: #e11d48;
+  color: #ffffff;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.4);
+}
+
+.template-card-footer {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0d1015;
+}
+
+.template-card-name {
+  display: block;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.template-card-dim {
+  display: block;
+  font-size: 11px;
+  color: #8292a8;
+  margin-top: 2px;
+}
+
+.card-launch-icon {
+  background: #141820;
+  border: 1px solid #232b38;
+  color: #cbd5e1;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.template-card:hover .card-launch-icon {
+  background: #e11d48;
+  border-color: #e11d48;
+  color: #ffffff;
+}

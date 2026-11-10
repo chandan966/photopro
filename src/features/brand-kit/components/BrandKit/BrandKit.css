@@ -1,0 +1,270 @@
+/* PhotoPro Brand Kit Styling */
+
+.brandkit-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #090b0e;
+  color: #f1f5f9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.brandkit-header {
+  height: 60px;
+  background: #0d1015;
+  border-bottom: 1px solid #1f2530;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  flex-shrink: 0;
+}
+
+.brandkit-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brandkit-exit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid #28303f;
+  color: #94a3b8;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.brandkit-exit-btn:hover {
+  color: #ffffff;
+  border-color: #475569;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.brandkit-title-wrap h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.brandkit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10.5px;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-top: 2px;
+}
+
+.brandkit-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandkit-workspace {
+  max-width: 960px;
+  margin: 32px auto;
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brandkit-card {
+  background: #0d1015;
+  border: 1px solid #1f2530;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.brand-name-input {
+  width: 100%;
+  background: #141820;
+  border: 1px solid #232b38;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+}
+
+.brand-name-input:focus {
+  border-color: #e11d48;
+}
+
+/* Logo Box */
+.logo-upload-box {
+  width: 100%;
+}
+
+.logo-placeholder-drop {
+  border: 2px dashed #283243;
+  border-radius: 8px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #94a3b8;
+  font-size: 12.5px;
+  transition: all 0.15s ease;
+}
+
+.logo-placeholder-drop:hover {
+  border-color: #e11d48;
+  color: #ffffff;
+  background: rgba(225, 29, 72, 0.04);
+}
+
+.logo-preview-frame {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-img {
+  max-width: 160px;
+  max-height: 80px;
+  object-fit: contain;
+  background: #141820;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #232b38;
+}
+
+.remove-logo-btn {
+  background: transparent;
+  border: 1px solid #3a4559;
+  color: #f43f5e;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* Swatches */
+.brand-swatches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.swatch-card {
+  background: #141820;
+  border: 1px solid #232b38;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.swatch-color-box {
+  height: 60px;
+  position: relative;
+  cursor: pointer;
+}
+
+.swatch-native-picker {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.swatch-meta {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.swatch-label {
+  font-size: 10.5px;
+  color: #94a3b8;
+}
+
+.swatch-hex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.swatch-hex {
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.swatch-copy-btn {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.swatch-copy-btn:hover {
+  color: #ffffff;
+}
+
+/* Fonts */
+.fonts-pair-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.font-pair-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.font-role {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.font-select {
+  background: #141820;
+  border: 1px solid #232b38;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  outline: none;
+}
+
+.font-select:focus {
+  border-color: #e11d48;
+}

@@ -118,17 +118,21 @@ export default function EditorPage({
   initialPreset = PRESETS[0],
   initialFile,
   onInitialFileHandled,
+  initialLayers = [],
+  initialGradient = null,
 }) {
   // Document & Canvas Setup
   const [projectName, setProjectName] = useState("Untitled Project");
   const [preset, setPreset] = useState(initialPreset);
-  const [bgType, setBgType] = useState("solid");
+  const [bgType, setBgType] = useState(initialGradient ? "gradient" : "solid");
   const [canvasColor, setCanvasColor] = useState("#090b0e");
-  const [activeGradient, setActiveGradient] = useState(GRADIENT_PRESETS[0]);
+  const [activeGradient, setActiveGradient] = useState(initialGradient || GRADIENT_PRESETS[0]);
 
   // Layers & Selection
-  const [layers, setLayers] = useState([]);
-  const [selectedLayerId, setSelectedLayerId] = useState(null);
+  const [layers, setLayers] = useState(initialLayers);
+  const [selectedLayerId, setSelectedLayerId] = useState(
+    initialLayers.length > 0 ? initialLayers[initialLayers.length - 1].id : null
+  );
 
   // Tools & Navigation
   const [activeTool, setActiveTool] = useState("move"); // move, marquee, lasso, wand, crop, eyedropper, brush, eraser, clone, healing, dodge, text, shape, pan, zoom

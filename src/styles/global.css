@@ -53,6 +53,22 @@
   --text-subtle: #64748b;
 
   --font-display: "Manrope", "DM Sans", sans-serif;
+
+  /* Centralized Design System Tokens */
+  --color-primary: #e11d48;
+  --color-secondary: #f43f5e;
+  --color-accent: #fb7185;
+  --color-background: #090b0e;
+  --color-surface: #12151b;
+  --color-surface-hover: #171c24;
+  --color-text: #ffffff;
+  --color-muted: #94a3b8;
+  --color-subtle: #64748b;
+  --color-border: #242a35;
+  --color-button: #e11d48;
+  --color-hover: #ff204e;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
 }
 
 * {

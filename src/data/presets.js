@@ -1,4 +1,7 @@
 import {
+  Bookmark,
+  Layout,
+  Scale,
   Aperture,
   Blend,
   Camera,
@@ -198,6 +201,27 @@ export const TOOLS = [
     tag: "PNG / JPG / WebP",
     icon: FileImage,
     desc: "Instantly batch convert images across formats locally with full ICC color profile retention.",
+  },
+  {
+    id: "design",
+    label: "Canva Design Studio",
+    tag: "Templates",
+    icon: Layout,
+    desc: "Ready-to-edit templates for YouTube, Instagram, Reels, TikTok, and ads with 1-click Studio import.",
+  },
+  {
+    id: "resizer",
+    label: "Batch Image Resizer",
+    tag: "Pixel & Aspect Lock",
+    icon: Scale,
+    desc: "Exact dimensions with aspect ratio lock, percentage scaling, and social media presets.",
+  },
+  {
+    id: "brand-kit",
+    label: "Brand Kit Manager",
+    tag: "Assets & Palettes",
+    icon: Bookmark,
+    desc: "Save brand logos, color swatches, and typography styles for 1-click canvas application.",
   },
   {
     id: "palette",

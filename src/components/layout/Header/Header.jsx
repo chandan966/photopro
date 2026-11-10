@@ -8,6 +8,8 @@ import {
   FileText,
   Film,
   Layers,
+  Layout,
+  Scale,
   Menu,
   Palette,
   Share2,
@@ -22,7 +24,7 @@ import { APP_CONFIG, PRESETS } from "../../../data/presets.js";
 import BrandLogo from "../../shared/BrandLogo/BrandLogo.jsx";
 import "./Header.css";
 
-function Header({ page, navigate, openEditor, onOpenFeaturesModal }) {
+function Header({ page, navigate, openEditor, onOpenFeaturesModal, onOpenLegalModal }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [toolsDropdown, setToolsDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -104,6 +106,15 @@ function Header({ page, navigate, openEditor, onOpenFeaturesModal }) {
             >
               <Aperture size={13} className="tab-icon ruby-icon" />
               <span>Photo Studio</span>
+            </button>
+
+            <button
+              className={`studio-tab-btn design-tab ${page === "design" ? "active" : ""}`}
+              onClick={() => go("design")}
+              title="Open Canva & Social Media Design Studio"
+            >
+              <Layout size={13} className="tab-icon gold-icon" />
+              <span>Design Studio</span>
             </button>
 
             <button
@@ -253,6 +264,26 @@ function Header({ page, navigate, openEditor, onOpenFeaturesModal }) {
                           <div className="item-sub">PNG, JPG, WebP & TIFF locally</div>
                         </div>
                       </button>
+
+                      <button className="mega-menu-item" onClick={() => go("resizer")}>
+                        <div className="item-icon-box comp-tool">
+                          <Scale size={16} />
+                        </div>
+                        <div className="item-text">
+                          <div className="item-heading">Image Resizer</div>
+                          <div className="item-sub">Exact px, aspect lock & social presets</div>
+                        </div>
+                      </button>
+
+                      <button className="mega-menu-item" onClick={() => go("brand-kit")}>
+                        <div className="item-icon-box pal-ai">
+                          <Palette size={16} />
+                        </div>
+                        <div className="item-text">
+                          <div className="item-heading">Brand Kit & Style Manager</div>
+                          <div className="item-sub">Logos, palettes & font pairings</div>
+                        </div>
+                      </button>
                     </div>
                   </div>
 
@@ -315,6 +346,19 @@ function Header({ page, navigate, openEditor, onOpenFeaturesModal }) {
                 <div className="mobile-card-info">
                   <strong>Photo Studio</strong>
                   <small>Photoshop & Lightroom Suite</small>
+                </div>
+              </button>
+
+              <button
+                className={`mobile-studio-card ${page === "design" ? "active" : ""}`}
+                onClick={() => go("design")}
+              >
+                <div className="mobile-card-icon gold">
+                  <Layout size={18} />
+                </div>
+                <div className="mobile-card-info">
+                  <strong>Design Studio</strong>
+                  <small>Canva & Social Media Templates</small>
                 </div>
               </button>
 
