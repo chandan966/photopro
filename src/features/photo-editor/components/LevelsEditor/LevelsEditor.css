@@ -1,0 +1,82 @@
+.levels-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #141820;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #1e2430;
+}
+
+.levels-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.levels-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.levels-reset-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.levels-reset-btn:hover {
+  background: #232c3d;
+  color: #f43f5e;
+}
+
+.levels-section-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+
+.levels-inputs-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.levels-input-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.levels-input-box span {
+  font-size: 10px;
+  color: #64748b;
+}
+
+.levels-num-input {
+  width: 52px;
+  background: #090b0e;
+  border: 1px solid #2d3748;
+  color: #ffffff;
+  font-size: 11px;
+  font-family: monospace;
+  text-align: center;
+  padding: 3px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.levels-num-input:focus {
+  border-color: #e11d48;
+}
+
+.levels-slider {
+  width: 100%;
+  accent-color: #e11d48;
+}

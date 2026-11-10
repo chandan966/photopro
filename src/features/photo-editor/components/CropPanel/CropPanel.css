@@ -1,0 +1,145 @@
+.crop-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #0f1218;
+  padding: 14px;
+  border-radius: 8px;
+  color: #e2e8f0;
+  user-select: none;
+}
+
+.crop-panel-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.crop-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.crop-ratios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.crop-ratio-btn {
+  background: #161b22;
+  border: 1px solid #2d3748;
+  color: #cbd5e1;
+  font-size: 11px;
+  padding: 8px 4px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+}
+
+.crop-ratio-btn:hover {
+  background: #1f2937;
+  color: #ffffff;
+  border-color: #4b5563;
+}
+
+.crop-ratio-btn.active {
+  background: #e11d48;
+  color: #ffffff;
+  border-color: #ff204e;
+  font-weight: 600;
+}
+
+.crop-straighten-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.crop-straighten-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #cbd5e1;
+}
+
+.crop-slider {
+  width: 100%;
+  accent-color: #e11d48;
+  height: 4px;
+  cursor: pointer;
+}
+
+.crop-transforms-row {
+  display: flex;
+  gap: 6px;
+}
+
+.crop-transform-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #161b22;
+  border: 1px solid #2d3748;
+  color: #cbd5e1;
+  font-size: 11px;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.crop-transform-btn:hover {
+  background: #1f2937;
+  color: #ffffff;
+  border-color: #4b5563;
+}
+
+.crop-actions-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.crop-apply-btn {
+  flex: 1;
+  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+  color: #ffffff;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.crop-apply-btn:hover {
+  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+}
+
+.crop-cancel-btn {
+  flex: 1;
+  background: #1e2430;
+  border: 1px solid #2d3748;
+  color: #cbd5e1;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.crop-cancel-btn:hover {
+  background: #283344;
+  color: #ffffff;
+}

@@ -1,0 +1,228 @@
+.editor-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  background-color: #0c0e12;
+  border-bottom: 1px solid #1a202c;
+  padding: 0 12px;
+  user-select: none;
+  z-index: 50;
+  gap: 12px;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #161b22;
+  border: 1px solid #2d3748;
+  color: #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.topbar-nav-btn:hover {
+  background: #232c3b;
+  border-color: #e11d48;
+  color: #ffffff;
+}
+
+.topbar-menus {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.menu-item-wrapper {
+  position: relative;
+}
+
+.topbar-menu-btn {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.topbar-menu-btn:hover,
+.topbar-menu-btn.active {
+  background: #1e2430;
+  color: #ffffff;
+}
+
+.topbar-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  min-width: 220px;
+  background: #12161f;
+  border: 1px solid #2d3748;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  padding: 6px;
+  z-index: 1000;
+  animation: fadeInFast 0.15s ease-out;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 7px 10px;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  color: #e2e8f0;
+  font-size: 12.5px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s;
+}
+
+.dropdown-item:hover {
+  background: #e11d48;
+  color: #ffffff;
+}
+
+.dropdown-item:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.dropdown-item:disabled:hover {
+  background: transparent;
+  color: #e2e8f0;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #232c3b;
+  margin: 4px 0;
+}
+
+.item-shortcut {
+  font-size: 11px;
+  color: #94a3b8;
+  font-family: monospace;
+}
+
+.dropdown-item:hover .item-shortcut {
+  color: #ffe4e6;
+}
+
+.topbar-center {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.project-name-input {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #f1f5f9;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-align: center;
+  width: 160px;
+  transition: all 0.15s;
+}
+
+.project-name-input:hover {
+  border-color: #334155;
+  background: #141820;
+}
+
+.project-name-input:focus {
+  background: #141820;
+  border-color: #e11d48;
+  outline: none;
+}
+
+.topbar-quick-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.topbar-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.topbar-icon-btn:hover:not(:disabled) {
+  background: #1c2331;
+  color: #f8fafc;
+  border-color: #334155;
+}
+
+.topbar-icon-btn.active {
+  background: rgba(225, 29, 72, 0.2);
+  color: #ff204e;
+  border-color: #e11d48;
+}
+
+.topbar-icon-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topbar-export-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+  color: #ffffff;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(225, 29, 72, 0.35);
+  transition: all 0.15s;
+}
+
+.topbar-export-btn:hover {
+  background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.5);
+  transform: translateY(-1px);
+}
+
+@keyframes fadeInFast {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

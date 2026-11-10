@@ -1,0 +1,93 @@
+.curves-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #141820;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #1e2430;
+}
+
+.curves-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.curves-channel-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.curves-tab-btn {
+  background: #1c2230;
+  border: 1px solid #2d3748;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.curves-tab-btn.active-rgb {
+  background: #ffffff;
+  color: #090b0e;
+  border-color: #ffffff;
+}
+
+.curves-tab-btn.active-red {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #f87171;
+}
+
+.curves-tab-btn.active-green {
+  background: #22c55e;
+  color: #ffffff;
+  border-color: #4ade80;
+}
+
+.curves-tab-btn.active-blue {
+  background: #3b82f6;
+  color: #ffffff;
+  border-color: #60a5fa;
+}
+
+.curves-reset-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.curves-reset-btn:hover {
+  background: #232c3d;
+  color: #f43f5e;
+}
+
+.curves-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: #090b0e;
+  border: 1px solid #2d3748;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+.curves-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.curves-hint {
+  font-size: 10px;
+  color: #64748b;
+  text-align: center;
+}

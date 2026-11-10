@@ -1,0 +1,72 @@
+.editor-bottombar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 28px;
+  background-color: #0c0e12;
+  border-top: 1px solid #1a202c;
+  padding: 0 12px;
+  font-size: 11px;
+  color: #94a3b8;
+  user-select: none;
+  z-index: 40;
+}
+
+.bottombar-left,
+.bottombar-center,
+.bottombar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bottombar-info-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bottombar-info-label {
+  color: #64748b;
+}
+
+.bottombar-info-val {
+  color: #cbd5e1;
+  font-family: monospace;
+}
+
+.bottombar-tool-hint {
+  color: #f43f5e;
+  font-weight: 500;
+}
+
+.bottombar-zoom-ctrls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bottombar-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.bottombar-btn:hover {
+  background: #1e2430;
+  color: #ffffff;
+  border-color: #334155;
+}
+
+.bottombar-zoom-text {
+  font-family: monospace;
+  font-size: 11px;
+  color: #e2e8f0;
+  width: 42px;
+  text-align: center;
+}

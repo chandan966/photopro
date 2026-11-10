@@ -1,0 +1,65 @@
+.shapes-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #0f1218;
+  padding: 12px;
+  border-radius: 8px;
+  color: #e2e8f0;
+  user-select: none;
+}
+
+.shapes-panel-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.shapes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.shape-picker-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: #161b22;
+  border: 1px solid #2d3748;
+  color: #cbd5e1;
+  padding: 10px 4px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 11px;
+  transition: all 0.15s;
+}
+
+.shape-picker-btn:hover {
+  background: #1f2937;
+  border-color: #e11d48;
+  color: #ffffff;
+}
+
+.shape-prop-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.shape-prop-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.shape-slider {
+  width: 100%;
+  accent-color: #e11d48;
+  height: 4px;
+  cursor: pointer;
+}

@@ -709,3 +709,121 @@ export const applyCubeLUT = (canvas, lut) => {
   }
   ctx.putImageData(imgData, 0, 0);
 };
+
+
+/**
+ * Real Motion Blur Effect
+ */
+export const applyMotionBlur = (canvas, angleDeg = 0, distance = 16) => {
+  const ctx = canvas.getContext("2d");
+  const w = canvas.width;
+  const h = canvas.height;
+  const rad = (angleDeg * Math.PI) / 180;
+  const dx = Math.cos(rad);
+  const dy = Math.sin(rad);
+
+  const src = ctx.getImageData(0, 0, w, h);
+  const dst = ctx.createImageData(w, h);
+  const s = src.data;
+  const d = dst.data;
+  const steps = Math.max(1, Math.round(distance));
+
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      let rSum = 0, gSum = 0, bSum = 0, aSum = 0, count = 0;
+      for (let k = -steps / 2; k <= steps / 2; k++) {
+        const sx = Math.round(x + k * dx);
+        const sy = Math.round(y + k * dy);
+        if (sx >= 0 && sx < w && sy >= 0 && sy < h) {
+          const idx = (sy * w + sx) * 4;
+          rSum += s[idx];
+          gSum += s[idx + 1];
+          bSum += s[idx + 2];
+          aSum += s[idx + 3];
+          count++;
+        }
+      }
+      const outIdx = (y * w + x) * 4;
+      d[outIdx] = Math.round(rSum / count);
+      d[outIdx + 1] = Math.round(gSum / count);
+      d[outIdx + 2] = Math.round(bSum / count);
+      d[outIdx + 3] = Math.round(aSum / count);
+    }
+  }
+  ctx.putImageData(dst, 0, 0);
+};
+
+/**
+ * Real Zoom Blur (Radial Explosion from Center)
+ */
+export const applyZoomBlur = (canvas, strength = 18) => {
+  const ctx = canvas.getContext("2d");
+  const w = canvas.width;
+  const h = canvas.height;
+  const cx = w / 2;
+  const cy = h / 2;
+
+  const src = ctx.getImageData(0, 0, w, h);
+  const dst = ctx.createImageData(w, h);
+  const s = src.data;
+  const d = dst.data;
+  const samples = 10;
+
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      const vx = x - cx;
+      const vy = y - cy;
+      let rSum = 0, gSum = 0, bSum = 0, aSum = 0;
+
+      for (let i = 0; i < samples; i++) {
+        const scale = 1 - (strength / 300) * (i / samples);
+        const sx = clamp(Math.round(cx + vx * scale), 0, w - 1);
+        const sy = clamp(Math.round(cy + vy * scale), 0, h - 1);
+        const idx = (sy * w + sx) * 4;
+        rSum += s[idx];
+        gSum += s[idx + 1];
+        bSum += s[idx + 2];
+        aSum += s[idx + 3];
+      }
+
+      const outIdx = (y * w + x) * 4;
+      d[outIdx] = Math.round(rSum / samples);
+      d[outIdx + 1] = Math.round(gSum / samples);
+      d[outIdx + 2] = Math.round(bSum / samples);
+      d[outIdx + 3] = Math.round(aSum / samples);
+    }
+  }
+  ctx.putImageData(dst, 0, 0);
+};
+
+/**
+ * Real Unsharp Mask Sharpening
+ */
+export const applyUnsharpMask = (canvas, amount = 1.2, radius = 2, threshold = 0) => {
+  const ctx = canvas.getContext("2d");
+  const w = canvas.width;
+  const h = canvas.height;
+
+  // 1. Create blurred copy
+  const blurCanvas = document.createElement("canvas");
+  blurCanvas.width = w;
+  blurCanvas.height = h;
+  const bCtx = blurCanvas.getContext("2d");
+  bCtx.filter = `blur(${radius}px)`;
+  bCtx.drawImage(canvas, 0, 0);
+
+  const origData = ctx.getImageData(0, 0, w, h);
+  const blurData = bCtx.getImageData(0, 0, w, h);
+  const o = origData.data;
+  const b = blurData.data;
+
+  for (let i = 0; i < o.length; i += 4) {
+    for (let c = 0; c < 3; c++) {
+      const diff = o[i + c] - b[i + c];
+      if (Math.abs(diff) >= threshold) {
+        o[i + c] = clamp(o[i + c] + diff * amount);
+      }
+    }
+  }
+  ctx.putImageData(origData, 0, 0);
+};

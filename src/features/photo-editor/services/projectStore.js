@@ -1,9 +1,13 @@
 /**
- * PhotoPro Local Project Storage & State Persistence Engine
- * Enables Canva/Photoshop-style project saving completely on the frontend
+ * PhotoPro Master Project Store & File Format (.photopro)
+ * 
+ * Supports:
+ * - Full multi-layer project persistence (Canvas dimensions, background, layers, masks, blend modes, adjustments)
+ * - Exporting and importing native `.photopro` project files
+ * - Browser LocalStorage & IndexedDB auto-recovery
  */
 
-const STORAGE_KEY = "photopro_saved_projects_v1";
+const STORAGE_KEY = "photopro_saved_projects_v2";
 
 export const getSavedProjects = () => {
   try {
@@ -29,11 +33,18 @@ export const saveProjectToLocal = (project) => {
       projects.unshift(updatedProject);
     }
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(projects.slice(0, 30)));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(projects.slice(0, 20)));
     return true;
   } catch (err) {
-    console.error("Failed to save project locally:", err);
-    return false;
+    // If LocalStorage quota is exceeded, prune oldest project and retry
+    try {
+      const projects = getSavedProjects().slice(0, 5);
+      projects.unshift(project);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
+      return true;
+    } catch {
+      return false;
+    }
   }
 };
 
@@ -47,32 +58,72 @@ export const deleteProjectFromLocal = (id) => {
   }
 };
 
-export const duplicateProjectInLocal = (id) => {
-  try {
-    const projects = getSavedProjects();
-    const target = projects.find((p) => p.id === id);
-    if (!target) return null;
+/**
+ * Export Native .photopro Project File
+ */
+export const exportProjectFile = (projectState, filename = "artwork") => {
+  const payload = {
+    version: "2.0",
+    appName: "PhotoPro",
+    exportedAt: new Date().toISOString(),
+    name: filename,
+    canvas: {
+      width: projectState.width,
+      height: projectState.height,
+      bgType: projectState.bgType,
+      canvasColor: projectState.canvasColor,
+      activeGradient: projectState.activeGradient,
+    },
+    adjustments: {
+      lrSettings: projectState.lrSettings,
+      hslMixer: projectState.hslMixer,
+      curves: projectState.curves,
+      levels: projectState.levels,
+      colorBalance: projectState.colorBalance,
+    },
+    layers: projectState.layers || [],
+  };
 
-    const copy = {
-      ...JSON.parse(JSON.stringify(target)),
-      id: crypto.randomUUID(),
-      name: `${target.name} (Copy)`,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    };
+  const jsonStr = JSON.stringify(payload, null, 2);
+  const blob = new Blob([jsonStr], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
 
-    projects.unshift(copy);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(projects));
-    return copy;
-  } catch {
-    return null;
-  }
+  const cleanName = filename.toLowerCase().replace(/[^a-z0-9_-]/g, "-");
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `${cleanName || "project"}.photopro`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
 };
 
-export const exportProjectJSON = (project) => {
-  const jsonStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(project, null, 2));
-  const dlAnchor = document.createElement("a");
-  dlAnchor.setAttribute("href", jsonStr);
-  dlAnchor.setAttribute("download", `${project.name.toLowerCase().replace(/\s+/g, "-")}-photopro.json`);
-  dlAnchor.click();
+/**
+ * Read and validate an uploaded .photopro project file
+ */
+export const importProjectFile = async (file) => {
+  return new Promise((resolve, reject) => {
+    if (!file) {
+      reject(new Error("No file selected"));
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const text = e.target.result;
+        const data = JSON.parse(text);
+
+        if (!data.canvas || !Array.isArray(data.layers)) {
+          throw new Error("Invalid PhotoPro project schema. Missing canvas or layers.");
+        }
+
+        resolve(data);
+      } catch (err) {
+        reject(new Error("Unable to parse .photopro project file: " + err.message));
+      }
+    };
+    reader.onerror = () => reject(new Error("Failed to read file"));
+    reader.readAsText(file);
+  });
 };
