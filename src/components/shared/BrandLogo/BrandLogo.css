@@ -29,7 +29,7 @@
   height: 100%;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 4px 16px rgba(225, 29, 72, 0.45));
+  filter: drop-shadow(0 4px 16px rgba(255, 32, 32, 0.45));
   transition: filter 0.25s ease, transform 0.25s ease;
 }
 
@@ -37,7 +37,7 @@
   width: 100%;
   height: 100%;
   display: block;
-  filter: drop-shadow(0 4px 16px rgba(225, 29, 72, 0.45));
+  filter: drop-shadow(0 4px 16px rgba(255, 32, 32, 0.45));
   transition: filter 0.25s ease;
 }
 
@@ -47,7 +47,7 @@
 
 .brand-logo-component:hover .brand-logo-img,
 .brand-logo-component:hover .brand-vector-svg {
-  filter: drop-shadow(0 6px 26px rgba(255, 32, 78, 0.75)) brightness(1.06);
+  filter: drop-shadow(0 6px 26px rgba(255, 32, 32, 0.75)) brightness(1.06);
 }
 
 .brand-text-stack {
@@ -67,10 +67,10 @@
 }
 
 .brand-ruby-highlight {
-  background: linear-gradient(135deg, #ff335c 0%, #e11d48 45%, #9f1239 100%);
+  background: linear-gradient(135deg, #ff4040 0%, #ff2020 45%, #cc0000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 20px rgba(255, 32, 78, 0.5);
+  text-shadow: 0 0 20px rgba(255, 32, 32, 0.5);
   margin-left: 2px;
   font-weight: 900;
 }
@@ -79,7 +79,7 @@
   font-size: 8.5px;
   font-weight: 800;
   letter-spacing: 1.4px;
-  color: #94a3b8;
+  color: var(--text-muted, #b0b0b0);
   margin-top: 1.5px;
   text-transform: uppercase;
 }

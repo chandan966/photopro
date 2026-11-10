@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://photopro.vercel.app/sitemap.xml

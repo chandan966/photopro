@@ -142,7 +142,7 @@ export default function EditorPage({
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
   // Swatches & Brushes
-  const [foregroundColor, setForegroundColor] = useState("#e11d48");
+  const [foregroundColor, setForegroundColor] = useState("#ff2020");
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
   const [brushSettings, setBrushSettings] = useState({
     size: 24,

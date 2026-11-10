@@ -9,7 +9,7 @@ function RetouchPanel({ onApplyRetouch, activeTool, setActiveTool, isProcessing 
     <div className="retouch-panel-wrap">
       <div className="retouch-header">
         <h4><Sparkles size={14} /> Portrait & Beauty Retouch</h4>
-        <p>Advanced algorithmic skin, facial, and color restoration</p>
+        <p>Algorithmic skin smoothing, facial retouching & tone grading</p>
       </div>
 
       <div className="retouch-section">
@@ -42,22 +42,22 @@ function RetouchPanel({ onApplyRetouch, activeTool, setActiveTool, isProcessing 
           onClick={() => onApplyRetouch("teeth-whiten")}
           disabled={isProcessing}
         >
-          <SmileIcon size={14} /> Teeth Whitening & Eye Enhance
+          <SmileIcon size={14} /> Teeth Whitening & Eye Brightening
         </button>
       </div>
 
       <div className="sidebar-separator" />
 
       <div className="retouch-section">
-        <h5>AI Colorization & Restoration</h5>
+        <h5>Vintage Colorization & Tonal Split</h5>
         <button
           className="button button-primary full-width"
           onClick={() => onApplyRetouch("colorize")}
           disabled={isProcessing}
         >
-          <Wand2 size={14} /> AI B&W Photo Colorization
+          <Wand2 size={14} /> Apply Vintage Split-Tone Colorization
         </button>
-        <small className="section-hint">Neural luminance tone mapping for vintage portraits and scenes.</small>
+        <small className="section-hint">Algorithmic luminance tone mapping for vintage portraits and monochrome photos.</small>
       </div>
 
       <div className="sidebar-separator" />

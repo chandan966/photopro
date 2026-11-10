@@ -3,22 +3,58 @@
   <head> 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0c0e12" />
-    <meta name="description" content="PhotoPro — Create. Enhance. Transform. Professional browser-based AI photo editor combining Photoshop, Lightroom, Canva, and Picsart." />
+    <meta name="theme-color" content="#090909" />
+    <meta name="description" content="PhotoPro — Create. Enhance. Transform. Professional browser-based creative platform combining Photoshop, Lightroom, Canva, PDF Studio, and Video editing in one unified, 100% private workspace." />
+    <meta name="keywords" content="photo editor, online photoshop, lightroom in browser, canva alternative, pdf tools, video editor, image compressor, image converter, free online photo editor" />
+    <link rel="canonical" href="https://photopro.vercel.app/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://photopro.vercel.app/" />
+    <meta property="og:title" content="PhotoPro — Professional In-Browser Creative Studio" />
+    <meta property="og:description" content="Photoshop, Lightroom, Canva, PDF & Video tools in one unified, private client-side suite. Free, high-performance, and secure." />
+    <meta property="og:image" content="https://photopro.vercel.app/brand-logo-192.png" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://photopro.vercel.app/" />
+    <meta name="twitter:title" content="PhotoPro — Professional In-Browser Creative Studio" />
+    <meta name="twitter:description" content="Photoshop, Lightroom, Canva, PDF & Video tools in one unified, private client-side suite." />
+    <meta name="twitter:image" content="https://photopro.vercel.app/brand-logo-192.png" />
+
+    <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'wasm-unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://*; media-src 'self' data: blob:; worker-src 'self' blob:; connect-src 'self' data: blob: https://unpkg.com https://staticimgly.com; frame-src 'none'; object-src 'none';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'wasm-unsafe-eval' https://unpkg.com https://pagead2.googlesyndication.com https://adservice.google.com https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://* https://pagead2.googlesyndication.com; media-src 'self' data: blob:; worker-src 'self' blob:; connect-src 'self' data: blob: https://unpkg.com https://staticimgly.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net; frame-src 'self' https://googleads.g.doubleclick.net; object-src 'none';" />
+
+    <!-- Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2" />
     <link rel="icon" type="image/png" sizes="192x192" href="/brand-logo-192.png?v=2" />
     <link rel="shortcut icon" href="/favicon.ico?v=2" />
     <link rel="apple-touch-icon" href="/brand-logo-192.png?v=2" />
-    <title>PhotoPro</title>
+    
+    <title>PhotoPro — Professional In-Browser Creative Studio</title>
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PhotoPro Creative Studio",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web, Windows, macOS, Linux, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Professional in-browser creative suite combining photo editing, layers, curves, Lightroom color grading, PDF utilities, video editing, and batch image compression."
+    }
+    </script>
+
     <!-- Google Ads -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6527373182140065"
-     crossorigin="anonymous"></script> 
-     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6527373182140065"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6527373182140065" crossorigin="anonymous"></script> 
   </head>
   <body>
     <div id="root"></div>
