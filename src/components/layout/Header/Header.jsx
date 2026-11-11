@@ -6,7 +6,6 @@ import {
   FileCheck,
   FileImage,
   FileText,
-  Film,
   Layers,
   Layout,
   Scale,
@@ -125,15 +124,6 @@ function Header({ page, navigate, openEditor, onOpenFeaturesModal, onOpenLegalMo
               <FileText size={13} className="tab-icon ruby-icon" />
               <span>PDF Studio</span>
             </button>
-
-            <button
-              className={`studio-tab-btn video-tab ${page === "video" ? "active" : ""}`}
-              onClick={() => go("video")}
-              title="Open Multi-Track Video Studio"
-            >
-              <Film size={13} className="tab-icon rose-icon" />
-              <span>Video Studio</span>
-            </button>
           </div>
 
           <div className="nav-divider-separator" />
@@ -232,16 +222,6 @@ function Header({ page, navigate, openEditor, onOpenFeaturesModal, onOpenLegalMo
                         <div className="item-text">
                           <div className="item-heading">PDF Maker & E-Sign</div>
                           <div className="item-sub">Merge, split, invoices & certificates</div>
-                        </div>
-                      </button>
-
-                      <button className="mega-menu-item" onClick={() => go("video")}>
-                        <div className="item-icon-box vid-tool">
-                          <Film size={16} />
-                        </div>
-                        <div className="item-text">
-                          <div className="item-heading">Video Studio</div>
-                          <div className="item-sub">Multi-track timeline & chroma key</div>
                         </div>
                       </button>
 
@@ -372,19 +352,6 @@ function Header({ page, navigate, openEditor, onOpenFeaturesModal, onOpenLegalMo
                 <div className="mobile-card-info">
                   <strong>PDF Maker & Studio</strong>
                   <small>PDF Document Suite</small>
-                </div>
-              </button>
-
-              <button
-                className={`mobile-studio-card ${page === "video" ? "active" : ""}`}
-                onClick={() => go("video")}
-              >
-                <div className="mobile-card-icon rose">
-                  <Film size={18} />
-                </div>
-                <div className="mobile-card-info">
-                  <strong>Video Studio</strong>
-                  <small>Multi-Track Timeline Studio</small>
                 </div>
               </button>
             </div>

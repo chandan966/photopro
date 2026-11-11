@@ -161,13 +161,6 @@ export const TOOLS = [
     desc: "Complete Photoshop & Lightroom workspace with 150 features, multi-layer editing, blend modes, curves, and live retouching.",
   },
   {
-    id: "video",
-    label: "Video Studio Pro",
-    tag: "100 Video Features",
-    icon: Zap,
-    desc: "Multi-track timeline, chroma key green screen, cinematic color wheels, audio mixing, speed curves, and 4K export.",
-  },
-  {
     id: "pdf",
     label: "PDF Studio & Maker",
     tag: "60 PDF Features",

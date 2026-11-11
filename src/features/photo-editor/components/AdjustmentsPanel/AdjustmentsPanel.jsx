@@ -102,6 +102,15 @@ export default function AdjustmentsPanel({
         {/* Basic Tab */}
         {tab === "basic" && (
           <>
+            {/* Histogram Display */}
+            {histogram && (
+              <div className="adj-histogram-row">
+                <div className="adj-histogram-bar" style={{ height: `${Math.min(100, histogram.r / 255 * 100)}%`, background: '#ff4040' }} />
+                <div className="adj-histogram-bar" style={{ height: `${Math.min(100, histogram.g / 255 * 100)}%`, background: '#22c55e' }} />
+                <div className="adj-histogram-bar" style={{ height: `${Math.min(100, histogram.b / 255 * 100)}%`, background: '#3b82f6' }} />
+              </div>
+            )}
+
             <div className="adjustment-section-heading">Tone & Light</div>
             <div className="adjustment-control-row">
               <div className="adjustment-label-row">
@@ -115,6 +124,7 @@ export default function AdjustmentsPanel({
                 value={lrSettings.exposure}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("exposure", e.target.value)}
+                onDoubleClick={() => updateLr("exposure", 0)}
               />
             </div>
 
@@ -130,6 +140,7 @@ export default function AdjustmentsPanel({
                 value={lrSettings.contrast}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("contrast", e.target.value)}
+                onDoubleClick={() => updateLr("contrast", 0)}
               />
             </div>
 
@@ -145,6 +156,7 @@ export default function AdjustmentsPanel({
                 value={lrSettings.highlights}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("highlights", e.target.value)}
+                onDoubleClick={() => updateLr("highlights", 0)}
               />
             </div>
 
@@ -160,6 +172,7 @@ export default function AdjustmentsPanel({
                 value={lrSettings.shadows}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("shadows", e.target.value)}
+                onDoubleClick={() => updateLr("shadows", 0)}
               />
             </div>
 
@@ -176,6 +189,7 @@ export default function AdjustmentsPanel({
                 value={lrSettings.temperature}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("temperature", e.target.value)}
+                onDoubleClick={() => updateLr("temperature", 0)}
               />
             </div>
 
@@ -191,6 +205,7 @@ export default function AdjustmentsPanel({
                 value={lrSettings.tint}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("tint", e.target.value)}
+                onDoubleClick={() => updateLr("tint", 0)}
               />
             </div>
 
@@ -206,6 +221,7 @@ export default function AdjustmentsPanel({
                 value={lrSettings.vibrance}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("vibrance", e.target.value)}
+                onDoubleClick={() => updateLr("vibrance", 0)}
               />
             </div>
 
@@ -221,6 +237,7 @@ export default function AdjustmentsPanel({
                 value={lrSettings.saturation}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("saturation", e.target.value)}
+                onDoubleClick={() => updateLr("saturation", 0)}
               />
             </div>
 
@@ -237,6 +254,7 @@ export default function AdjustmentsPanel({
                 value={lrSettings.vignette}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("vignette", e.target.value)}
+                onDoubleClick={() => updateLr("vignette", 0)}
               />
             </div>
 
@@ -252,6 +270,7 @@ export default function AdjustmentsPanel({
                 value={lrSettings.filmGrain}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("filmGrain", e.target.value)}
+                onDoubleClick={() => updateLr("filmGrain", 0)}
               />
             </div>
           </>

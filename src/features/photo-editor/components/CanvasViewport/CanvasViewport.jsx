@@ -15,6 +15,10 @@ export default function CanvasViewport({
   onPointerDown,
   onPointerMove,
   onPointerUp,
+  hasContent = true,
+  onDrop,
+  onOpenImage,
+  onNewCanvas,
 }) {
   const containerRef = useRef(null);
   const isPanningRef = useRef(false);
@@ -119,6 +123,20 @@ export default function CanvasViewport({
           </div>
         )}
       </div>
+
+      {/* Welcome / Empty State */}
+      {!hasContent && (
+        <div className="editor-empty-state" onDragOver={e => { e.preventDefault(); }} onDrop={onDrop}>
+          <div className="editor-empty-icon">🖼️</div>
+          <h2 className="editor-empty-title">Open an Image to Begin</h2>
+          <p className="editor-empty-sub">Drag &amp; drop an image here, or use File → Open Image</p>
+          <div className="editor-empty-actions">
+            <button className="editor-empty-btn-primary" onClick={onOpenImage}>📂 Open Image</button>
+            <button className="editor-empty-btn-secondary" onClick={onNewCanvas}>✨ New Blank Canvas</button>
+          </div>
+          <p className="editor-empty-formats">Supports: JPG, PNG, WEBP, GIF, SVG, BMP, TIFF</p>
+        </div>
+      )}
     </div>
   );
 }

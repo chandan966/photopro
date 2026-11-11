@@ -7,7 +7,6 @@ import {
   Cpu,
   Download,
   FileImage,
-  Film,
   Layers,
   LockKeyhole,
   Palette,
@@ -28,7 +27,6 @@ import {
   TOOLS,
   SOCIAL_PLATFORMS,
   PHOTO_150_FEATURES,
-  VIDEO_100_FEATURES,
 } from "../../data/presets.js";
 import { createDemoSampleBlob } from "../../imageTools.js";
 import { SocialLogoIcon } from "../../components/shared/SocialLogos/SocialLogos.jsx";
@@ -68,15 +66,12 @@ function HomePage({ navigate, openEditor, onUpload, notify, onOpenFeaturesModal 
           <p>
             Experience the precision of <strong>Lightroom</strong>, the multi-layer depth of{" "}
             <strong>Photoshop</strong>, and the ease of <strong>Canva</strong>. Over <strong>150 photo editing
-            features</strong>, a <strong>60-feature PDF Studio</strong>, and a <strong>100-feature Video Editor</strong> — 100% private, free, and client-side.
+            features</strong> and a <strong>60-feature PDF Studio</strong> — 100% private, free, and client-side.
           </p>
 
           <div className="hero-actions">
             <button className="button button-primary button-large" onClick={() => openEditor(PRESETS[0])}>
               <Zap size={18} /> Launch Photo Studio <ArrowRight size={18} />
-            </button>
-            <button className="button button-outline button-large" onClick={() => navigate("video")}>
-              <Film size={18} /> Video Studio (100)
             </button>
             <button className="button button-quiet button-large feat-badge-btn" onClick={onOpenFeaturesModal}>
               <Layers size={16} /> 150 Photo Features
@@ -174,7 +169,7 @@ function HomePage({ navigate, openEditor, onUpload, notify, onOpenFeaturesModal 
         />
       </section>
 
-      {/* THREE BANNER HIGHLIGHT: 150 PHOTO + 60 PDF + 100 VIDEO */}
+      {/* DUAL BANNER HIGHLIGHT: 150 PHOTO + 60 PDF */}
       <section className="features-dual-banners">
         <div className="features-highlight-banner">
           <div className="fh-content">
@@ -198,19 +193,6 @@ function HomePage({ navigate, openEditor, onUpload, notify, onOpenFeaturesModal 
             </div>
             <button className="button button-primary pdf-btn" onClick={() => navigate("pdf")}>
               <Zap size={16} /> Launch PDF Studio (60)
-            </button>
-          </div>
-        </div>
-
-        <div className="features-highlight-banner video-highlight-banner">
-          <div className="fh-content">
-            <div>
-              <span className="fh-tag video-tag">100 VIDEO FEATURES</span>
-              <h2>Complete In-Browser Video Studio</h2>
-              <p>Multi-track timeline, chroma key green screen, color wheels, audio mixing, speed curves, and 4K export.</p>
-            </div>
-            <button className="button button-primary video-btn" onClick={() => navigate("video")}>
-              <Film size={16} /> Launch Video Studio (100)
             </button>
           </div>
         </div>
@@ -364,7 +346,7 @@ function HomePage({ navigate, openEditor, onUpload, notify, onOpenFeaturesModal 
         <div className="pillar-card">
           <div className="pillar-icon"><LockKeyhole size={24} /></div>
           <h3>100% Private & Local</h3>
-          <p>Your photos and videos never leave your device. All neural background removal, filters, and rendering run in your browser memory.</p>
+          <p>Your photos and documents never leave your device. All neural background removal, filters, and rendering run in your browser memory.</p>
         </div>
         <div className="pillar-card">
           <div className="pillar-icon"><Zap size={24} /></div>

@@ -2,13 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 48px;
+  height: 52px;
   background-color: #ffffff;
   border-bottom: 1px solid #fee2e2;
   padding: 0 12px;
   user-select: none;
   z-index: 50;
   gap: 12px;
+  box-shadow: 0 1px 4px rgba(255, 32, 32, 0.08);
 }
 
 .topbar-left {
@@ -85,7 +86,8 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 7px 10px;
+  padding: 8px 10px;
+  min-height: 32px;
   background: transparent;
   border: none;
   border-radius: 4px;
@@ -204,7 +206,7 @@
   align-items: center;
   gap: 6px;
   background: linear-gradient(135deg, #ff2020 0%, #be123c 100%);
-  color: #800000;
+  color: #ffffff;
   border: none;
   font-size: 13px;
   font-weight: 600;
@@ -213,12 +215,19 @@
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(225, 29, 72, 0.35);
   transition: all 0.15s;
+  animation: pulse-once 1.2s ease-in-out 1;
 }
 
 .topbar-export-btn:hover {
   background: linear-gradient(135deg, #f43f5e 0%, #ff2020 100%);
   box-shadow: 0 4px 14px rgba(225, 29, 72, 0.5);
   transform: translateY(-1px);
+}
+
+@keyframes pulse-once {
+  0% { box-shadow: 0 2px 8px rgba(225, 29, 72, 0.35); }
+  50% { box-shadow: 0 4px 20px rgba(225, 29, 72, 0.65); }
+  100% { box-shadow: 0 2px 8px rgba(225, 29, 72, 0.35); }
 }
 
 @keyframes fadeInFast {

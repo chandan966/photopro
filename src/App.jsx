@@ -8,7 +8,6 @@ import BackgroundTool from "./features/ai-tools/components/BackgroundTool/Backgr
 import ImageTool from "./features/ai-tools/components/ImageTool/ImageTool.jsx";
 import PaletteTool from "./features/ai-tools/components/PaletteTool/PaletteTool.jsx";
 import PDFStudio from "./features/pdf-studio/components/PDFStudio/PDFStudio.jsx";
-import VideoStudio from "./features/video-editor/components/VideoStudio/VideoStudio.jsx";
 import FeaturesModal from "./components/shared/FeaturesModal/FeaturesModal.jsx";
 import HomePage from "./pages/HomePage/HomePage.jsx";
 import ImageCompressor from "./features/image-compressor/components/ImageCompressor/ImageCompressor.jsx";
@@ -19,7 +18,7 @@ import BrandKit from "./features/brand-kit/components/BrandKit/BrandKit.jsx";
 import LegalTrustModal from "./components/shared/LegalTrustModal/LegalTrustModal.jsx";
 
 function App() {
-  const [page, setPage] = useState("home"); // home, editor, design, pdf, video, background, enhancer, compressor, converter, resizer, brand-kit, palette
+  const [page, setPage] = useState("home"); // home, editor, design, pdf, background, enhancer, compressor, converter, resizer, brand-kit, palette
   const [toast, setToast] = useState("");
   const [editorPreset, setEditorPreset] = useState(PRESETS[0]);
   const [initialFile, setInitialFile] = useState(null);
@@ -96,7 +95,6 @@ function App() {
       )}
 
       {page === "pdf" && <PDFStudio notify={notify} />}
-      {page === "video" && <VideoStudio notify={notify} />}
       {page === "background" && <BackgroundTool notify={notify} />}
       {page === "enhancer" && <ImageTool type="enhancer" notify={notify} />}
       {page === "palette" && <PaletteTool notify={notify} />}

@@ -35,7 +35,7 @@ function Footer({ navigate, onOpenLegalModal }) {
               <BrandLogo size={34} />
             </button>
             <p>
-              Photoshop, Lightroom, Canva, PDF &amp; Video in one unified studio.
+              Photoshop, Lightroom, Canva, &amp; PDF in one unified studio.
             </p>
             <div className="footer-brand-actions">
               <span className="footer-privacy">
@@ -59,7 +59,6 @@ function Footer({ navigate, onOpenLegalModal }) {
               <button onClick={() => navigate("editor")}>Photo Studio (Photoshop)</button>
               <button onClick={() => navigate("design")}>Canva Design Studio</button>
               <button onClick={() => navigate("pdf")}>PDF Maker &amp; Studio (60)</button>
-              <button onClick={() => navigate("video")}>Video Studio (91–100)</button>
               <button onClick={() => navigate("background")}>AI Background Remover</button>
             </div>
             <div>
@@ -102,7 +101,7 @@ function Footer({ navigate, onOpenLegalModal }) {
           </a>
 
           <div className="footer-bottom-links">
-            <span>Zero Server Uploads &bull; 100 Photo + 60 PDF + 10 Video</span>
+            <span>Zero Server Uploads &bull; 100 Photo + 60 PDF</span>
           </div>
         </div>
       </footer>

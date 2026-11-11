@@ -1573,6 +1573,10 @@ export default function EditorPage({
           onPointerDown={handleCanvasPointerDown}
           onPointerMove={handleCanvasPointerMove}
           onPointerUp={handleCanvasPointerUp}
+          hasContent={layers.length > 0}
+          onOpenImage={() => uploadRef.current?.click()}
+          onNewCanvas={() => handleNewCanvas(1280, 720, "New Project")}
+          onDrop={(e) => { e.preventDefault(); const files = Array.from(e.dataTransfer.files).filter(f => f.type.startsWith('image/')); if (files.length) handleAddImageFiles(files); }}
         />
 
         {/* RIGHT DOCK PANEL */}
@@ -1580,22 +1584,23 @@ export default function EditorPage({
           {/* Dock Navigation Tabs */}
           <nav className="dock-tabs-nav">
             {[
-              { id: "layers", label: "Layers" },
-              { id: "adjustments", label: "Adjustments" },
-              { id: "filters", label: "Filters" },
-              { id: "effects", label: "Effects" },
-              { id: "retouch", label: "Retouch" },
-              { id: "crop", label: "Crop" },
-              { id: "text", label: "Text" },
-              { id: "shapes", label: "Shapes" },
-              { id: "history", label: "History" },
+              { id: "layers", label: "Layers", icon: "🗂️" },
+              { id: "adjustments", label: "Adjust", icon: "🎨" },
+              { id: "filters", label: "Filters", icon: "✨" },
+              { id: "effects", label: "Effects", icon: "🌟" },
+              { id: "retouch", label: "Retouch", icon: "💄" },
+              { id: "crop", label: "Crop", icon: "✂️" },
+              { id: "text", label: "Text", icon: "T" },
+              { id: "shapes", label: "Shapes", icon: "⬡" },
+              { id: "history", label: "History", icon: "📋" },
             ].map((tab) => (
               <button
                 key={tab.id}
                 className={`dock-tab-btn ${activeTab === tab.id ? "active" : ""}`}
                 onClick={() => setActiveTab(tab.id)}
               >
-                {tab.label}
+                <span style={{ marginRight: 4 }}>{tab.icon}</span>
+                <span>{tab.label}</span>
               </button>
             ))}
           </nav>
@@ -1697,6 +1702,14 @@ export default function EditorPage({
             )}
           </div>
         </aside>
+
+        {/* Processing Spinner Overlay */}
+        {isProcessing && (
+          <div className="editor-processing-overlay">
+            <div className="editor-processing-spinner" />
+            <span>Processing Effect...</span>
+          </div>
+        )}
       </div>
 
       {/* BOTTOM STATUS & ZOOM BAR */}
