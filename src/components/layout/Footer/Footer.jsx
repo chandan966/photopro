@@ -75,8 +75,10 @@ function Footer({ navigate, onOpenLegalModal }) {
               <b>TRUST &amp; COMPLIANCE</b>
               <button onClick={showAbout}>About Studio</button>
               <button onClick={() => onOpenLegalModal ? onOpenLegalModal("privacy") : setLegal("Privacy policy")}>Privacy Policy</button>
+              <button onClick={() => onOpenLegalModal && onOpenLegalModal("cookies")}>Cookie Policy</button>
               <button onClick={() => onOpenLegalModal ? onOpenLegalModal("terms") : setLegal("Terms & conditions")}>Terms of Service</button>
               <button onClick={() => onOpenLegalModal && onOpenLegalModal("security")}>Security &amp; Sandboxing</button>
+              <button onClick={() => onOpenLegalModal && onOpenLegalModal("disclaimer")}>Disclaimer</button>
               <button onClick={() => onOpenLegalModal && onOpenLegalModal("faq")}>Help &amp; FAQ</button>
               <button onClick={() => onOpenLegalModal && onOpenLegalModal("contact")}>Contact &amp; Support</button>
             </div>
