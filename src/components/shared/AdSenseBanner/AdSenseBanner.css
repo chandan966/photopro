@@ -1,0 +1,16 @@
+.adsense-banner-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  text-align: center;
+  overflow: hidden;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.adsense-banner-container .adsbygoogle {
+  width: 100%;
+}
