@@ -1,10 +1,11 @@
 import { jsPDF } from "jspdf";
 import { PDFDocument, rgb, degrees, StandardFonts } from "pdf-lib";
 import * as pdfjsLib from "pdfjs-dist";
+import pdfWorker from "pdfjs-dist/build/pdf.worker.min.js?url";
 
 // Configure worker for client-side PDF rendering in browser
 if (typeof window !== "undefined") {
-  pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.js`;
+  pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
 }
 
 /**
@@ -33,7 +34,18 @@ export const convertImagesToPDF = async (files, options = {}) => {
 
     // Calculate aspect ratio
     const img = await loadImageElement(dataUrl);
-    const imgAspect = img.width / img.height;
+
+    // Draw onto canvas with white background so transparency/WebP/PNG never artifact
+    const canvas = document.createElement("canvas");
+    canvas.width = img.naturalWidth || img.width;
+    canvas.height = img.naturalHeight || img.height;
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0);
+    const cleanJpeg = canvas.toDataURL("image/jpeg", 0.95);
+
+    const imgAspect = canvas.width / canvas.height;
     const pageAspect = printableWidth / printableHeight;
 
     let renderW = printableWidth;
@@ -49,7 +61,7 @@ export const convertImagesToPDF = async (files, options = {}) => {
       renderX = margin + (printableWidth - renderW) / 2;
     }
 
-    doc.addImage(dataUrl, "JPEG", renderX, renderY, renderW, renderH);
+    doc.addImage(cleanJpeg, "JPEG", renderX, renderY, renderW, renderH);
   }
 
   return doc.output("blob");
@@ -77,12 +89,18 @@ export const splitPDF = async (pdfFile, startPage = 1, endPage = 1) => {
   const newPdf = await PDFDocument.create();
 
   const totalPages = sourcePdf.getPageCount();
-  const s = Math.max(0, startPage - 1);
-  const e = Math.min(totalPages - 1, endPage - 1);
+  const from = Math.min(startPage, endPage);
+  const to = Math.max(startPage, endPage);
+  const s = Math.max(0, from - 1);
+  const e = Math.min(totalPages - 1, to - 1);
 
   const indices = [];
   for (let i = s; i <= e; i++) {
     indices.push(i);
+  }
+
+  if (indices.length === 0) {
+    throw new Error("Invalid page range. Please select valid page numbers.");
   }
 
   const copiedPages = await newPdf.copyPages(sourcePdf, indices);
@@ -94,6 +112,9 @@ export const splitPDF = async (pdfFile, startPage = 1, endPage = 1) => {
 
 // 4. Delete & Reorder Pages
 export const deleteAndReorderPages = async (pdfFile, pageIndicesToKeep) => {
+  if (!pageIndicesToKeep || pageIndicesToKeep.length === 0) {
+    throw new Error("You must select at least one page to keep.");
+  }
   const arrayBuffer = await pdfFile.arrayBuffer();
   const pdfDoc = await PDFDocument.load(arrayBuffer, { ignoreEncryption: true });
   const newPdf = await PDFDocument.create();
@@ -145,10 +166,11 @@ export const addWatermarkToPDF = async (pdfFile, watermarkText = "CONFIDENTIAL",
   const pdfDoc = await PDFDocument.load(arrayBuffer, { ignoreEncryption: true });
   const font = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
   const pages = pdfDoc.getPages();
+  const safeText = (watermarkText || "CONFIDENTIAL").replace(/[^\x20-\x7E]/g, "").trim() || "CONFIDENTIAL";
 
   pages.forEach((page) => {
     const { width, height } = page.getSize();
-    page.drawText(watermarkText, {
+    page.drawText(safeText, {
       x: width * 0.15,
       y: height * 0.45,
       size: Math.min(width, height) * 0.08,
@@ -231,11 +253,16 @@ export const editPDFPage = async (pdfFile, options = {}) => {
 
   if (text) {
     const font = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
-    const r = parseInt(textColor.slice(1, 3), 16) / 255 || 0.88;
-    const g = parseInt(textColor.slice(3, 5), 16) / 255 || 0.12;
-    const b = parseInt(textColor.slice(5, 7), 16) / 255 || 0.28;
+    const parseHex = (hex, fallback) => {
+      const val = parseInt(hex, 16) / 255;
+      return Number.isFinite(val) ? val : fallback;
+    };
+    const r = parseHex(textColor.slice(1, 3), 0.88);
+    const g = parseHex(textColor.slice(3, 5), 0.12);
+    const b = parseHex(textColor.slice(5, 7), 0.28);
+    const safeText = text.replace(/[^\x20-\x7E]/g, "").trim() || text;
 
-    page.drawText(text, {
+    page.drawText(safeText, {
       x: width * xRatio,
       y: height * yRatio,
       size: Number(textSize) || 14,

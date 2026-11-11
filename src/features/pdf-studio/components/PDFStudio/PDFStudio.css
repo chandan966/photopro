@@ -428,6 +428,42 @@
   color: #800000;
 }
 
+/* Quick Document Actions Bar */
+.pdf-quick-tools-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #fff5f5;
+  border: 1.5px solid #fee2e2;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.quick-tools-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #800000;
+}
+
+.quick-tools-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.quick-tools-buttons .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
 /* Page Selection Matrix (Delete & Reorder) */
 .page-selection-matrix {
   background: #fff5f5;
@@ -527,12 +563,35 @@
   font-weight: 600;
 }
 
+/* Rendered Pages Container & Batch Download */
+.rendered-pages-container {
+  margin-top: 24px;
+}
+
+.download-all-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #fff5f5;
+  border: 1.5px solid #fee2e2;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.download-all-bar span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #800000;
+}
+
 /* Rendered Pages Grid */
 .rendered-pages-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 16px;
-  margin-top: 24px;
 }
 
 .rendered-page-card {

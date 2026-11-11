@@ -296,6 +296,38 @@ function PDFStudio({ notify }) {
     }
   };
 
+  const handleRotatePDF = async (angle = 90) => {
+    if (!reorderPdf) return;
+    setIsProcessing(true);
+    setStatusMessage(`Rotating PDF pages by ${angle}°...`);
+    try {
+      const blob = await rotatePDFPages(reorderPdf, angle);
+      downloadBlob(blob, `rotated-${angle}deg-${reorderPdf.name}`);
+      notify(`Rotated all pages by ${angle}°!`);
+    } catch (err) {
+      notify(`Error: ${err.message}`);
+    } finally {
+      setIsProcessing(false);
+      setStatusMessage("");
+    }
+  };
+
+  const handleAddPageNumbers = async () => {
+    if (!reorderPdf) return;
+    setIsProcessing(true);
+    setStatusMessage("Adding page numbers to document...");
+    try {
+      const blob = await addPageNumbersToPDF(reorderPdf);
+      downloadBlob(blob, `numbered-${reorderPdf.name}`);
+      notify("Numbered PDF downloaded successfully!");
+    } catch (err) {
+      notify(`Error: ${err.message}`);
+    } finally {
+      setIsProcessing(false);
+      setStatusMessage("");
+    }
+  };
+
   // 5. Compress PDF
   const handleCompressPDF = async () => {
     if (!compressTargetPdf) return;
@@ -305,7 +337,11 @@ function PDFStudio({ notify }) {
       const res = await compressPDF(compressTargetPdf);
       setCompressResult(res);
       downloadBlob(res.blob, `compressed-${compressTargetPdf.name}`);
-      notify(`Compressed PDF! Saved ${res.percentSaved}% (${(res.savedBytes / 1024).toFixed(1)} KB)`);
+      if (res.percentSaved > 0) {
+        notify(`Compressed PDF! Saved ${res.percentSaved}% (${(res.savedBytes / 1024).toFixed(1)} KB)`);
+      } else {
+        notify("PDF is already fully optimized and compressed!");
+      }
     } catch (err) {
       notify(`Compression error: ${err.message}`);
     } finally {
@@ -365,6 +401,16 @@ function PDFStudio({ notify }) {
     }
   };
 
+  const handleDownloadAllImages = () => {
+    if (!convertedImages.length) return;
+    convertedImages.forEach((img, idx) => {
+      setTimeout(() => {
+        downloadBlob(img.blob, `page-${img.pageNumber}.png`);
+      }, idx * 180);
+    });
+    notify(`Downloading ${convertedImages.length} page images...`);
+  };
+
   const handleExtractPDFToWord = async () => {
     if (!convertPdf) return;
     setIsProcessing(true);
@@ -392,13 +438,72 @@ function PDFStudio({ notify }) {
   };
 
   // 8. E-Sign, Watermark & Protect
+  const isDrawingRef = useRef(false);
+
+  const getCanvasPos = (e, canvas) => {
+    const rect = canvas.getBoundingClientRect();
+    const clientX = e.clientX ?? (e.touches && e.touches[0]?.clientX);
+    const clientY = e.clientY ?? (e.touches && e.touches[0]?.clientY);
+    if (clientX === undefined || clientY === undefined) return null;
+    return {
+      x: (clientX - rect.left) * (canvas.width / rect.width),
+      y: (clientY - rect.top) * (canvas.height / rect.height),
+    };
+  };
+
+  const handleSignaturePointerDown = (e) => {
+    const canvas = sigCanvasRef.current;
+    if (!canvas) return;
+    const pos = getCanvasPos(e, canvas);
+    if (!pos) return;
+    const ctx = canvas.getContext("2d");
+    ctx.strokeStyle = "#ff2020";
+    ctx.lineWidth = 3;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.beginPath();
+    ctx.moveTo(pos.x, pos.y);
+    isDrawingRef.current = true;
+    try {
+      e.target.setPointerCapture?.(e.pointerId);
+    } catch {}
+  };
+
+  const handleSignaturePointerMove = (e) => {
+    if (!isDrawingRef.current) return;
+    const canvas = sigCanvasRef.current;
+    if (!canvas) return;
+    const pos = getCanvasPos(e, canvas);
+    if (!pos) return;
+    const ctx = canvas.getContext("2d");
+    ctx.lineTo(pos.x, pos.y);
+    ctx.stroke();
+  };
+
+  const handleSignaturePointerUp = () => {
+    isDrawingRef.current = false;
+  };
+
   const handleStampSignature = async () => {
     if (!signPdf) {
       notify("Please upload a PDF document first.");
       return;
     }
     if (!sigCanvasRef.current) return;
-    const sigData = sigCanvasRef.current.toDataURL("image/png");
+
+    // Check if signature canvas has drawn strokes
+    const canvas = sigCanvasRef.current;
+    const ctx = canvas.getContext("2d");
+    const pixelBuffer = new Uint32Array(
+      ctx.getImageData(0, 0, canvas.width, canvas.height).data.buffer
+    );
+    const hasDrawn = pixelBuffer.some((color) => color !== 0);
+    if (!hasDrawn) {
+      notify("Please draw your signature on the pad before stamping!");
+      return;
+    }
+
+    const sigData = canvas.toDataURL("image/png");
     setIsProcessing(true);
     setStatusMessage("Stamping digital signature...");
     try {
@@ -790,38 +895,73 @@ function PDFStudio({ notify }) {
               </div>
 
               {reorderPdf && (
-                <div className="page-selection-matrix">
-                  <div className="matrix-heading">
-                    <span>Click pages to toggle keep / delete:</span>
-                    <button
-                      className="button-text-clear"
-                      onClick={() =>
-                        setPagesToKeep(Array.from({ length: reorderTotalPages }, (_, i) => i))
-                      }
-                    >
-                      Select All
-                    </button>
+                <>
+                  <div className="pdf-quick-tools-bar">
+                    <span className="quick-tools-label">Quick Page & Document Actions:</span>
+                    <div className="quick-tools-buttons">
+                      <button
+                        type="button"
+                        className="button button-outline button-small"
+                        disabled={isProcessing}
+                        onClick={() => handleRotatePDF(90)}
+                        title="Rotate all pages clockwise by 90 degrees"
+                      >
+                        <RotateCw size={14} /> Rotate 90°
+                      </button>
+                      <button
+                        type="button"
+                        className="button button-outline button-small"
+                        disabled={isProcessing}
+                        onClick={() => handleRotatePDF(180)}
+                        title="Rotate all pages upside down by 180 degrees"
+                      >
+                        <RotateCw size={14} /> Rotate 180°
+                      </button>
+                      <button
+                        type="button"
+                        className="button button-outline button-small"
+                        disabled={isProcessing}
+                        onClick={handleAddPageNumbers}
+                        title="Stamp page numbers (Page X of Y) at bottom center"
+                      >
+                        <FileDigit size={14} /> Add Page Numbers
+                      </button>
+                    </div>
                   </div>
 
-                  <div className="pages-grid">
-                    {Array.from({ length: reorderTotalPages }, (_, idx) => {
-                      const isKept = pagesToKeep.includes(idx);
-                      return (
-                        <div
-                          key={idx}
-                          className={`page-chip-card ${isKept ? "kept" : "deleted"}`}
-                          onClick={() => togglePageKeep(idx)}
-                        >
-                          <div className="page-chip-badge">
-                            {isKept ? <Check size={12} /> : <Trash2 size={12} />}
+                  <div className="page-selection-matrix">
+                    <div className="matrix-heading">
+                      <span>Click pages to toggle keep / delete:</span>
+                      <button
+                        className="button-text-clear"
+                        onClick={() =>
+                          setPagesToKeep(Array.from({ length: reorderTotalPages }, (_, i) => i))
+                        }
+                      >
+                        Select All
+                      </button>
+                    </div>
+
+                    <div className="pages-grid">
+                      {Array.from({ length: reorderTotalPages }, (_, idx) => {
+                        const isKept = pagesToKeep.includes(idx);
+                        return (
+                          <div
+                            key={idx}
+                            className={`page-chip-card ${isKept ? "kept" : "deleted"}`}
+                            onClick={() => togglePageKeep(idx)}
+                          >
+                            <div className="page-chip-badge">
+                              {isKept ? <Check size={12} /> : <Trash2 size={12} />}
+                            </div>
+                            <strong>Page {idx + 1}</strong>
+                            <small>{isKept ? "Keep in PDF" : "Deleted"}</small>
                           </div>
-                          <strong>Page {idx + 1}</strong>
-                          <small>{isKept ? "Keep in PDF" : "Deleted"}</small>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
+                </>
               )}
 
               <div className="action-footer">
@@ -1081,21 +1221,33 @@ function PDFStudio({ notify }) {
                   </div>
 
                   {convertedImages.length > 0 && (
-                    <div className="rendered-pages-grid">
-                      {convertedImages.map((img) => (
-                        <div key={img.pageNumber} className="rendered-page-card">
-                          <img src={img.dataUrl} alt={`Page ${img.pageNumber}`} />
-                          <div className="page-card-footer">
-                            <span>Page {img.pageNumber}</span>
-                            <button
-                              className="button button-outline button-small"
-                              onClick={() => downloadBlob(img.blob, `page-${img.pageNumber}.png`)}
-                            >
-                              <Download size={12} /> Save PNG
-                            </button>
+                    <div className="rendered-pages-container">
+                      <div className="download-all-bar">
+                        <span>Converted {convertedImages.length} page{convertedImages.length > 1 ? "s" : ""} to high-res images</span>
+                        <button
+                          type="button"
+                          className="button button-primary button-small"
+                          onClick={handleDownloadAllImages}
+                        >
+                          <Download size={13} /> Download All ({convertedImages.length} PNGs)
+                        </button>
+                      </div>
+                      <div className="rendered-pages-grid">
+                        {convertedImages.map((img) => (
+                          <div key={img.pageNumber} className="rendered-page-card">
+                            <img src={img.dataUrl} alt={`Page ${img.pageNumber}`} />
+                            <div className="page-card-footer">
+                              <span>Page {img.pageNumber}</span>
+                              <button
+                                className="button button-outline button-small"
+                                onClick={() => downloadBlob(img.blob, `page-${img.pageNumber}.png`)}
+                              >
+                                <Download size={12} /> Save PNG
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -1225,28 +1377,11 @@ function PDFStudio({ notify }) {
                       width={440}
                       height={130}
                       className="sig-draw-canvas"
-                      onMouseDown={(e) => {
-                        const canvas = sigCanvasRef.current;
-                        const ctx = canvas.getContext("2d");
-                        const rect = canvas.getBoundingClientRect();
-                        ctx.beginPath();
-                        ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
-                        canvas.isDrawing = true;
-                      }}
-                      onMouseMove={(e) => {
-                        const canvas = sigCanvasRef.current;
-                        if (!canvas?.isDrawing) return;
-                        const ctx = canvas.getContext("2d");
-                        const rect = canvas.getBoundingClientRect();
-                        ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
-                        ctx.stroke();
-                      }}
-                      onMouseUp={() => {
-                        if (sigCanvasRef.current) sigCanvasRef.current.isDrawing = false;
-                      }}
-                      onMouseLeave={() => {
-                        if (sigCanvasRef.current) sigCanvasRef.current.isDrawing = false;
-                      }}
+                      onPointerDown={handleSignaturePointerDown}
+                      onPointerMove={handleSignaturePointerMove}
+                      onPointerUp={handleSignaturePointerUp}
+                      onPointerLeave={handleSignaturePointerUp}
+                      style={{ touchAction: "none", cursor: "crosshair" }}
                     />
                   </div>
 
