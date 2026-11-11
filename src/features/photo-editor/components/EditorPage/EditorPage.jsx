@@ -22,6 +22,13 @@ import {
   applyMotionBlur,
   applyZoomBlur,
   applyUnsharpMask,
+  applyGaussianBlur,
+  applyColorSplash,
+  applyPosterizeEffect,
+  applyNeonEffect,
+  applyGlowBloomEffect,
+  applyRGBSplitEffect,
+  applyDoubleExposure,
   parseCubeLUT,
   applyCubeLUT,
 } from "../../services/filters.js";
@@ -51,11 +58,29 @@ import HistoryPanel from "../HistoryPanel/HistoryPanel.jsx";
 import ColorPickerModal from "../ColorPickerModal/ColorPickerModal.jsx";
 import ExportModal from "../ExportModal/ExportModal.jsx";
 import BeforeAfterSlider from "../BeforeAfterSlider/BeforeAfterSlider.jsx";
+import UploadPanel from "../UploadPanel/UploadPanel.jsx";
+import TemplatesPanel from "../TemplatesPanel/TemplatesPanel.jsx";
+import BackgroundPanel from "../BackgroundPanel/BackgroundPanel.jsx";
+
+import {
+  Upload as UploadIcon,
+  LayoutTemplate as TemplateIcon,
+  SlidersHorizontal,
+  Sparkles,
+  Wand2,
+  Type as TypeIcon,
+  Shapes as ShapesIcon,
+  Palette as PaletteIcon,
+  Layers as LayersIcon,
+  Scissors,
+  History as HistoryIcon,
+} from "lucide-react";
 
 import "./EditorPage.css";
 
 const DEFAULT_LR_SETTINGS = {
   exposure: 0,
+  brightness: 0,
   contrast: 0,
   highlights: 0,
   shadows: 0,
@@ -65,8 +90,12 @@ const DEFAULT_LR_SETTINGS = {
   tint: 0,
   vibrance: 0,
   saturation: 0,
+  hue: 0,
+  sharpness: 0,
   clarity: 0,
+  texture: 0,
   dehaze: 0,
+  gamma: 1,
   vignette: 0,
   filmGrain: 0,
 };
@@ -136,7 +165,10 @@ export default function EditorPage({
 
   // Tools & Navigation
   const [activeTool, setActiveTool] = useState("move"); // move, marquee, lasso, wand, crop, eyedropper, brush, eraser, clone, healing, dodge, text, shape, pan, zoom
-  const [activeTab, setActiveTab] = useState("layers"); // layers, adjustments, filters, effects, retouch, crop, text, shapes, history
+  const [activeTab, setActiveTab] = useState("layers"); // upload, templates, adjustments, filters, effects, text, shapes, background, layers, crop, history
+  const [themeMode, setThemeMode] = useState("dark"); // 'dark' | 'light'
+  const [wandTolerance, setWandTolerance] = useState(32);
+  const [isContiguous, setIsContiguous] = useState(true);
   const [zoom, setZoom] = useState(100);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
@@ -922,6 +954,24 @@ export default function EditorPage({
         else if (effectType === "duotone") applyDuotoneEffect(c, "#ff2020", "#ffffff");
         else if (effectType === "pixelate") applyPixelateEffect(c, 14);
         else if (effectType === "emboss") applyEmbossEffect(c);
+        else if (effectType === "gaussian") applyGaussianBlur(c, 10);
+        else if (effectType === "motion") applyMotionBlur(c, 24, 0);
+        else if (effectType === "colorsplash") applyColorSplash(c, 0, 45);
+        else if (effectType === "posterize") applyPosterizeEffect(c, 5);
+        else if (effectType === "neon") applyNeonEffect(c, "#ff2020");
+        else if (effectType === "glow") applyGlowBloomEffect(c, 180, 14);
+        else if (effectType === "rgbsplit") applyRGBSplitEffect(c, 12);
+        else if (effectType === "doubleexposure") {
+          // Double exposure: blend previous image layer with canvas
+          const imgLayer = layers.find((l) => l.type === "image" && l.url);
+          if (imgLayer) {
+            const tempImg = new Image();
+            tempImg.src = imgLayer.url;
+            applyDoubleExposure(c, tempImg, "screen", 0.65);
+          } else {
+            applyGlowBloomEffect(c, 160, 12);
+          }
+        }
 
         const url = c.toDataURL("image/png");
         const newLayer = {
@@ -1270,6 +1320,213 @@ export default function EditorPage({
     notify?.("Reset all color adjustments");
   };
 
+  const handleResizeCanvas = (newWidth, newHeight) => {
+    snapshot(`Resize Canvas ${newWidth}x${newHeight}`);
+    setPreset((prev) => ({
+      ...prev,
+      width: newWidth,
+      height: newHeight,
+    }));
+    notify?.(`Resized canvas to ${newWidth} × ${newHeight} px`);
+  };
+
+  const handleLoadTemplate = (tpl) => {
+    snapshot(`Load Template: ${tpl.title}`);
+    setPreset({
+      id: tpl.id,
+      name: tpl.title,
+      width: tpl.width,
+      height: tpl.height,
+    });
+    if (tpl.bgType) setBgType(tpl.bgType);
+    if (tpl.bgColor) setCanvasColor(tpl.bgColor);
+    if (tpl.bgGradient) setActiveGradient(tpl.bgGradient);
+
+    const generatedLayers = (tpl.layers || []).map((l) => ({
+      ...l,
+      id: crypto.randomUUID(),
+      opacity: l.opacity ?? 1,
+      visible: true,
+      locked: false,
+      blendMode: "normal",
+    }));
+
+    setLayers(generatedLayers);
+    if (generatedLayers.length > 0) {
+      setSelectedLayerId(generatedLayers[generatedLayers.length - 1].id);
+    }
+    notify?.(`Loaded ${tpl.title} template!`);
+  };
+
+  const handleUploadAsset = async (file, mode = "replace") => {
+    if (!file) return;
+    try {
+      const url = URL.createObjectURL(file);
+      const img = await loadImage(url);
+      snapshot(`Upload ${file.name}`);
+
+      if (mode === "replace" || layers.length === 0) {
+        setPreset({
+          id: "custom",
+          name: file.name,
+          width: img.width,
+          height: img.height,
+        });
+      }
+
+      const newLayer = {
+        id: crypto.randomUUID(),
+        type: "image",
+        name: file.name.replace(/\.[^/.]+$/, ""),
+        url,
+        x: 0,
+        y: 0,
+        width: img.width,
+        height: img.height,
+        opacity: 1,
+        blendMode: "normal",
+        visible: true,
+        locked: false,
+      };
+
+      if (mode === "replace") {
+        setLayers([newLayer]);
+      } else {
+        setLayers((prev) => [...prev, newLayer]);
+      }
+      setSelectedLayerId(newLayer.id);
+      notify?.(`Added ${file.name} to canvas`);
+    } catch (err) {
+      notify?.(`Error uploading image: ${err.message}`);
+    }
+  };
+
+  const handleResetImageToOriginal = () => {
+    snapshot("Reset Image");
+    handleResetAdjustments();
+    if (initialLayers && initialLayers.length > 0) {
+      setLayers(initialLayers);
+      setSelectedLayerId(initialLayers[initialLayers.length - 1]?.id || null);
+    }
+    notify?.("Reset image and layers to original state");
+  };
+
+  const handleApplyBackgroundBlur = (radius = 16) => {
+    snapshot("Background Blur");
+    setIsProcessing(true);
+    setTimeout(() => {
+      try {
+        const bgLayer = layers.find((l) => l.type === "image");
+        if (bgLayer && bgLayer.url) {
+          const img = new Image();
+          img.src = bgLayer.url;
+          img.onload = () => {
+            const c = document.createElement("canvas");
+            c.width = img.width;
+            c.height = img.height;
+            const ctx = c.getContext("2d");
+            ctx.filter = `blur(${radius}px)`;
+            ctx.drawImage(img, 0, 0);
+            const blurredUrl = c.toDataURL("image/png");
+            handleUpdateLayer(bgLayer.id, { url: blurredUrl });
+            notify?.(`Applied background blur (${radius}px)`);
+          };
+        } else {
+          notify?.("No background image layer found to blur");
+        }
+      } catch (err) {
+        notify?.(`Blur error: ${err.message}`);
+      } finally {
+        setIsProcessing(false);
+      }
+    }, 50);
+  };
+
+  const handleEraseSelected = () => {
+    if (!selectionManagerRef.current?.hasSelection) {
+      notify?.("No active selection to erase");
+      return;
+    }
+    const targetLayer = layers.find((l) => l.id === selectedLayerId && l.type === "image");
+    if (!targetLayer || !targetLayer.url) {
+      notify?.("Select an image layer to erase");
+      return;
+    }
+    snapshot("Erase Selection");
+    setIsProcessing(true);
+    setTimeout(() => {
+      try {
+        const img = new Image();
+        img.src = targetLayer.url;
+        img.onload = () => {
+          const c = document.createElement("canvas");
+          c.width = targetLayer.width || img.width;
+          c.height = targetLayer.height || img.height;
+          const ctx = c.getContext("2d");
+          ctx.drawImage(img, 0, 0, c.width, c.height);
+
+          const sm = selectionManagerRef.current;
+          const imgData = ctx.getImageData(0, 0, c.width, c.height);
+          const d = imgData.data;
+
+          for (let py = 0; py < c.height; py++) {
+            for (let px = 0; px < c.width; px++) {
+              if (sm.isSelected(px + (targetLayer.x || 0), py + (targetLayer.y || 0))) {
+                d[(py * c.width + px) * 4 + 3] = 0;
+              }
+            }
+          }
+          ctx.putImageData(imgData, 0, 0);
+          handleUpdateLayer(targetLayer.id, { url: c.toDataURL("image/png") });
+          sm.clear();
+          setHasSelection(false);
+          setForceRerender((v) => v + 1);
+          notify?.("Erased selected area to transparency");
+        };
+      } catch (err) {
+        notify?.(`Erase error: ${err.message}`);
+      } finally {
+        setIsProcessing(false);
+      }
+    }, 50);
+  };
+
+  const handleFitCanvasLayer = () => {
+    if (!selectedLayer) return;
+    const cw = preset.width || 1280;
+    const ch = preset.height || 720;
+    const lw = selectedLayer.width || cw;
+    const lh = selectedLayer.height || ch;
+    const scale = Math.min(cw / lw, ch / lh);
+    const w = Math.round(lw * scale);
+    const h = Math.round(lh * scale);
+    handleUpdateLayer(selectedLayerId, {
+      width: w,
+      height: h,
+      x: Math.round((cw - w) / 2),
+      y: Math.round((ch - h) / 2),
+    });
+    notify?.("Layer fitted to canvas");
+  };
+
+  const handleFillCanvasLayer = () => {
+    if (!selectedLayer) return;
+    const cw = preset.width || 1280;
+    const ch = preset.height || 720;
+    const lw = selectedLayer.width || cw;
+    const lh = selectedLayer.height || ch;
+    const scale = Math.max(cw / lw, ch / lh);
+    const w = Math.round(lw * scale);
+    const h = Math.round(lh * scale);
+    handleUpdateLayer(selectedLayerId, {
+      width: w,
+      height: h,
+      x: Math.round((cw - w) / 2),
+      y: Math.round((ch - h) / 2),
+    });
+    notify?.("Layer filled canvas");
+  };
+
   // Project .photopro File Save & Open
   const handleSaveProjectFile = () => {
     const projectState = {
@@ -1498,7 +1755,7 @@ export default function EditorPage({
   const selectedLayer = layers.find((l) => l.id === selectedLayerId) || null;
 
   return (
-    <main className="editor-app">
+    <main className={`editor-app theme-${themeMode}`}>
       {/* PROFESSIONAL TOP BAR WITH DROP DOWN MENUS */}
       <EditorTopBar
         onExit={onExit}
@@ -1508,6 +1765,9 @@ export default function EditorPage({
         canRedo={future.length > 0}
         onUndo={handleUndo}
         onRedo={handleRedo}
+        onResetImage={handleResetImageToOriginal}
+        themeMode={themeMode}
+        onToggleTheme={() => setThemeMode((t) => (t === "dark" ? "light" : "dark"))}
         onOpenProject={() => projectFileInputRef.current?.click()}
         onSaveProject={handleSaveProjectFile}
         onQuickExport={handleQuickExportPng}
@@ -1547,7 +1807,36 @@ export default function EditorPage({
 
       {/* WORKSPACE ROW */}
       <div className="editor-workspace-row">
-        {/* LEFT PHOTOSHOP TOOLBAR */}
+        {/* 1. LEFT PRIMARY CATEGORY SIDEBAR */}
+        <nav className="editor-left-nav" aria-label="Editor categories">
+          {[
+            { id: "upload", label: "Upload", icon: UploadIcon },
+            { id: "templates", label: "Templates", icon: TemplateIcon },
+            { id: "adjustments", label: "Adjust", icon: SlidersHorizontal },
+            { id: "filters", label: "Filters", icon: Sparkles },
+            { id: "effects", label: "Effects", icon: Wand2 },
+            { id: "text", label: "Text", icon: TypeIcon },
+            { id: "shapes", label: "Elements", icon: ShapesIcon },
+            { id: "background", label: "Background", icon: PaletteIcon },
+            { id: "layers", label: "Layers", icon: LayersIcon },
+          ].map((cat) => {
+            const Icon = cat.icon;
+            const isActive = activeTab === cat.id;
+            return (
+              <button
+                key={cat.id}
+                className={`left-nav-btn ${isActive ? "active" : ""}`}
+                onClick={() => setActiveTab(cat.id)}
+                title={cat.label}
+              >
+                <Icon size={19} className="nav-icon" />
+                <span className="nav-label">{cat.label}</span>
+              </button>
+            );
+          })}
+        </nav>
+
+        {/* 2. SECONDARY CANVAS TOOLS RAIL */}
         <EditorToolbar
           activeTool={activeTool}
           setActiveTool={handleSelectTool}
@@ -1558,28 +1847,67 @@ export default function EditorPage({
           onOpenColorPicker={(type) => setColorPickerTarget(type)}
         />
 
-        {/* CENTER PAN & ZOOM CANVAS VIEWPORT */}
-        <CanvasViewport
-          canvasRef={canvasRef}
-          zoom={zoom}
-          pan={pan}
-          onPanChange={setPan}
-          onZoomChange={setZoom}
-          showRulers={showRulers}
-          showGrid={showGrid}
-          isCropping={activeTool === "crop"}
-          activeTool={activeTool}
-          onCursorMove={setCursorPos}
-          onPointerDown={handleCanvasPointerDown}
-          onPointerMove={handleCanvasPointerMove}
-          onPointerUp={handleCanvasPointerUp}
-          hasContent={layers.length > 0}
-          onOpenImage={() => uploadRef.current?.click()}
-          onNewCanvas={() => handleNewCanvas(1280, 720, "New Project")}
-          onDrop={(e) => { e.preventDefault(); const files = Array.from(e.dataTransfer.files).filter(f => f.type.startsWith('image/')); if (files.length) handleAddImageFiles(files); }}
-        />
+        {/* 3. CENTER PAN & ZOOM CANVAS VIEWPORT */}
+        <div className="editor-center-stage">
+          <CanvasViewport
+            canvasRef={canvasRef}
+            zoom={zoom}
+            pan={pan}
+            onPanChange={setPan}
+            onZoomChange={setZoom}
+            showRulers={showRulers}
+            showGrid={showGrid}
+            isCropping={activeTool === "crop"}
+            activeTool={activeTool}
+            onCursorMove={setCursorPos}
+            onPointerDown={handleCanvasPointerDown}
+            onPointerMove={handleCanvasPointerMove}
+            onPointerUp={handleCanvasPointerUp}
+            hasContent={layers.length > 0}
+            onOpenImage={() => uploadRef.current?.click()}
+            onNewCanvas={() => handleNewCanvas(1280, 720, "New Project")}
+            onDrop={(e) => {
+              e.preventDefault();
+              const files = Array.from(e.dataTransfer.files).filter((f) => f.type.startsWith("image/"));
+              if (files.length) handleAddImageFiles(files);
+            }}
+          />
 
-        {/* RIGHT DOCK PANEL */}
+          {/* Center Floating Viewport Control Bar */}
+          <div className="center-floating-bar">
+            <button
+              className="center-bar-btn"
+              onClick={() => setZoom((z) => Math.max(10, Math.round(z - 10)))}
+              title="Zoom Out"
+            >
+              −
+            </button>
+            <span className="center-bar-zoom-val">{Math.round(zoom)}%</span>
+            <button
+              className="center-bar-btn"
+              onClick={() => setZoom((z) => Math.min(500, Math.round(z + 10)))}
+              title="Zoom In"
+            >
+              +
+            </button>
+            <div className="center-bar-divider" />
+            <button className="center-bar-pill" onClick={handleFitScreen} title="Fit to Screen">
+              Fit Screen
+            </button>
+            <button className="center-bar-pill" onClick={() => setZoom(100)} title="100% Zoom">
+              100%
+            </button>
+            <button
+              className={`center-bar-pill ${beforeAfterOpen ? "active" : ""}`}
+              onClick={() => setBeforeAfterOpen((b) => !b)}
+              title="Toggle Before/After Comparison"
+            >
+              Before/After
+            </button>
+          </div>
+        </div>
+
+        {/* 4. RIGHT DOCK PANEL */}
         <aside className="editor-dock-container">
           {/* Dock Navigation Tabs */}
           <nav className="dock-tabs-nav">
@@ -1588,10 +1916,12 @@ export default function EditorPage({
               { id: "adjustments", label: "Adjust", icon: "🎨" },
               { id: "filters", label: "Filters", icon: "✨" },
               { id: "effects", label: "Effects", icon: "🌟" },
-              { id: "retouch", label: "Retouch", icon: "💄" },
-              { id: "crop", label: "Crop", icon: "✂️" },
+              { id: "background", label: "Background", icon: "🖌️" },
+              { id: "templates", label: "Templates", icon: "📐" },
+              { id: "upload", label: "Upload", icon: "📂" },
               { id: "text", label: "Text", icon: "T" },
               { id: "shapes", label: "Shapes", icon: "⬡" },
+              { id: "crop", label: "Crop", icon: "✂️" },
               { id: "history", label: "History", icon: "📋" },
             ].map((tab) => (
               <button
@@ -1607,6 +1937,61 @@ export default function EditorPage({
 
           {/* Dock Content Body */}
           <div className="dock-content-body">
+            {activeTab === "upload" && (
+              <UploadPanel
+                onUploadImage={handleUploadAsset}
+                onRotateCW={() => handleRotate(90)}
+                onRotateCCW={() => handleRotate(-90)}
+                onRotate180={() => handleRotate(180)}
+                onFlipH={() => handleFlip("horizontal")}
+                onFlipV={() => handleFlip("vertical")}
+                onFitCanvas={handleFitCanvasLayer}
+                onFillCanvas={handleFillCanvasLayer}
+                onResetImage={handleResetImageToOriginal}
+                onOpenProjectFile={(f) => handleProjectFileSelected({ target: { files: [f] } })}
+              />
+            )}
+            {activeTab === "templates" && (
+              <TemplatesPanel
+                canvasWidth={preset.width}
+                canvasHeight={preset.height}
+                onResizeCanvas={handleResizeCanvas}
+                onLoadTemplate={handleLoadTemplate}
+              />
+            )}
+            {activeTab === "background" && (
+              <BackgroundPanel
+                bgType={bgType}
+                canvasColor={canvasColor}
+                onChangeBgColor={(color) => {
+                  setBgType("color");
+                  setCanvasColor(color);
+                }}
+                activeGradient={activeGradient}
+                onChangeGradient={(grad) => {
+                  setBgType("gradient");
+                  setActiveGradient(grad);
+                }}
+                wandTolerance={wandTolerance}
+                onChangeWandTolerance={setWandTolerance}
+                isContiguous={isContiguous}
+                onToggleContiguous={setIsContiguous}
+                onActivateMagicWand={() => handleSelectTool("wand")}
+                onActivateEraser={() => handleSelectTool("eraser")}
+                onEraseSelected={handleEraseSelected}
+                onInvertSelection={() => {
+                  selectionManagerRef.current?.invert();
+                  setForceRerender((v) => v + 1);
+                }}
+                onClearSelection={() => {
+                  selectionManagerRef.current?.clear();
+                  setHasSelection(false);
+                  setForceRerender((v) => v + 1);
+                }}
+                hasSelection={hasSelection}
+                onApplyBackgroundBlur={handleApplyBackgroundBlur}
+              />
+            )}
             {activeTab === "layers" && (
               <LayersPanel
                 layers={layers}

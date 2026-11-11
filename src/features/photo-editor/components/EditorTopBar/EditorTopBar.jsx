@@ -8,9 +8,12 @@ import {
   History,
   Maximize2,
   Minimize2,
+  Moon,
   Redo2,
+  RotateCcw,
   Save,
   SplitSquareVertical,
+  Sun,
   Undo2,
 } from "lucide-react";
 import "./EditorTopBar.css";
@@ -23,6 +26,9 @@ export default function EditorTopBar({
   canRedo,
   onUndo,
   onRedo,
+  onResetImage,
+  themeMode = "dark",
+  onToggleTheme,
   onOpenProject,
   onSaveProject,
   onQuickExport,
@@ -302,11 +308,11 @@ export default function EditorTopBar({
             <Redo2 size={16} />
           </button>
           <button
-            className={`topbar-icon-btn ${historyPanelOpen ? "active" : ""}`}
-            onClick={onToggleHistoryPanel}
-            title="History Panel"
+            className="topbar-icon-btn"
+            onClick={onResetImage}
+            title="Reset Image to Original State"
           >
-            <History size={16} />
+            <RotateCcw size={16} />
           </button>
           <button
             className={`topbar-icon-btn ${beforeAfterOpen ? "active" : ""}`}
@@ -315,10 +321,24 @@ export default function EditorTopBar({
           >
             <SplitSquareVertical size={16} />
           </button>
+          <button
+            className={`topbar-icon-btn ${historyPanelOpen ? "active" : ""}`}
+            onClick={onToggleHistoryPanel}
+            title="History Panel"
+          >
+            <History size={16} />
+          </button>
+          <button
+            className="topbar-icon-btn theme-toggle-btn"
+            onClick={onToggleTheme}
+            title={themeMode === "dark" ? "Switch to Red & White Light Theme" : "Switch to Dark Theme"}
+          >
+            {themeMode === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
         </div>
       </div>
 
-      {/* Right Actions: Fullscreen & Export */}
+      {/* Right Actions: Fullscreen, Quick Download & Export */}
       <div className="topbar-right">
         <button
           className="topbar-icon-btn"
@@ -328,9 +348,17 @@ export default function EditorTopBar({
           {isFullscreen ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
         </button>
 
+        <button
+          className="topbar-download-btn"
+          onClick={onQuickExport}
+          title="Instant Quick Download (PNG)"
+        >
+          <Download size={14} />
+          <span>Download</span>
+        </button>
+
         <button className="topbar-export-btn" onClick={onOpenExportModal}>
-          <Download size={15} />
-          <span>Export</span>
+          <span>Export...</span>
         </button>
       </div>
     </header>

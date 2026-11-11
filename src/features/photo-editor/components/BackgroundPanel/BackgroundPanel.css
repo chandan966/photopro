@@ -1,0 +1,189 @@
+/* BackgroundPanel.css */
+
+.background-panel {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 13px;
+  color: #800000;
+}
+
+.bg-panel-header h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #800000;
+}
+
+.bg-panel-header p {
+  margin: 0;
+  font-size: 11px;
+  color: #b30000;
+  opacity: 0.85;
+}
+
+.bg-section {
+  background: #fff5f5;
+  border: 1px solid #fee2e2;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bg-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #800000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-hint {
+  margin: 0;
+  font-size: 11.5px;
+  color: #b30000;
+  line-height: 1.4;
+}
+
+.bg-swatches-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+.bg-swatch-btn {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  padding: 0;
+}
+
+.bg-swatch-btn:hover {
+  transform: scale(1.08);
+}
+
+.bg-swatch-btn.selected {
+  border: 2px solid #ff2020;
+  box-shadow: 0 0 8px rgba(255, 32, 32, 0.4);
+}
+
+.custom-color-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hex-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.color-picker-input {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+}
+
+.hex-text-input {
+  width: 80px;
+  padding: 6px 8px;
+  border: 1.5px solid #fee2e2;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 12px;
+  background: #ffffff;
+  color: #800000;
+  text-transform: uppercase;
+}
+
+.gradient-presets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gradient-card-btn {
+  width: 100%;
+  height: 38px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  transition: transform 0.15s ease;
+}
+
+.gradient-card-btn:hover {
+  transform: translateY(-1px);
+}
+
+.gradient-card-btn.selected {
+  border: 2px solid #ff2020;
+  box-shadow: 0 0 10px rgba(255, 32, 32, 0.35);
+}
+
+.grad-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.slider-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: #800000;
+}
+
+.slider-val {
+  font-family: monospace;
+  color: #ff2020;
+  font-weight: 700;
+}
+
+.panel-slider {
+  width: 100%;
+  accent-color: #ff2020;
+  cursor: pointer;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  color: #800000;
+}
+
+.wand-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 4px;
+}

@@ -4,14 +4,101 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #fff5f5;
   overflow: hidden;
   user-select: none;
-  color: #800000;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Master Workspace Row: Left Toolbar | Center Viewport | Right Dock Panel */
+/* Light Theme (Red & White) */
+.editor-app.theme-light {
+  background: #fff5f5;
+  color: #800000;
+}
+
+/* Dark Theme (Pro Obsidian & Crimson) */
+.editor-app.theme-dark {
+  background: #121316;
+  color: #f1f5f9;
+}
+
+.editor-app.theme-dark .editor-workspace-row {
+  background: #0f1013;
+}
+
+.editor-app.theme-dark .editor-left-nav {
+  background: #181920;
+  border-right-color: #272935;
+}
+
+.editor-app.theme-dark .left-nav-btn {
+  color: #94a3b8;
+}
+
+.editor-app.theme-dark .left-nav-btn:hover {
+  background: rgba(255, 32, 32, 0.12);
+  color: #ff4040;
+}
+
+.editor-app.theme-dark .left-nav-btn.active {
+  background: rgba(255, 32, 32, 0.2);
+  color: #ff2020;
+  border-left-color: #ff2020;
+}
+
+.editor-app.theme-dark .editor-dock-container {
+  background: #181920;
+  border-left-color: #272935;
+}
+
+.editor-app.theme-dark .dock-tabs-nav {
+  background: #181920;
+  border-bottom-color: #272935;
+}
+
+.editor-app.theme-dark .dock-tab-btn {
+  color: #94a3b8;
+}
+
+.editor-app.theme-dark .dock-tab-btn:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.editor-app.theme-dark .dock-tab-btn.active {
+  color: #ff2020;
+  border-bottom-color: #ff2020;
+  background: rgba(255, 32, 32, 0.1);
+}
+
+.editor-app.theme-dark .center-floating-bar {
+  background: rgba(24, 25, 32, 0.92);
+  border-color: #272935;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+}
+
+.editor-app.theme-dark .center-bar-btn {
+  color: #f1f5f9;
+}
+
+.editor-app.theme-dark .center-bar-zoom-val {
+  color: #ff4040;
+}
+
+.editor-app.theme-dark .center-bar-pill {
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.editor-app.theme-dark .center-bar-pill:hover,
+.editor-app.theme-dark .center-bar-pill.active {
+  background: #ff2020;
+  color: #ffffff;
+  border-color: #ff2020;
+}
+
+/* Master Workspace Row: Left Primary Nav | Left Tool Strip | Center Viewport | Right Dock Panel */
 .editor-workspace-row {
   flex: 1;
   min-height: 0;
@@ -21,9 +108,148 @@
   background: #fff5f5;
 }
 
+/* 1. Left Primary Category Sidebar */
+.editor-left-nav {
+  width: 68px;
+  background: #ffffff;
+  border-right: 1px solid #fee2e2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+  gap: 2px;
+  flex-shrink: 0;
+  z-index: 12;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.editor-left-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.left-nav-btn {
+  width: 100%;
+  height: 54px;
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent;
+  color: #b30000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0 4px;
+}
+
+.left-nav-btn .nav-icon {
+  flex-shrink: 0;
+}
+
+.left-nav-btn .nav-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.left-nav-btn:hover {
+  background: rgba(255, 32, 32, 0.06);
+  color: #ff2020;
+}
+
+.left-nav-btn.active {
+  border-left-color: #ff2020;
+  background: rgba(255, 32, 32, 0.12);
+  color: #ff2020;
+}
+
+/* 2. Center Stage & Floating Controls */
+.editor-center-stage {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.center-floating-bar {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid #fee2e2;
+  border-radius: 24px;
+  padding: 4px 12px;
+  box-shadow: 0 4px 16px rgba(128, 0, 0, 0.12);
+  z-index: 50;
+}
+
+.center-bar-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: #800000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.center-bar-btn:hover {
+  background: rgba(255, 32, 32, 0.1);
+}
+
+.center-bar-zoom-val {
+  font-family: monospace;
+  font-size: 12px;
+  font-weight: 800;
+  color: #ff2020;
+  min-width: 44px;
+  text-align: center;
+}
+
+.center-bar-divider {
+  width: 1px;
+  height: 16px;
+  background: #fee2e2;
+}
+
+.center-bar-pill {
+  background: #fff5f5;
+  border: 1px solid #fee2e2;
+  color: #800000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.center-bar-pill:hover,
+.center-bar-pill.active {
+  background: #ff2020;
+  color: #ffffff;
+  border-color: #ff2020;
+}
+
 /* Right Dock Container (Photoshop / Lightroom Inspector Drawer) */
 .editor-dock-container {
-  width: 320px;
+  width: 330px;
   background: #ffffff;
   border-left: 1px solid #fee2e2;
   display: flex;

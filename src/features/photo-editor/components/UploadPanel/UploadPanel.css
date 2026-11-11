@@ -1,0 +1,92 @@
+/* UploadPanel.css */
+
+.upload-panel {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 13px;
+  color: #800000;
+}
+
+.upload-header h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #800000;
+}
+
+.upload-header p {
+  margin: 0;
+  font-size: 11px;
+  color: #b30000;
+  opacity: 0.85;
+}
+
+.upload-dropzone-box {
+  background: #fff5f5;
+  border: 2px dashed #ff4040;
+  border-radius: 12px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.upload-dropzone-box:hover {
+  background: #ffe4e6;
+  border-color: #ff2020;
+  transform: translateY(-1px);
+}
+
+.upload-drop-icon {
+  color: #ff2020;
+}
+
+.upload-dropzone-box strong {
+  font-size: 13px;
+  color: #800000;
+}
+
+.upload-dropzone-box span {
+  font-size: 11px;
+  color: #b30000;
+}
+
+.upload-section {
+  background: #fff5f5;
+  border: 1px solid #fee2e2;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.upload-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #800000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.transform-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.fitting-buttons-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

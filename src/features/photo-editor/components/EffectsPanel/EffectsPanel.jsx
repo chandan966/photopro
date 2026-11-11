@@ -20,22 +20,88 @@ function EffectsPanel({ onApplyEffect, activeEffect, isProcessing, onImportLUT }
 
   const effects = [
     {
+      id: "gaussian",
+      label: "Gaussian Blur",
+      desc: "Soft lens defocus & creamy bokeh blur",
+      icon: Sparkles,
+    },
+    {
+      id: "motion",
+      label: "Motion Blur",
+      desc: "Linear dynamic speed streaking",
+      icon: Zap,
+    },
+    {
+      id: "pixelate",
+      label: "Pixelation",
+      desc: "Retro 8-bit mosaic tile quantization",
+      icon: Grid,
+    },
+    {
+      id: "glitch",
+      label: "Glitch Effect",
+      desc: "Cyberpunk slice jitter & RGB channel displacement",
+      icon: Zap,
+    },
+    {
+      id: "duotone",
+      label: "Duotone",
+      desc: "Two-tone gradient mapping (Ruby & Obsidian)",
+      icon: Layers,
+    },
+    {
+      id: "colorsplash",
+      label: "Color Splash",
+      desc: "Isolate vibrant red tones, turn background B&W",
+      icon: Palette,
+    },
+    {
+      id: "posterize",
+      label: "Posterize",
+      desc: "Step tonal compression into graphic color bands",
+      icon: Layers,
+    },
+    {
+      id: "sketch",
+      label: "Pencil Sketch",
+      desc: "Invert & color-dodge graphite sketch",
+      icon: Brush,
+    },
+    {
       id: "cartoon",
       label: "Cartoon Effect",
       desc: "Sobel edge outlines & color quantization",
       icon: Wand2,
     },
     {
-      id: "sketch",
-      label: "Pencil Sketch",
-      desc: "Grayscale, invert & color-dodge blend",
-      icon: Brush,
-    },
-    {
       id: "oil",
-      label: "Oil Painting",
+      label: "Oil Painting Effect",
       desc: "Kuwahara variance brush clustering",
       icon: Palette,
+    },
+    {
+      id: "neon",
+      label: "Neon",
+      desc: "Vibrant high-voltage edge contour glow",
+      icon: Flame,
+    },
+    {
+      id: "glow",
+      label: "Glow & Bloom",
+      desc: "High-pass luminance highlight bloom",
+      icon: Sun,
+    },
+    {
+      id: "rgbsplit",
+      label: "RGB Split",
+      desc: "3-channel chromatic aberration offset",
+      icon: Camera,
+    },
+    {
+      id: "doubleexposure",
+      label: "Double Exposure",
+      desc: "Screen blend artistic dual overlay",
+      icon: Film,
     },
     {
       id: "hdr",
@@ -44,46 +110,10 @@ function EffectsPanel({ onApplyEffect, activeEffect, isProcessing, onImportLUT }
       icon: Flame,
     },
     {
-      id: "sepia",
-      label: "Vintage Sepia",
-      desc: "Warm nostalgic monochrome patina",
-      icon: Camera,
-    },
-    {
-      id: "duotone",
-      label: "Duotone Gradient",
-      desc: "Ruby Crimson & Obsidian two-tone map",
-      icon: Layers,
-    },
-    {
-      id: "glitch",
-      label: "Glitch RGB Split",
-      desc: "Chromatic aberration & slice jitter",
-      icon: Zap,
-    },
-    {
-      id: "pixelate",
-      label: "Pixelate Mosaic",
-      desc: "Retro 8-bit block pixelation",
-      icon: Grid,
-    },
-    {
       id: "emboss",
       label: "Emboss Relief",
       desc: "3D directional lighting emboss kernel",
       icon: Film,
-    },
-    {
-      id: "lightleak",
-      label: "Vintage Light Leak",
-      desc: "Warm crimson & gold optical leak",
-      icon: Sun,
-    },
-    {
-      id: "lensflare",
-      label: "Lens Flare",
-      desc: "Radiant optical bloom & secondary rings",
-      icon: Sparkles,
     },
   ];
 

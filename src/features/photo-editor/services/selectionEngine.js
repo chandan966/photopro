@@ -166,6 +166,11 @@ export class SelectionManager {
     this.bounds = { x: minX, y: minY, width: Math.max(1, maxX - minX), height: Math.max(1, maxY - minY) };
   }
 
+  // Alias for compatibility
+  wandSelect(canvas, startX, startY, tolerance = 32, contiguous = true) {
+    return this.setMagicWandSelection(canvas, startX, startY, tolerance, contiguous);
+  }
+
   // Magic Wand: Flood fill contiguous color matching seed (startX, startY)
   setMagicWandSelection(canvas, startX, startY, tolerance = 32, contiguous = true) {
     const ctx = canvas.getContext("2d");

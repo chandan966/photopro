@@ -115,13 +115,13 @@ export default function AdjustmentsPanel({
             <div className="adjustment-control-row">
               <div className="adjustment-label-row">
                 <span>Exposure</span>
-                <span className="adjustment-val-text">{lrSettings.exposure}</span>
+                <span className="adjustment-val-text">{lrSettings.exposure ?? 0}</span>
               </div>
               <input
                 type="range"
                 min="-100"
                 max="100"
-                value={lrSettings.exposure}
+                value={lrSettings.exposure ?? 0}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("exposure", e.target.value)}
                 onDoubleClick={() => updateLr("exposure", 0)}
@@ -130,14 +130,30 @@ export default function AdjustmentsPanel({
 
             <div className="adjustment-control-row">
               <div className="adjustment-label-row">
-                <span>Contrast</span>
-                <span className="adjustment-val-text">{lrSettings.contrast}</span>
+                <span>Brightness</span>
+                <span className="adjustment-val-text">{lrSettings.brightness ?? 0}</span>
               </div>
               <input
                 type="range"
                 min="-100"
                 max="100"
-                value={lrSettings.contrast}
+                value={lrSettings.brightness ?? 0}
+                className="adjustment-slider"
+                onChange={(e) => updateLr("brightness", e.target.value)}
+                onDoubleClick={() => updateLr("brightness", 0)}
+              />
+            </div>
+
+            <div className="adjustment-control-row">
+              <div className="adjustment-label-row">
+                <span>Contrast</span>
+                <span className="adjustment-val-text">{lrSettings.contrast ?? 0}</span>
+              </div>
+              <input
+                type="range"
+                min="-100"
+                max="100"
+                value={lrSettings.contrast ?? 0}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("contrast", e.target.value)}
                 onDoubleClick={() => updateLr("contrast", 0)}
@@ -147,13 +163,13 @@ export default function AdjustmentsPanel({
             <div className="adjustment-control-row">
               <div className="adjustment-label-row">
                 <span>Highlights</span>
-                <span className="adjustment-val-text">{lrSettings.highlights}</span>
+                <span className="adjustment-val-text">{lrSettings.highlights ?? 0}</span>
               </div>
               <input
                 type="range"
                 min="-100"
                 max="100"
-                value={lrSettings.highlights}
+                value={lrSettings.highlights ?? 0}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("highlights", e.target.value)}
                 onDoubleClick={() => updateLr("highlights", 0)}
@@ -163,16 +179,48 @@ export default function AdjustmentsPanel({
             <div className="adjustment-control-row">
               <div className="adjustment-label-row">
                 <span>Shadows</span>
-                <span className="adjustment-val-text">{lrSettings.shadows}</span>
+                <span className="adjustment-val-text">{lrSettings.shadows ?? 0}</span>
               </div>
               <input
                 type="range"
                 min="-100"
                 max="100"
-                value={lrSettings.shadows}
+                value={lrSettings.shadows ?? 0}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("shadows", e.target.value)}
                 onDoubleClick={() => updateLr("shadows", 0)}
+              />
+            </div>
+
+            <div className="adjustment-control-row">
+              <div className="adjustment-label-row">
+                <span>Whites</span>
+                <span className="adjustment-val-text">{lrSettings.whites ?? 0}</span>
+              </div>
+              <input
+                type="range"
+                min="-100"
+                max="100"
+                value={lrSettings.whites ?? 0}
+                className="adjustment-slider"
+                onChange={(e) => updateLr("whites", e.target.value)}
+                onDoubleClick={() => updateLr("whites", 0)}
+              />
+            </div>
+
+            <div className="adjustment-control-row">
+              <div className="adjustment-label-row">
+                <span>Blacks</span>
+                <span className="adjustment-val-text">{lrSettings.blacks ?? 0}</span>
+              </div>
+              <input
+                type="range"
+                min="-100"
+                max="100"
+                value={lrSettings.blacks ?? 0}
+                className="adjustment-slider"
+                onChange={(e) => updateLr("blacks", e.target.value)}
+                onDoubleClick={() => updateLr("blacks", 0)}
               />
             </div>
 
@@ -180,13 +228,13 @@ export default function AdjustmentsPanel({
             <div className="adjustment-control-row">
               <div className="adjustment-label-row">
                 <span>Temperature</span>
-                <span className="adjustment-val-text">{lrSettings.temperature}</span>
+                <span className="adjustment-val-text">{lrSettings.temperature ?? 0}</span>
               </div>
               <input
                 type="range"
                 min="-100"
                 max="100"
-                value={lrSettings.temperature}
+                value={lrSettings.temperature ?? 0}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("temperature", e.target.value)}
                 onDoubleClick={() => updateLr("temperature", 0)}
@@ -196,13 +244,13 @@ export default function AdjustmentsPanel({
             <div className="adjustment-control-row">
               <div className="adjustment-label-row">
                 <span>Tint</span>
-                <span className="adjustment-val-text">{lrSettings.tint}</span>
+                <span className="adjustment-val-text">{lrSettings.tint ?? 0}</span>
               </div>
               <input
                 type="range"
                 min="-100"
                 max="100"
-                value={lrSettings.tint}
+                value={lrSettings.tint ?? 0}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("tint", e.target.value)}
                 onDoubleClick={() => updateLr("tint", 0)}
@@ -212,13 +260,13 @@ export default function AdjustmentsPanel({
             <div className="adjustment-control-row">
               <div className="adjustment-label-row">
                 <span>Vibrance</span>
-                <span className="adjustment-val-text">{lrSettings.vibrance}</span>
+                <span className="adjustment-val-text">{lrSettings.vibrance ?? 0}</span>
               </div>
               <input
                 type="range"
                 min="-100"
                 max="100"
-                value={lrSettings.vibrance}
+                value={lrSettings.vibrance ?? 0}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("vibrance", e.target.value)}
                 onDoubleClick={() => updateLr("vibrance", 0)}
@@ -228,30 +276,111 @@ export default function AdjustmentsPanel({
             <div className="adjustment-control-row">
               <div className="adjustment-label-row">
                 <span>Saturation</span>
-                <span className="adjustment-val-text">{lrSettings.saturation}</span>
+                <span className="adjustment-val-text">{lrSettings.saturation ?? 0}</span>
               </div>
               <input
                 type="range"
                 min="-100"
                 max="100"
-                value={lrSettings.saturation}
+                value={lrSettings.saturation ?? 0}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("saturation", e.target.value)}
                 onDoubleClick={() => updateLr("saturation", 0)}
               />
             </div>
 
-            <div className="adjustment-section-heading">Effects & Atmosphere</div>
             <div className="adjustment-control-row">
               <div className="adjustment-label-row">
-                <span>Vignette</span>
-                <span className="adjustment-val-text">{lrSettings.vignette}</span>
+                <span>Hue Rotation</span>
+                <span className="adjustment-val-text">{lrSettings.hue ?? 0}°</span>
+              </div>
+              <input
+                type="range"
+                min="-180"
+                max="180"
+                value={lrSettings.hue ?? 0}
+                className="adjustment-slider"
+                onChange={(e) => updateLr("hue", e.target.value)}
+                onDoubleClick={() => updateLr("hue", 0)}
+              />
+            </div>
+
+            <div className="adjustment-section-heading">Presence & Texture</div>
+            <div className="adjustment-control-row">
+              <div className="adjustment-label-row">
+                <span>Texture</span>
+                <span className="adjustment-val-text">{lrSettings.texture ?? 0}</span>
+              </div>
+              <input
+                type="range"
+                min="-100"
+                max="100"
+                value={lrSettings.texture ?? 0}
+                className="adjustment-slider"
+                onChange={(e) => updateLr("texture", e.target.value)}
+                onDoubleClick={() => updateLr("texture", 0)}
+              />
+            </div>
+
+            <div className="adjustment-control-row">
+              <div className="adjustment-label-row">
+                <span>Clarity</span>
+                <span className="adjustment-val-text">{lrSettings.clarity ?? 0}</span>
+              </div>
+              <input
+                type="range"
+                min="-100"
+                max="100"
+                value={lrSettings.clarity ?? 0}
+                className="adjustment-slider"
+                onChange={(e) => updateLr("clarity", e.target.value)}
+                onDoubleClick={() => updateLr("clarity", 0)}
+              />
+            </div>
+
+            <div className="adjustment-control-row">
+              <div className="adjustment-label-row">
+                <span>Dehaze</span>
+                <span className="adjustment-val-text">{lrSettings.dehaze ?? 0}</span>
+              </div>
+              <input
+                type="range"
+                min="-100"
+                max="100"
+                value={lrSettings.dehaze ?? 0}
+                className="adjustment-slider"
+                onChange={(e) => updateLr("dehaze", e.target.value)}
+                onDoubleClick={() => updateLr("dehaze", 0)}
+              />
+            </div>
+
+            <div className="adjustment-control-row">
+              <div className="adjustment-label-row">
+                <span>Sharpness</span>
+                <span className="adjustment-val-text">{lrSettings.sharpness ?? 0}</span>
               </div>
               <input
                 type="range"
                 min="0"
                 max="100"
-                value={lrSettings.vignette}
+                value={lrSettings.sharpness ?? 0}
+                className="adjustment-slider"
+                onChange={(e) => updateLr("sharpness", e.target.value)}
+                onDoubleClick={() => updateLr("sharpness", 0)}
+              />
+            </div>
+
+            <div className="adjustment-section-heading">Atmosphere & Effects</div>
+            <div className="adjustment-control-row">
+              <div className="adjustment-label-row">
+                <span>Vignette</span>
+                <span className="adjustment-val-text">{lrSettings.vignette ?? 0}</span>
+              </div>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={lrSettings.vignette ?? 0}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("vignette", e.target.value)}
                 onDoubleClick={() => updateLr("vignette", 0)}
@@ -261,16 +390,33 @@ export default function AdjustmentsPanel({
             <div className="adjustment-control-row">
               <div className="adjustment-label-row">
                 <span>Film Grain</span>
-                <span className="adjustment-val-text">{lrSettings.filmGrain}</span>
+                <span className="adjustment-val-text">{lrSettings.filmGrain ?? 0}</span>
               </div>
               <input
                 type="range"
                 min="0"
                 max="100"
-                value={lrSettings.filmGrain}
+                value={lrSettings.filmGrain ?? 0}
                 className="adjustment-slider"
                 onChange={(e) => updateLr("filmGrain", e.target.value)}
                 onDoubleClick={() => updateLr("filmGrain", 0)}
+              />
+            </div>
+
+            <div className="adjustment-control-row">
+              <div className="adjustment-label-row">
+                <span>Gamma</span>
+                <span className="adjustment-val-text">{(lrSettings.gamma ?? 1.0).toFixed(2)}</span>
+              </div>
+              <input
+                type="range"
+                min="0.3"
+                max="2.5"
+                step="0.05"
+                value={lrSettings.gamma ?? 1.0}
+                className="adjustment-slider"
+                onChange={(e) => updateLr("gamma", e.target.value)}
+                onDoubleClick={() => updateLr("gamma", 1.0)}
               />
             </div>
           </>

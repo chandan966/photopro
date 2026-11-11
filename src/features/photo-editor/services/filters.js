@@ -59,6 +59,8 @@ export const applyLightroomAdjustments = (imageData, settings) => {
   const data = imageData.data;
   const {
     exposure = 0, // -100 to 100
+    brightness = 0, // -100 to 100
+    contrast = 0, // -100 to 100
     highlights = 0, // -100 to 100
     shadows = 0, // -100 to 100
     whites = 0, // -100 to 100
@@ -67,6 +69,10 @@ export const applyLightroomAdjustments = (imageData, settings) => {
     tint = 0, // -100 (green) to 100 (magenta)
     vibrance = 0, // -100 to 100
     saturation = 0, // -100 to 100
+    hue = 0, // 0 to 360 or -180 to 180
+    clarity = 0, // -100 to 100
+    texture = 0, // -100 to 100
+    sharpness = 0, // 0 to 100
     dehaze = 0, // -100 to 100
     fade = 0, // 0 to 100
     gamma = 1, // 0.2 to 2.5
@@ -75,6 +81,8 @@ export const applyLightroomAdjustments = (imageData, settings) => {
   } = settings;
 
   const expMult = Math.pow(2, exposure / 50);
+  const brightShift = (brightness / 100) * 55;
+  const contrastFactor = contrast !== 0 ? (259 * (contrast + 255)) / (255 * (259 - contrast)) : 1;
   const tempR = temperature > 0 ? 1 + (temperature / 100) * 0.3 : 1;
   const tempB = temperature < 0 ? 1 + (-temperature / 100) * 0.3 : 1;
   const tintG = tint < 0 ? 1 + (-tint / 100) * 0.2 : 1;
@@ -92,10 +100,17 @@ export const applyLightroomAdjustments = (imageData, settings) => {
     let g = data[i + 1];
     let b = data[i + 2];
 
-    // Exposure
-    r *= expMult;
-    g *= expMult;
-    b *= expMult;
+    // Exposure & Brightness
+    r = r * expMult + brightShift;
+    g = g * expMult + brightShift;
+    b = b * expMult + brightShift;
+
+    // Contrast
+    if (contrast !== 0) {
+      r = contrastFactor * (r - 128) + 128;
+      g = contrastFactor * (g - 128) + 128;
+      b = contrastFactor * (b - 128) + 128;
+    }
 
     // Highlights & Shadows
     const lum = 0.299 * r + 0.587 * g + 0.114 * b;
@@ -116,6 +131,15 @@ export const applyLightroomAdjustments = (imageData, settings) => {
     if (blacks !== 0 && lum < 80) {
       const bFactor = ((80 - lum) / 80) * (blacks / 100) * 35;
       r += bFactor; g += bFactor; b += bFactor;
+    }
+
+    // Clarity & Texture (Midtone micro-contrast)
+    if (clarity !== 0 || texture !== 0) {
+      const totalPresence = (clarity * 0.7) + (texture * 0.5);
+      if (lum > 50 && lum < 205) {
+        const pFactor = ((lum - 128) / 78) * (totalPresence / 100) * 22;
+        r += pFactor; g += pFactor; b += pFactor;
+      }
     }
 
     // Dehaze (contrast in low-contrast regions)
@@ -144,12 +168,13 @@ export const applyLightroomAdjustments = (imageData, settings) => {
     g = g * tintG;
     b = b * tempB * tintB;
 
-    // Vibrance & Saturation
-    if (vibrance !== 0 || saturation !== 0) {
+    // Vibrance, Saturation & Hue Rotation
+    if (vibrance !== 0 || saturation !== 0 || hue !== 0) {
       const [h, s, l] = rgbToHsl(r, g, b);
       const vibFactor = vibrance > 0 ? (1 - s) * (vibrance / 100) : (vibrance / 100);
       const newS = clamp(s + (saturation / 100) * 0.5 + vibFactor * 0.5, 0, 1);
-      const [nr, ng, nb] = hslToRgb(h, newS, l);
+      const newH = (h + hue + 360) % 360;
+      const [nr, ng, nb] = hslToRgb(newH, newS, l);
       r = nr; g = ng; b = nb;
     }
 
@@ -177,6 +202,28 @@ export const applyLightroomAdjustments = (imageData, settings) => {
     data[i + 1] = clamp(g);
     data[i + 2] = clamp(b);
   }
+
+  // Sharpness pass if requested
+  if (sharpness > 0) {
+    const sharpWeight = (sharpness / 100) * 1.5;
+    const copy = new Uint8ClampedArray(data);
+    for (let y = 1; y < height - 1; y++) {
+      for (let x = 1; x < width - 1; x++) {
+        const idx = (y * width + x) * 4;
+        for (let c = 0; c < 3; c++) {
+          const center = copy[idx + c];
+          const laplacian =
+            4 * center -
+            copy[((y - 1) * width + x) * 4 + c] -
+            copy[((y + 1) * width + x) * 4 + c] -
+            copy[(y * width + (x - 1)) * 4 + c] -
+            copy[(y * width + (x + 1)) * 4 + c];
+          data[idx + c] = clamp(center + laplacian * sharpWeight);
+        }
+      }
+    }
+  }
+
   return imageData;
 };
 
@@ -826,4 +873,205 @@ export const applyUnsharpMask = (canvas, amount = 1.2, radius = 2, threshold = 0
     }
   }
   ctx.putImageData(origData, 0, 0);
+};
+
+/**
+ * Real Gaussian Blur
+ */
+export const applyGaussianBlur = (canvas, radius = 8) => {
+  const ctx = canvas.getContext("2d");
+  const tempCanvas = document.createElement("canvas");
+  tempCanvas.width = canvas.width;
+  tempCanvas.height = canvas.height;
+  const tempCtx = tempCanvas.getContext("2d");
+  tempCtx.filter = `blur(${radius}px)`;
+  tempCtx.drawImage(canvas, 0, 0);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(tempCanvas, 0, 0);
+};
+
+/**
+ * Real Color Splash (Selective Color Extraction)
+ * Keeps pixels matching targetHue saturated, turns everything else grayscale
+ */
+export const applyColorSplash = (canvas, targetHue = 0, tolerance = 45) => {
+  const ctx = canvas.getContext("2d");
+  const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const data = imgData.data;
+
+  for (let i = 0; i < data.length; i += 4) {
+    const r = data[i];
+    const g = data[i + 1];
+    const b = data[i + 2];
+    const [h, s] = rgbToHsl(r, g, b);
+
+    // Shortest angular distance between hues on 360 circle
+    const diff = Math.min(Math.abs(h - targetHue), 360 - Math.abs(h - targetHue));
+    if (diff > tolerance || s < 0.15) {
+      const gray = Math.round(0.299 * r + 0.587 * g + 0.114 * b);
+      data[i] = gray;
+      data[i + 1] = gray;
+      data[i + 2] = gray;
+    }
+  }
+  ctx.putImageData(imgData, 0, 0);
+};
+
+/**
+ * Real Posterize (Quantize colors to discrete levels)
+ */
+export const applyPosterizeEffect = (canvas, levels = 5) => {
+  const ctx = canvas.getContext("2d");
+  const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const data = imgData.data;
+  const step = 255 / (Math.max(2, levels) - 1);
+
+  for (let i = 0; i < data.length; i += 4) {
+    data[i] = clamp(Math.round(Math.round(data[i] / step) * step));
+    data[i + 1] = clamp(Math.round(Math.round(data[i + 1] / step) * step));
+    data[i + 2] = clamp(Math.round(Math.round(data[i + 2] / step) * step));
+  }
+  ctx.putImageData(imgData, 0, 0);
+};
+
+/**
+ * Real Neon Glow Effect
+ * Edge detection + saturated fluorescent tint + Gaussian bloom
+ */
+export const applyNeonEffect = (canvas, neonColor = "#ff2020") => {
+  const ctx = canvas.getContext("2d");
+  const w = canvas.width;
+  const h = canvas.height;
+
+  // 1. Sobel Edge Detection
+  const edgeCanvas = document.createElement("canvas");
+  edgeCanvas.width = w;
+  edgeCanvas.height = h;
+  const edgeCtx = edgeCanvas.getContext("2d");
+  edgeCtx.drawImage(canvas, 0, 0);
+  const srcData = edgeCtx.getImageData(0, 0, w, h);
+  const dstData = edgeCtx.createImageData(w, h);
+  const s = srcData.data;
+  const d = dstData.data;
+
+  // Parse neon tint
+  const nR = parseInt(neonColor.slice(1, 3), 16) || 255;
+  const nG = parseInt(neonColor.slice(3, 5), 16) || 32;
+  const nB = parseInt(neonColor.slice(5, 7), 16) || 32;
+
+  for (let y = 1; y < h - 1; y++) {
+    for (let x = 1; x < w - 1; x++) {
+      const idx = (y * w + x) * 4;
+      const left = (y * w + (x - 1)) * 4;
+      const right = (y * w + (x + 1)) * 4;
+      const top = ((y - 1) * w + x) * 4;
+      const bot = ((y + 1) * w + x) * 4;
+
+      const dx = (s[right] - s[left]) + (s[right + 1] - s[left + 1]) + (s[right + 2] - s[left + 2]);
+      const dy = (s[bot] - s[top]) + (s[bot + 1] - s[top + 1]) + (s[bot + 2] - s[top + 2]);
+      const mag = Math.min(255, Math.sqrt(dx * dx + dy * dy) * 1.5);
+
+      if (mag > 40) {
+        d[idx] = clamp(Math.round((nR / 255) * mag));
+        d[idx + 1] = clamp(Math.round((nG / 255) * mag));
+        d[idx + 2] = clamp(Math.round((nB / 255) * mag));
+        d[idx + 3] = 255;
+      }
+    }
+  }
+  edgeCtx.putImageData(dstData, 0, 0);
+
+  // 2. Base dark contrast layer
+  ctx.fillStyle = "#0a0a0f";
+  ctx.fillRect(0, 0, w, h);
+
+  // 3. Multi-pass glow blur
+  ctx.save();
+  ctx.globalCompositeOperation = "lighter";
+  ctx.filter = "blur(14px)";
+  ctx.drawImage(edgeCanvas, 0, 0);
+  ctx.filter = "blur(6px)";
+  ctx.drawImage(edgeCanvas, 0, 0);
+  ctx.filter = "none";
+  ctx.drawImage(edgeCanvas, 0, 0);
+  ctx.restore();
+};
+
+/**
+ * Real Glow / Bloom Effect
+ * High-pass luminance threshold + blurred additive composite
+ */
+export const applyGlowBloomEffect = (canvas, threshold = 180, radius = 14) => {
+  const ctx = canvas.getContext("2d");
+  const w = canvas.width;
+  const h = canvas.height;
+
+  // 1. High-pass filter canvas
+  const brightCanvas = document.createElement("canvas");
+  brightCanvas.width = w;
+  brightCanvas.height = h;
+  const bCtx = brightCanvas.getContext("2d");
+  bCtx.drawImage(canvas, 0, 0);
+  const imgData = bCtx.getImageData(0, 0, w, h);
+  const d = imgData.data;
+
+  for (let i = 0; i < d.length; i += 4) {
+    const lum = 0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2];
+    if (lum < threshold) {
+      d[i] = 0;
+      d[i + 1] = 0;
+      d[i + 2] = 0;
+      d[i + 3] = 0;
+    }
+  }
+  bCtx.putImageData(imgData, 0, 0);
+
+  // 2. Additive blend blurred highlights
+  ctx.save();
+  ctx.globalCompositeOperation = "screen";
+  ctx.filter = `blur(${radius}px)`;
+  ctx.drawImage(brightCanvas, 0, 0);
+  ctx.drawImage(brightCanvas, 0, 0);
+  ctx.restore();
+};
+
+/**
+ * Real RGB Split / Chromatic Aberration
+ */
+export const applyRGBSplitEffect = (canvas, offset = 10) => {
+  const ctx = canvas.getContext("2d");
+  const w = canvas.width;
+  const h = canvas.height;
+  const src = ctx.getImageData(0, 0, w, h);
+  const dst = ctx.createImageData(w, h);
+  const s = src.data;
+  const d = dst.data;
+
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      const idx = (y * w + x) * 4;
+      const rX = clamp(x + offset, 0, w - 1);
+      const bX = clamp(x - offset, 0, w - 1);
+
+      d[idx] = s[(y * w + rX) * 4];         // Red channel shifted right
+      d[idx + 1] = s[idx + 1];              // Green stays centered
+      d[idx + 2] = s[(y * w + bX) * 4 + 2]; // Blue channel shifted left
+      d[idx + 3] = s[idx + 3];
+    }
+  }
+  ctx.putImageData(dst, 0, 0);
+};
+
+/**
+ * Real Double Exposure Effect
+ * Blends two images using screen / lighten blend mode with opacity
+ */
+export const applyDoubleExposure = (canvas, overlayImg, blendMode = "screen", opacity = 0.7) => {
+  if (!overlayImg) return;
+  const ctx = canvas.getContext("2d");
+  ctx.save();
+  ctx.globalCompositeOperation = blendMode;
+  ctx.globalAlpha = Math.max(0, Math.min(1, opacity));
+  ctx.drawImage(overlayImg, 0, 0, canvas.width, canvas.height);
+  ctx.restore();
 };
