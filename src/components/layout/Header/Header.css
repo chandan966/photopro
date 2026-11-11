@@ -326,22 +326,6 @@
   color: #ff2020;
 }
 
-.features-nav-pill {
-  border-color: rgba(251, 191, 36, 0.25);
-  background: rgba(251, 191, 36, 0.04);
-}
-
-.features-nav-pill:hover {
-  background: rgba(251, 191, 36, 0.12);
-  border-color: rgba(251, 191, 36, 0.5);
-  color: #fef08a;
-  box-shadow: 0 0 14px rgba(251, 191, 36, 0.25);
-}
-
-.sparkle-gold-icon {
-  color: #fbbf24;
-}
-
 .dropdown-trigger-pill.active {
   background: rgba(225, 29, 72, 0.15);
   border-color: rgba(225, 29, 72, 0.35);

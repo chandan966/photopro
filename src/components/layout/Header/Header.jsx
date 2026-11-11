@@ -23,7 +23,7 @@ import { APP_CONFIG, PRESETS } from "../../../data/presets.js";
 import BrandLogo from "../../shared/BrandLogo/BrandLogo.jsx";
 import "./Header.css";
 
-function Header({ page, navigate, openEditor, onOpenFeaturesModal, onOpenLegalModal }) {
+function Header({ page, navigate, openEditor, onOpenLegalModal }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [toolsDropdown, setToolsDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);

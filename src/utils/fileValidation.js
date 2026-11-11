@@ -11,7 +11,6 @@
 
 export const FILE_LIMITS = {
   IMAGE_MAX_BYTES: 50 * 1024 * 1024,   // 50 MB
-  VIDEO_MAX_BYTES: 500 * 1024 * 1024, // 500 MB
   PDF_MAX_BYTES: 100 * 1024 * 1024,   // 100 MB
   MAX_PIXELS: 67_108_864,             // 8192 x 8192 (~67 Megapixels)
   MAX_FILENAME_LEN: 120,
@@ -39,15 +38,6 @@ const MAGIC_SIGNATURES = {
   },
   pdf: [
     [0x25, 0x50, 0x44, 0x46], // %PDF
-  ],
-  mp4: {
-    check: (bytes) => {
-      // ftyp at byte offset 4..7
-      return bytes[4] === 0x66 && bytes[5] === 0x74 && bytes[6] === 0x79 && bytes[7] === 0x70;
-    },
-  },
-  webm: [
-    [0x1a, 0x45, 0xdf, 0xa3], // EBML header
   ],
 };
 
@@ -104,16 +94,6 @@ export async function detectFileType(file) {
   // Check PDF
   for (const sig of MAGIC_SIGNATURES.pdf) {
     if (matchesBytes(bytes, sig)) return { type: "pdf", category: "document", verified: true };
-  }
-
-  // Check MP4
-  if (MAGIC_SIGNATURES.mp4.check(bytes)) {
-    return { type: "mp4", category: "video", verified: true };
-  }
-
-  // Check WebM
-  for (const sig of MAGIC_SIGNATURES.webm) {
-    if (matchesBytes(bytes, sig)) return { type: "webm", category: "video", verified: true };
   }
 
   // Fallback check for SVG (text-based)
@@ -261,33 +241,6 @@ export async function validateImageFile(file) {
       error: "Image validation failed: " + (err.message || "Corrupt image data"),
     };
   }
-}
-
-/**
- * Validate an uploaded video file
- */
-export async function validateVideoFile(file) {
-  if (!file) {
-    return { isValid: false, error: "No video file provided." };
-  }
-
-  if (file.size > FILE_LIMITS.VIDEO_MAX_BYTES) {
-    const mb = (file.size / (1024 * 1024)).toFixed(1);
-    return {
-      isValid: false,
-      error: `Video size (${mb} MB) exceeds maximum limit of ${FILE_LIMITS.VIDEO_MAX_BYTES / (1024 * 1024)} MB.`,
-    };
-  }
-
-  const detected = await detectFileType(file);
-  if (detected.category !== "video" && !file.type.startsWith("video/")) {
-    return {
-      isValid: false,
-      error: "The selected file is not a supported video format (MP4, WebM, MOV).",
-    };
-  }
-
-  return { isValid: true, file, format: detected.type };
 }
 
 /**

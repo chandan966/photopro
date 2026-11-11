@@ -49,7 +49,6 @@ function App() {
           page={page}
           navigate={setPage}
           openEditor={openEditor}
-          onOpenFeaturesModal={() => setFeaturesModalOpen(true)}
           onOpenLegalModal={setLegalModalTab}
         />
       )}
