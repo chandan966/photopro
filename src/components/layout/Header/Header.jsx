@@ -139,15 +139,6 @@ function Header({ page, navigate, openEditor, onOpenFeaturesModal, onOpenLegalMo
               <span>Social Media</span>
             </button>
 
-            <button
-              className="nav-action-pill features-nav-pill"
-              onClick={onOpenFeaturesModal}
-              title="Explore all Photo Editing Capabilities"
-            >
-              <Sparkles size={13} className="sparkle-gold-icon" />
-              <span>Features</span>
-            </button>
-
             {/* PRO TOOLS MEGA-DROPDOWN */}
             <div
               className="nav-dropdown-wrapper"
@@ -366,17 +357,6 @@ function Header({ page, navigate, openEditor, onOpenFeaturesModal, onOpenLegalMo
               <button className="mobile-link-row" onClick={showSocialMedia}>
                 <Share2 size={15} />
                 <span>Social Media Creator Hub</span>
-              </button>
-
-              <button
-                className="mobile-link-row"
-                onClick={() => {
-                  setMenuOpen(false);
-                  onOpenFeaturesModal();
-                }}
-              >
-                <Sparkles size={15} className="sparkle-gold-icon" />
-                <span>Features Catalog</span>
               </button>
 
               <button className="mobile-link-row" onClick={showTemplates}>
