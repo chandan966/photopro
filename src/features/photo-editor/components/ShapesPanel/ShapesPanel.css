@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  background: #0f1218;
+  background: #fff5f5;
   padding: 12px;
   border-radius: 8px;
   color: #800000;
@@ -38,7 +38,7 @@
 }
 
 .shape-picker-btn:hover {
-  background: #1f2937;
+  background: #fee2e2;
   border-color: #ff2020;
   color: #800000;
 }

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: #0f1218;
+  background: #fff5f5;
   color: #800000;
   user-select: none;
 }
@@ -10,7 +10,7 @@
 .filters-category-tabs {
   display: flex;
   background: #fff5f5;
-  border-bottom: 1px solid #1e2430;
+  border-bottom: 1px solid #fecdd3;
   padding: 4px;
   gap: 2px;
   overflow-x: auto;
@@ -30,7 +30,7 @@
 }
 
 .filter-cat-btn:hover {
-  background: #1c2230;
+  background: #fee2e2;
   color: #800000;
 }
 
@@ -71,13 +71,13 @@
 }
 
 .filter-card-btn:hover {
-  background: #1f2937;
+  background: #fee2e2;
   border-color: #ff2020;
   color: #800000;
 }
 
 .filter-card-btn.active {
-  background: #232c3d;
+  background: #fecdd3;
   border-color: #ff4040;
   color: #800000;
   font-weight: 600;
@@ -91,7 +91,7 @@
   background: #ffffff;
   padding: 10px;
   border-radius: 6px;
-  border: 1px solid #1e2430;
+  border: 1px solid #fecdd3;
 }
 
 .filter-intensity-label {

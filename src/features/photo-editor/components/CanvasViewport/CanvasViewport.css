@@ -31,7 +31,7 @@
   right: 0;
   height: 20px;
   background: #0c0e12;
-  border-bottom: 1px solid #1e2430;
+  border-bottom: 1px solid #fecdd3;
   z-index: 30;
   pointer-events: none;
 }
@@ -43,7 +43,7 @@
   bottom: 0;
   width: 20px;
   background: #0c0e12;
-  border-right: 1px solid #1e2430;
+  border-right: 1px solid #fecdd3;
   z-index: 30;
   pointer-events: none;
 }
@@ -55,8 +55,8 @@
   width: 20px;
   height: 20px;
   background: #fff5f5;
-  border-right: 1px solid #1e2430;
-  border-bottom: 1px solid #1e2430;
+  border-right: 1px solid #fecdd3;
+  border-bottom: 1px solid #fecdd3;
   z-index: 31;
 }
 

@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: #0f1218;
+  background: #fff5f5;
   color: #800000;
   user-select: none;
 }
 
 .history-panel-header {
   padding: 10px 12px;
-  border-bottom: 1px solid #1e2430;
+  border-bottom: 1px solid #fecdd3;
   font-size: 12px;
   font-weight: 600;
   color: #800000;
@@ -41,12 +41,12 @@
 }
 
 .history-item-btn:hover {
-  background: #1c2230;
+  background: #fee2e2;
   color: #800000;
 }
 
 .history-item-btn.active {
-  background: #232c3d;
+  background: #fecdd3;
   color: #f43f5e;
   border-color: #ff2020;
   font-weight: 600;

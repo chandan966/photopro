@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: #0f1218;
+  background: #fff5f5;
   color: #800000;
   user-select: none;
 }
@@ -10,7 +10,7 @@
 .adjustments-tabs-nav {
   display: flex;
   background: #fff5f5;
-  border-bottom: 1px solid #1e2430;
+  border-bottom: 1px solid #fecdd3;
   overflow-x: auto;
   padding: 4px;
   gap: 2px;
@@ -31,7 +31,7 @@
 
 .adjustments-tab-item:hover {
   color: #800000;
-  background: #1c2230;
+  background: #fee2e2;
 }
 
 .adjustments-tab-item.active {
@@ -86,7 +86,7 @@
 
 .adjustments-footer {
   padding: 8px 12px;
-  border-top: 1px solid #1e2430;
+  border-top: 1px solid #fecdd3;
   background: #fff5f5;
   display: flex;
   justify-content: flex-end;

@@ -323,7 +323,7 @@ export const convertPDFToWordDoc = async (pdfFile) => {
     <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
     <head><meta charset='utf-8'><title>Converted Document</title>
     <style>
-      body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; line-height: 1.5; color: #111827; margin: 24pt; }
+      body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; line-height: 1.5; color: #fff5f5; margin: 24pt; }
       h2 { color: #e11d48; margin-top: 14pt; }
       p { margin-bottom: 8pt; }
     </style>

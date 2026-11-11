@@ -3,7 +3,7 @@
   max-width: 980px;
   max-height: 85vh;
   background: #ffffff;
-  border: 1px solid #283344;
+  border: 1px solid #fee2e2;
   border-radius: 20px;
   padding: 28px;
   display: flex;
@@ -42,7 +42,7 @@
   align-items: center;
   gap: 10px;
   background: #ffffff;
-  border: 1px solid #283344;
+  border: 1px solid #fee2e2;
   border-radius: 10px;
   padding: 6px 14px;
 }
@@ -69,7 +69,7 @@
 }
 
 .cat-pill {
-  border: 1px solid #283344;
+  border: 1px solid #fee2e2;
   background: #ffffff;
   color: #cc5555;
   padding: 6px 14px;

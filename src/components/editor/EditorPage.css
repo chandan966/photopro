@@ -126,7 +126,7 @@
 /* LEFT SIDEBAR */
 .editor-left-sidebar {
   background: #0f1217;
-  border-right: 1px solid #1e2430;
+  border-right: 1px solid #fecdd3;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -814,7 +814,7 @@
 /* RIGHT LAYERS & PROPERTIES PANEL */
 .properties-panel {
   background: #0f1217;
-  border-left: 1px solid #1e2430;
+  border-left: 1px solid #fecdd3;
   padding: 18px 16px;
   overflow-y: auto;
   display: flex;
@@ -1078,7 +1078,7 @@
   overflow: hidden;
   background: #ffffff;
   cursor: ew-resize;
-  border: 1px solid #283344;
+  border: 1px solid #fee2e2;
 }
 
 .ba-image {
@@ -1170,7 +1170,7 @@
   width: 100%;
   max-width: 380px;
   background: #12161e;
-  border: 1px solid #283344;
+  border: 1px solid #fee2e2;
   border-radius: 16px;
   padding: 22px;
   display: flex;

@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: #0f1218;
+  background: #fff5f5;
   color: #800000;
   user-select: none;
 }
 
 .layers-header {
   padding: 10px 12px;
-  border-bottom: 1px solid #1e2430;
+  border-bottom: 1px solid #fecdd3;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -87,11 +87,11 @@
 }
 
 .layer-item:hover {
-  background: #1c2230;
+  background: #fee2e2;
 }
 
 .layer-item.active {
-  background: #232c3d;
+  background: #fecdd3;
   border-color: #ff2020;
 }
 
@@ -174,7 +174,7 @@
 }
 
 .layer-action-icon-btn:hover {
-  background: #283344;
+  background: #fee2e2;
   color: #800000;
 }
 
@@ -187,7 +187,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 8px 12px;
-  border-top: 1px solid #1e2430;
+  border-top: 1px solid #fecdd3;
   background: #0c0e12;
 }
 
