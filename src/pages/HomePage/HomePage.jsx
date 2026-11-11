@@ -346,7 +346,7 @@ function HomePage({ navigate, openEditor, onUpload, notify, onOpenFeaturesModal 
         <div className="pillar-card">
           <div className="pillar-icon"><LockKeyhole size={24} /></div>
           <h3>100% Private & Local</h3>
-          <p>Your photos and documents never leave your device. All neural background removal, filters, and rendering run in your browser memory.</p>
+          <p>Your photos and documents never leave your device. All image editing, filters, background tools, and rendering run in your browser memory.</p>
         </div>
         <div className="pillar-card">
           <div className="pillar-icon"><Zap size={24} /></div>

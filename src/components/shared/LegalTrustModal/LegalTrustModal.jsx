@@ -71,7 +71,7 @@ export default function LegalTrustModal({ initialTab = "privacy", onClose }) {
                 <h4>1. Client-Side Processing Architecture</h4>
                 <p>
                   PhotoPro is engineered on a strict <strong>frontend-first privacy architecture</strong>.
-                  All photo adjustments, Canvas 2D layer compositing, video timeline manipulations,
+                  All photo adjustments, Canvas 2D layer compositing, graphic design templates,
                   PDF operations, and file compressions are executed 100% locally on your machine using
                   HTML5 Canvas, Web Workers, and WebAssembly.
                 </p>
@@ -79,7 +79,7 @@ export default function LegalTrustModal({ initialTab = "privacy", onClose }) {
                 <h4>2. Zero Server Storage & Zero File Retention</h4>
                 <p>
                   We do not operate backend ingestion pipelines or cloud storage databases that upload,
-                  inspect, or store your photos, videos, or documents. Your files never leave your
+                  inspect, or store your photos or documents. Your files never leave your
                   device or local browser sandbox.
                 </p>
 
@@ -93,9 +93,41 @@ export default function LegalTrustModal({ initialTab = "privacy", onClose }) {
 
                 <h4>4. Third-Party CDN Resources</h4>
                 <p>
-                  Standard web font stylesheets (e.g. Google Fonts) and client-side neural model weights
-                  are delivered over encrypted HTTPS CDNs. No user images or identifying metadata are
+                  Standard web font stylesheets (e.g. Google Fonts) and client-side vector libraries
+                  are delivered over encrypted HTTPS CDNs. No user images or identifying creative metadata are
                   transmitted in connection with these resource requests.
+                </p>
+
+                <h4>5. Google AdSense & Third-Party Advertising</h4>
+                <p>
+                  We use Google AdSense and third-party advertising partners to display advertisements
+                  when you visit PhotoPro. Google, as a third-party vendor, uses cookies to serve ads on
+                  our site based on your prior visits to PhotoPro or other sites on the Internet:
+                </p>
+                <ul>
+                  <li>
+                    Google's use of advertising cookies enables it and its partners to serve ads based on your visit to our sites and/or other sites on the Internet.
+                  </li>
+                  <li>
+                    You may opt out of personalized advertising at any time by visiting the{" "}
+                    <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" style={{ color: "#e11d48", textDecoration: "underline" }}>
+                      Google Ads Settings page
+                    </a>.
+                  </li>
+                  <li>
+                    Alternatively, you can opt out of third-party vendors' use of cookies for personalized advertising by visiting{" "}
+                    <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" style={{ color: "#e11d48", textDecoration: "underline" }}>
+                      www.aboutads.info
+                    </a>.
+                  </li>
+                </ul>
+
+                <h4>6. GDPR & CCPA Compliance</h4>
+                <p>
+                  Under the General Data Protection Regulation (GDPR) and California Consumer Privacy Act (CCPA),
+                  users have the right to request information about data collection and to opt out of personalized
+                  cookie tracking. Because PhotoPro does not maintain accounts or collect personal identities, your
+                  creative work is inherently protected from profiling.
                 </p>
               </div>
             )}
@@ -105,7 +137,7 @@ export default function LegalTrustModal({ initialTab = "privacy", onClose }) {
                 <h4>1. Intellectual Property Ownership</h4>
                 <p>
                   You retain <strong>100% intellectual property ownership</strong> and copyright of all
-                  artwork, graphics, videos, PDFs, and documents created, imported, or exported
+                  artwork, graphics, PDFs, and documents created, imported, or exported
                   through PhotoPro. PhotoPro claims no proprietary rights or license over user creations.
                 </p>
 
@@ -128,19 +160,32 @@ export default function LegalTrustModal({ initialTab = "privacy", onClose }) {
               <div className="legal-text-block">
                 <h4>1. What Cookies & Storage Do We Use?</h4>
                 <p>
-                  PhotoPro does not use invasive tracking cookies or third-party behavioral profiling
-                  cookies. We utilize strictly necessary local storage mechanisms:
+                  PhotoPro utilizes local storage and advertising cookies to operate the service:
                 </p>
                 <ul>
                   <li>
-                    <code>LocalStorage</code>: Stores your recent project states, Brand Kit palettes,
-                    and workspace UI preferences.
+                    <strong>Essential Local Storage:</strong> <code>LocalStorage</code> and <code>IndexedDB</code> store
+                    your recent project states, Brand Kit palettes, and workspace UI preferences locally on your device.
                   </li>
                   <li>
-                    <code>SessionStorage</code>: Temporarily caches active canvas session state while
-                    navigating between studios.
+                    <strong>Session Storage:</strong> <code>SessionStorage</code> temporarily caches active canvas
+                    state while navigating between studios.
+                  </li>
+                  <li>
+                    <strong>Advertising Cookies (Google AdSense):</strong> Google and its advertising partners
+                    may place and read cookies on your browser, or use web beacons, to collect non-personal device
+                    information for ad serving, frequency capping, and fraud prevention.
                   </li>
                 </ul>
+
+                <h4>2. Managing Your Cookie Preferences</h4>
+                <p>
+                  You can configure your browser to refuse all cookies or notify you when a cookie is sent.
+                  To manage or opt out of Google's advertising cookies, visit{" "}
+                  <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" style={{ color: "#e11d48", textDecoration: "underline" }}>
+                    Google Ad Settings
+                  </a>.
+                </p>
               </div>
             )}
 
@@ -166,8 +211,8 @@ export default function LegalTrustModal({ initialTab = "privacy", onClose }) {
                 <h4>1. Hardware & Memory Thresholds</h4>
                 <p>
                   Because all processing takes place locally in your web browser, memory limits (RAM)
-                  depend on your device hardware and operating system. For high-resolution 4K video
-                  rendering or multi-megapixel RAW image compositing, we recommend modern desktop
+                  depend on your device hardware and operating system. For high-resolution 4K canvas
+                  rendering or multi-layer RAW image compositing, we recommend modern desktop
                   browsers (Chrome, Edge, Firefox, Safari) with hardware acceleration enabled.
                 </p>
               </div>
@@ -177,11 +222,11 @@ export default function LegalTrustModal({ initialTab = "privacy", onClose }) {
               <div className="legal-text-block">
                 <h4>Q: Is PhotoPro really free to use?</h4>
                 <p>
-                  A: Yes! All photo editing, video timeline sequencing, PDF creation, and compression
+                  A: Yes! All photo editing, graphic design templates, PDF creation, and compression
                   tools run locally in your browser with zero subscription fees or watermarks.
                 </p>
 
-                <h4>Q: How does PhotoPro export 4K images and videos?</h4>
+                <h4>Q: How does PhotoPro export 4K images?</h4>
                 <p>
                   A: Our rendering pipeline uses native Canvas 2D and WebGL contexts capable of
                   rasterizing at pixel-perfect multi-scale resolutions up to 3840×2160 pixels.

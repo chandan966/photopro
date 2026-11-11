@@ -23,7 +23,7 @@ function Footer({ navigate, onOpenLegalModal }) {
 
   const legalText =
     legal === "Privacy policy"
-      ? "PhotoPro processes all image files directly in your browser without uploading to external cloud servers. Neural network weights for local background removal execute on your device's WebAssembly/WebGPU pipeline. Zero user files are ever stored on our servers."
+      ? "PhotoPro processes all image files directly in your browser without uploading to external cloud servers. All tools run 100% locally on your device via HTML5 Canvas and WebAssembly. Zero user files are ever stored on our servers."
       : "PhotoPro is a professional browser-based creative suite provided as-is. You retain full 100% intellectual property ownership of your exported designs and photos.";
 
   return (
