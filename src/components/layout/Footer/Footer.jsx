@@ -56,37 +56,37 @@ function Footer({ navigate, onOpenLegalModal }) {
           <div className="footer-links">
             <div>
               <b>STUDIO</b>
-              <button onClick={() => navigate("editor")}>Photo Studio (Photoshop)</button>
-              <button onClick={() => navigate("design")}>Canva Design Studio</button>
-              <button onClick={() => navigate("pdf")}>PDF Maker &amp; Studio (60)</button>
-              <button onClick={() => navigate("background")}>AI Background Remover</button>
+              <a href="/editor" onClick={(e) => { e.preventDefault(); navigate("editor"); }}>Photo Studio (Photoshop)</a>
+              <a href="/design" onClick={(e) => { e.preventDefault(); navigate("design"); }}>Canva Design Studio</a>
+              <a href="/pdf" onClick={(e) => { e.preventDefault(); navigate("pdf"); }}>PDF Maker &amp; Studio (60)</a>
+              <a href="/background" onClick={(e) => { e.preventDefault(); navigate("background"); }}>Background Remover</a>
             </div>
             <div>
               <b>PRO TOOLS</b>
-              <button onClick={() => navigate("compressor")}>Smart Compressor</button>
-              <button onClick={() => navigate("converter")}>Format Converter</button>
-              <button onClick={() => navigate("resizer")}>Image Resizer</button>
-              <button onClick={() => navigate("brand-kit")}>Brand Kit Manager</button>
-              <button onClick={() => navigate("enhancer")}>AI Image Enhancer (4K)</button>
-              <button onClick={() => navigate("palette")}>Color Palette Extractor</button>
+              <a href="/compressor" onClick={(e) => { e.preventDefault(); navigate("compressor"); }}>Smart Compressor</a>
+              <a href="/converter" onClick={(e) => { e.preventDefault(); navigate("converter"); }}>Format Converter</a>
+              <a href="/resizer" onClick={(e) => { e.preventDefault(); navigate("resizer"); }}>Image Resizer</a>
+              <a href="/brand-kit" onClick={(e) => { e.preventDefault(); navigate("brand-kit"); }}>Brand Kit Manager</a>
+              <a href="/enhancer" onClick={(e) => { e.preventDefault(); navigate("enhancer"); }}>Image Enhancer (4K)</a>
+              <a href="/palette" onClick={(e) => { e.preventDefault(); navigate("palette"); }}>Color Palette Extractor</a>
               <button onClick={showTemplates}>Canvas Templates</button>
             </div>
             <div>
               <b>TRUST &amp; COMPLIANCE</b>
-              <button onClick={showAbout}>About Studio</button>
-              <button onClick={() => onOpenLegalModal ? onOpenLegalModal("privacy") : setLegal("Privacy policy")}>Privacy Policy</button>
+              <a href="/about" onClick={(e) => { e.preventDefault(); navigate("about"); }}>About Us</a>
+              <a href="/contact" onClick={(e) => { e.preventDefault(); navigate("contact"); }}>Contact Support</a>
+              <a href="/privacy-policy" onClick={(e) => { e.preventDefault(); navigate("privacy"); }}>Privacy Policy</a>
+              <a href="/terms" onClick={(e) => { e.preventDefault(); navigate("terms"); }}>Terms of Service</a>
+              <a href="/disclaimer" onClick={(e) => { e.preventDefault(); navigate("disclaimer"); }}>Disclaimer</a>
               <button onClick={() => onOpenLegalModal && onOpenLegalModal("cookies")}>Cookie Policy</button>
-              <button onClick={() => onOpenLegalModal ? onOpenLegalModal("terms") : setLegal("Terms & conditions")}>Terms of Service</button>
               <button onClick={() => onOpenLegalModal && onOpenLegalModal("security")}>Security &amp; Sandboxing</button>
-              <button onClick={() => onOpenLegalModal && onOpenLegalModal("disclaimer")}>Disclaimer</button>
               <button onClick={() => onOpenLegalModal && onOpenLegalModal("faq")}>Help &amp; FAQ</button>
-              <button onClick={() => onOpenLegalModal && onOpenLegalModal("contact")}>Contact &amp; Support</button>
             </div>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <span>&copy; {new Date().getFullYear()} PhotoPro AI Studio. All rights reserved.</span>
+          <span>&copy; {new Date().getFullYear()} PhotoPro Creative Studio. All rights reserved.</span>
 
           {/* Center Developer Instagram Link */}
           <a

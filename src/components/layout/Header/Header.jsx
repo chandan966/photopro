@@ -193,19 +193,27 @@ function Header({ page, navigate, openEditor, onOpenLegalModal }) {
             </div>
 
             {/* Quick Actions */}
-            <div className="mobile-section-heading">DISCOVER & TEMPLATES</div>
+            <div className="mobile-section-heading">EXPLORE &amp; TRUST</div>
             <div className="mobile-nav-links-list">
               <button className="mobile-link-row" onClick={() => go("home")}>
                 <span>Home Dashboard</span>
               </button>
 
+              <button className="mobile-link-row" onClick={() => go("about")}>
+                <span>About PhotoPro</span>
+              </button>
+
+              <button className="mobile-link-row" onClick={() => go("contact")}>
+                <span>Contact Support</span>
+              </button>
+
+              <button className="mobile-link-row" onClick={() => go("privacy")}>
+                <span>Privacy Policy</span>
+              </button>
+
               <button className="mobile-link-row" onClick={showSocialMedia}>
                 <Share2 size={15} />
                 <span>Social Media Creator Hub</span>
-              </button>
-
-              <button className="mobile-link-row" onClick={showTemplates}>
-                <span>Browse Design Templates</span>
               </button>
             </div>
 

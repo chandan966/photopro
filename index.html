@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="QzIzD4D1JoybATFVyO_goOP9uqYvKN7SO6EkKgTNu14" />
     <meta name="theme-color" content="#ffffff" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="description" content="PhotoPro — Create. Enhance. Transform. Professional browser-based creative platform combining Photoshop, Lightroom, Canva, and PDF Studio in one unified, 100% private workspace." />
     <meta name="keywords" content="photo editor, online photoshop, lightroom in browser, canva alternative, pdf tools, image compressor, image converter, free online photo editor" />
     <link rel="canonical" href="https://photopro.vercel.app/" />
@@ -40,20 +41,53 @@
     
     <title>PhotoPro — Professional In-Browser Creative Studio</title>
 
-    <!-- Structured Data (Schema.org) -->
+    <!-- Structured Data (Schema.org Graph: WebSite, Organization, SoftwareApplication) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "PhotoPro Creative Studio",
-      "applicationCategory": "DesignApplication",
-      "operatingSystem": "Web, Windows, macOS, Linux, iOS, Android",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "description": "Professional in-browser creative suite combining photo editing, layers, curves, Lightroom color grading, PDF utilities, and batch image compression."
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://photopro.vercel.app/#website",
+          "url": "https://photopro.vercel.app/",
+          "name": "PhotoPro Creative Studio",
+          "description": "Professional browser-based creative platform combining Photoshop, Lightroom, Canva, and PDF Studio.",
+          "publisher": {
+            "@id": "https://photopro.vercel.app/#organization"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://photopro.vercel.app/#organization",
+          "name": "PhotoPro",
+          "url": "https://photopro.vercel.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://photopro.vercel.app/brand-logo-192.png",
+            "width": 192,
+            "height": 192
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "contactchandan0101@gmail.com",
+            "contactType": "Customer Support",
+            "availableLanguage": ["English"]
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://photopro.vercel.app/#application",
+          "name": "PhotoPro Creative Studio",
+          "applicationCategory": "DesignApplication",
+          "operatingSystem": "Web, Windows, macOS, Linux, iOS, Android",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "Professional in-browser creative suite combining photo editing, layers, curves, Lightroom color grading, PDF utilities, and batch image compression."
+        }
+      ]
     }
     </script>
 

@@ -97,18 +97,22 @@
   margin-bottom: 4px;
 }
 
-.footer-links button {
+.footer-links button,
+.footer-links a {
   border: 0;
   background: none;
   text-align: left;
   padding: 0;
   color: #0369a1;
   font-size: 13px;
+  text-decoration: none;
   transition: color 0.18s;
   cursor: pointer;
+  font-family: inherit;
 }
 
-.footer-links button:hover {
+.footer-links button:hover,
+.footer-links a:hover {
   color: #0c4a6e;
 }
 

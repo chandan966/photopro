@@ -1,7 +1,18 @@
+# PhotoPro Robots.txt
+# Allow search engines and Google AdSense crawlers full access to all indexable pages
+
 User-agent: *
+Allow: /
+Allow: /ads.txt
+Allow: /sitemap.xml
+
+User-agent: Googlebot
 Allow: /
 
 User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Google-Display-Ads-Bot
 Allow: /
 
 Sitemap: https://photopro.vercel.app/sitemap.xml
