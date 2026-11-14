@@ -25,9 +25,7 @@ import "./Header.css";
 
 function Header({ page, navigate, openEditor, onOpenLegalModal }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [toolsDropdown, setToolsDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const dropdownRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,35 +35,21 @@ function Header({ page, navigate, openEditor, onOpenLegalModal }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdown on click outside
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setToolsDropdown(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
   const showTemplates = () => {
     if (page !== "home") navigate("home");
     window.setTimeout(() => document.getElementById("templates")?.scrollIntoView({ behavior: "smooth" }), 60);
     setMenuOpen(false);
-    setToolsDropdown(false);
   };
 
   const showSocialMedia = () => {
     if (page !== "home") navigate("home");
     window.setTimeout(() => document.getElementById("social-media")?.scrollIntoView({ behavior: "smooth" }), 60);
     setMenuOpen(false);
-    setToolsDropdown(false);
   };
 
   const go = (destination) => {
     navigate(destination);
     setMenuOpen(false);
-    setToolsDropdown(false);
   };
 
   return (
@@ -79,11 +63,6 @@ function Header({ page, navigate, openEditor, onOpenLegalModal }) {
           <button className="brand-button" onClick={() => go("home")} aria-label="PhotoPro Home">
             <BrandLogo size={38} />
           </button>
-
-          <div className="header-status-pill" title="Client-Side Browser Execution Ready">
-            <span className="status-ping-dot" />
-            <span className="status-badge-text">v2.5 PRO</span>
-          </div>
         </div>
 
         {/* DESKTOP NAVIGATION DOCK */}
@@ -137,140 +116,6 @@ function Header({ page, navigate, openEditor, onOpenLegalModal }) {
             >
               <Share2 size={13} className="nav-pill-icon" />
               <span>Social Media</span>
-            </button>
-
-            {/* PRO TOOLS MEGA-DROPDOWN */}
-            <div
-              className="nav-dropdown-wrapper"
-              ref={dropdownRef}
-              onMouseEnter={() => setToolsDropdown(true)}
-              onMouseLeave={() => setToolsDropdown(false)}
-            >
-              <button
-                className={`nav-action-pill dropdown-trigger-pill ${
-                  ["background", "enhancer", "compressor", "converter", "palette"].includes(page) ? "active" : ""
-                }`}
-                onClick={() => setToolsDropdown(!toolsDropdown)}
-                aria-expanded={toolsDropdown}
-              >
-                <SlidersHorizontal size={13} />
-                <span>Pro Tools</span>
-                <ChevronDown size={12} className={`dropdown-chevron ${toolsDropdown ? "open" : ""}`} />
-              </button>
-
-              {toolsDropdown && (
-                <div className="pro-tools-mega-menu">
-                  <div className="mega-menu-grid">
-                    {/* Category 1: AI Tools */}
-                    <div className="mega-menu-column">
-                      <div className="column-label">
-                        <Sparkles size={11} />
-                        <span>AI NEURAL TOOLS</span>
-                      </div>
-
-                      <button className="mega-menu-item" onClick={() => go("background")}>
-                        <div className="item-icon-box bg-ai">
-                          <WandSparkles size={16} />
-                        </div>
-                        <div className="item-text">
-                          <div className="item-heading">AI Background Remover</div>
-                          <div className="item-sub">Auto cutout & subject masking</div>
-                        </div>
-                      </button>
-
-                      <button className="mega-menu-item" onClick={() => go("enhancer")}>
-                        <div className="item-icon-box enh-ai">
-                          <Sparkles size={16} />
-                        </div>
-                        <div className="item-text">
-                          <div className="item-heading">AI 4K Image Enhancer</div>
-                          <div className="item-sub">De-noise, sharpen & HD upscale</div>
-                        </div>
-                      </button>
-
-                      <button className="mega-menu-item" onClick={() => go("palette")}>
-                        <div className="item-icon-box pal-ai">
-                          <Palette size={16} />
-                        </div>
-                        <div className="item-text">
-                          <div className="item-heading">Harmonic Color Extractor</div>
-                          <div className="item-sub">Generate 6-tone color palettes</div>
-                        </div>
-                      </button>
-                    </div>
-
-                    {/* Category 2: Utilities */}
-                    <div className="mega-menu-column">
-                      <div className="column-label">
-                        <Layers size={11} />
-                        <span>CREATIVE UTILITIES</span>
-                      </div>
-
-                      <button className="mega-menu-item" onClick={() => go("pdf")}>
-                        <div className="item-icon-box pdf-tool">
-                          <FileCheck size={16} />
-                        </div>
-                        <div className="item-text">
-                          <div className="item-heading">PDF Maker & E-Sign</div>
-                          <div className="item-sub">Merge, split, invoices & certificates</div>
-                        </div>
-                      </button>
-
-                      <button className="mega-menu-item" onClick={() => go("compressor")}>
-                        <div className="item-icon-box comp-tool">
-                          <SlidersHorizontal size={16} />
-                        </div>
-                        <div className="item-text">
-                          <div className="item-heading">Smart Image Compressor</div>
-                          <div className="item-sub">Shrink MBs up to 90% losslessly</div>
-                        </div>
-                      </button>
-
-                      <button className="mega-menu-item" onClick={() => go("converter")}>
-                        <div className="item-icon-box conv-tool">
-                          <FileImage size={16} />
-                        </div>
-                        <div className="item-text">
-                          <div className="item-heading">Batch Format Converter</div>
-                          <div className="item-sub">PNG, JPG, WebP & TIFF locally</div>
-                        </div>
-                      </button>
-
-                      <button className="mega-menu-item" onClick={() => go("resizer")}>
-                        <div className="item-icon-box comp-tool">
-                          <Scale size={16} />
-                        </div>
-                        <div className="item-text">
-                          <div className="item-heading">Image Resizer</div>
-                          <div className="item-sub">Exact px, aspect lock & social presets</div>
-                        </div>
-                      </button>
-
-                      <button className="mega-menu-item" onClick={() => go("brand-kit")}>
-                        <div className="item-icon-box pal-ai">
-                          <Palette size={16} />
-                        </div>
-                        <div className="item-text">
-                          <div className="item-heading">Brand Kit & Style Manager</div>
-                          <div className="item-sub">Logos, palettes & font pairings</div>
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Mega Menu Footer */}
-                  <div className="mega-menu-footer">
-                    <div className="footer-privacy-note">
-                      <ShieldCheck size={13} className="privacy-shield-icon" />
-                      <span>100% Client-Side Privacy • Zero Cloud Uploads • Instant Processing</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <button className="nav-action-pill templates-pill" onClick={showTemplates}>
-              <span>Templates</span>
             </button>
           </div>
         </nav>
