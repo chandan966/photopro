@@ -61,6 +61,11 @@ import BeforeAfterSlider from "../BeforeAfterSlider/BeforeAfterSlider.jsx";
 import UploadPanel from "../UploadPanel/UploadPanel.jsx";
 import TemplatesPanel from "../TemplatesPanel/TemplatesPanel.jsx";
 import BackgroundPanel from "../BackgroundPanel/BackgroundPanel.jsx";
+import ToolOptionsBar from "../ToolOptionsBar/ToolOptionsBar.jsx";
+import DocumentTabBar from "../DocumentTabBar/DocumentTabBar.jsx";
+import NewProjectModal from "../NewProjectModal/NewProjectModal.jsx";
+import { ImageSizeModal, CanvasSizeModal } from "../ResizeDialogs/ResizeDialogs.jsx";
+import ShortcutsModal from "../ShortcutsModal/ShortcutsModal.jsx";
 
 import {
   Upload as UploadIcon,
@@ -213,12 +218,23 @@ export default function EditorPage({
   const [exportType, setExportType] = useState("image/png");
   const [beforeAfterOpen, setBeforeAfterOpen] = useState(false);
   const [originalImageSrc, setOriginalImageSrc] = useState(null);
-  const [colorPickerTarget, setColorPickerTarget] = useState(null); // 'foreground' | 'background' | 'layer'
+  const [colorPickerTarget, setColorPickerTarget] = useState(null); // 'foreground' | 'background' | 'layer' | 'shape-fill' | 'shape-stroke'
   const [showGrid, setShowGrid] = useState(false);
   const [showRulers, setShowRulers] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [hasSelection, setHasSelection] = useState(false);
+
+  // Photopea Dialogs & Tool Options
+  const [newProjectModalOpen, setNewProjectModalOpen] = useState(false);
+  const [imageSizeModalOpen, setImageSizeModalOpen] = useState(false);
+  const [canvasSizeModalOpen, setCanvasSizeModalOpen] = useState(false);
+  const [shortcutsModalOpen, setShortcutsModalOpen] = useState(false);
+  const [showTransformControls, setShowTransformControls] = useState(true);
+  const [shapeType, setShapeType] = useState("rectangle");
+  const [shapeFill, setShapeFill] = useState("#e11d48");
+  const [shapeStroke, setShapeStroke] = useState("#ffffff");
+  const [shapeStrokeWidth, setShapeStrokeWidth] = useState(2);
 
   // References
   const canvasRef = useRef(null);
@@ -1330,6 +1346,98 @@ export default function EditorPage({
     notify?.(`Resized canvas to ${newWidth} × ${newHeight} px`);
   };
 
+  const handleApplyImageSize = (newWidth, newHeight, resample = true) => {
+    snapshot(`Image Size ${newWidth}x${newHeight}`);
+    const oldW = preset.width || 1280;
+    const oldH = preset.height || 720;
+    const scaleX = newWidth / oldW;
+    const scaleY = newHeight / oldH;
+
+    setPreset((prev) => ({ ...prev, width: newWidth, height: newHeight }));
+
+    if (resample) {
+      setLayers((prev) =>
+        prev.map((l) => ({
+          ...l,
+          x: Math.round(l.x * scaleX),
+          y: Math.round(l.y * scaleY),
+          width: Math.round((l.width || 200) * scaleX),
+          height: Math.round((l.height || 200) * scaleY),
+        }))
+      );
+    }
+    notify?.(`Image resized to ${newWidth} × ${newHeight} px`);
+  };
+
+  const handleApplyCanvasSize = (newWidth, newHeight, anchor = "center", canvasBg = "transparent") => {
+    snapshot(`Canvas Size ${newWidth}x${newHeight}`);
+    setPreset((prev) => ({ ...prev, width: newWidth, height: newHeight }));
+    if (canvasBg !== "transparent") {
+      setCanvasColor(canvasBg);
+      setBgType("solid");
+    }
+    notify?.(`Canvas size updated to ${newWidth} × ${newHeight} px`);
+  };
+
+  const handleCreateProjectFromModal = ({ name, width, height, dpi, background }) => {
+    snapshot(`New Document ${name}`);
+    setProjectName(name.endsWith(".psd") ? name : `${name}.psd`);
+    setPreset({ id: "custom", name, width, height });
+    setLayers([]);
+    setSelectedLayerId(null);
+    setLrSettings(DEFAULT_LR_SETTINGS);
+    setHslMixer(DEFAULT_HSL_MIXER);
+    setCurves(DEFAULT_CURVES);
+    setLevels(DEFAULT_LEVELS);
+    setColorBalance(DEFAULT_COLOR_BALANCE);
+    setActiveFilter("none");
+    setFilterCss("none");
+    if (background === "transparent") {
+      setBgType("solid");
+      setCanvasColor("transparent");
+    } else {
+      setBgType("solid");
+      setCanvasColor(background);
+    }
+    if (selectionManagerRef.current) selectionManagerRef.current.clear();
+    setHasSelection(false);
+    notify?.(`Created "${name}" (${width} × ${height} px)`);
+  };
+
+  const handleCloseDocument = () => {
+    if (layers.length === 0) {
+      setNewProjectModalOpen(true);
+      return;
+    }
+    if (window.confirm("Close active document? Any unsaved edits will be cleared.")) {
+      setLayers([]);
+      setSelectedLayerId(null);
+      setProjectName("Untitled-1.psd");
+      notify?.("Document closed");
+    }
+  };
+
+  const handleAlignLayer = (direction) => {
+    if (!selectedLayerId || !selectedLayer) {
+      notify?.("Please select a layer to align");
+      return;
+    }
+    snapshot(`Align Layer ${direction}`);
+    const layerW = selectedLayer.width || 200;
+    const layerH = selectedLayer.height || 200;
+    let newX = selectedLayer.x;
+    let newY = selectedLayer.y;
+
+    if (direction === "left") newX = 0;
+    else if (direction === "h-center") newX = Math.round((preset.width - layerW) / 2);
+    else if (direction === "right") newX = Math.round(preset.width - layerW);
+    else if (direction === "top") newY = 0;
+    else if (direction === "v-center") newY = Math.round((preset.height - layerH) / 2);
+    else if (direction === "bottom") newY = Math.round(preset.height - layerH);
+
+    handleUpdateLayer(selectedLayerId, { x: newX, y: newY });
+  };
+
   const handleLoadTemplate = (tpl) => {
     snapshot(`Load Template: ${tpl.title}`);
     setPreset({
@@ -1671,6 +1779,53 @@ export default function EditorPage({
     const handleKeyDown = (e) => {
       if (["INPUT", "TEXTAREA", "SELECT"].includes(e.target.tagName)) return;
 
+      if ((e.ctrlKey || e.metaKey) && !e.shiftKey && e.key.toLowerCase() === "n") {
+        e.preventDefault();
+        setNewProjectModalOpen(true);
+        return;
+      }
+      if ((e.ctrlKey || e.metaKey) && !e.shiftKey && e.key.toLowerCase() === "o") {
+        e.preventDefault();
+        uploadRef.current?.click();
+        return;
+      }
+      if (e.altKey && (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "i") {
+        e.preventDefault();
+        setImageSizeModalOpen(true);
+        return;
+      }
+      if (e.altKey && (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "c") {
+        e.preventDefault();
+        setCanvasSizeModalOpen(true);
+        return;
+      }
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === "i") {
+        e.preventDefault();
+        selectionManagerRef.current?.invert();
+        setForceRerender((v) => v + 1);
+        return;
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "j") {
+        e.preventDefault();
+        handleDuplicateSelected();
+        return;
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key === "0") {
+        e.preventDefault();
+        handleFitScreen();
+        return;
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key === "1") {
+        e.preventDefault();
+        setZoom(100);
+        return;
+      }
+      if (e.key === "?" || e.key === "F1") {
+        e.preventDefault();
+        setShortcutsModalOpen((v) => !v);
+        return;
+      }
+
       if ((e.ctrlKey || e.metaKey) && !e.shiftKey && e.key.toLowerCase() === "z") {
         e.preventDefault();
         handleUndo();
@@ -1777,6 +1932,10 @@ export default function EditorPage({
         }}
         onSelectAll={handleSelectAll}
         onDeselect={handleDeselect}
+        onInvertSelection={() => {
+          selectionManagerRef.current?.invert();
+          setForceRerender((v) => v + 1);
+        }}
         onDeleteSelected={handleDeleteSelected}
         onDuplicateSelected={handleDuplicateSelected}
         onMergeDown={handleMergeDown}
@@ -1785,6 +1944,7 @@ export default function EditorPage({
         onInvertMask={handleInvertMask}
         onRotateCW={() => handleRotate(90)}
         onRotateCCW={() => handleRotate(-90)}
+        onRotate180={() => handleRotate(180)}
         onFlipH={() => handleFlip("horizontal")}
         onFlipV={() => handleFlip("vertical")}
         onZoomIn={() => setZoom((z) => Math.min(500, Math.round(z + 10)))}
@@ -1801,8 +1961,68 @@ export default function EditorPage({
         onToggleHistoryPanel={() => setActiveTab(activeTab === "history" ? "layers" : "history")}
         isFullscreen={isFullscreen}
         onToggleFullscreen={toggleFullscreen}
-        onNewCanvas={() => handleNewCanvas(1280, 720, "New Project")}
+        onNewCanvas={() => setNewProjectModalOpen(true)}
         onOpenImage={() => uploadRef.current?.click()}
+        onOpenImageSize={() => setImageSizeModalOpen(true)}
+        onOpenCanvasSize={() => setCanvasSizeModalOpen(true)}
+        onOpenShortcuts={() => setShortcutsModalOpen(true)}
+        onSelectTab={(tabId) => setActiveTab(tabId)}
+        onApplyFilterEffect={handleApplyCreativeEffect}
+      />
+
+      {/* PHOTOPEA-STYLE CONTEXT-SENSITIVE TOOL OPTIONS BAR */}
+      <ToolOptionsBar
+        activeTool={activeTool}
+        brushSize={brushSettings.size}
+        onChangeBrushSize={(size) => setBrushSettings((s) => ({ ...s, size }))}
+        brushHardness={Math.round((brushSettings.hardness || 0.5) * 100)}
+        onChangeBrushHardness={(hardness) => setBrushSettings((s) => ({ ...s, hardness: hardness / 100 }))}
+        brushOpacity={Math.round((brushSettings.opacity || 1) * 100)}
+        onChangeBrushOpacity={(opacity) => setBrushSettings((s) => ({ ...s, opacity: opacity / 100 }))}
+        brushFlow={Math.round((brushSettings.flow || 1) * 100)}
+        onChangeBrushFlow={(flow) => setBrushSettings((s) => ({ ...s, flow: flow / 100 }))}
+        brushBlendMode={brushSettings.blendMode || "normal"}
+        onChangeBrushBlendMode={(blendMode) => setBrushSettings((s) => ({ ...s, blendMode }))}
+        eraserSize={brushSettings.size}
+        onChangeEraserSize={(size) => setBrushSettings((s) => ({ ...s, size }))}
+        eraserOpacity={Math.round((brushSettings.opacity || 1) * 100)}
+        onChangeEraserOpacity={(opacity) => setBrushSettings((s) => ({ ...s, opacity: opacity / 100 }))}
+        wandTolerance={wandTolerance}
+        onChangeWandTolerance={setWandTolerance}
+        isContiguous={isContiguous}
+        onToggleContiguous={setIsContiguous}
+        onEraseSelected={handleEraseSelected}
+        onSelectAll={handleSelectAll}
+        onDeselect={handleDeselect}
+        onInvertSelection={() => {
+          selectionManagerRef.current?.invert();
+          setForceRerender((v) => v + 1);
+        }}
+        hasSelection={hasSelection}
+        cropRatio={cropState.ratioId}
+        onChangeCropRatio={(ratioId) => setCropState((c) => ({ ...c, ratioId }))}
+        onApplyCrop={handleApplyCrop}
+        onCancelCrop={handleCancelCrop}
+        selectedLayer={selectedLayer}
+        onUpdateLayer={handleUpdateLayer}
+        shapeType={shapeType}
+        onChangeShapeType={setShapeType}
+        shapeFill={shapeFill}
+        onChangeShapeFill={setShapeFill}
+        shapeStroke={shapeStroke}
+        onChangeShapeStroke={setShapeStroke}
+        shapeStrokeWidth={shapeStrokeWidth}
+        onChangeShapeStrokeWidth={setShapeStrokeWidth}
+        showTransformControls={showTransformControls}
+        onToggleTransformControls={setShowTransformControls}
+        onAlignLayer={handleAlignLayer}
+        zoom={zoom}
+        onZoomIn={() => setZoom((z) => Math.min(500, Math.round(z + 10)))}
+        onZoomOut={() => setZoom((z) => Math.max(10, Math.round(z - 10)))}
+        onFitScreen={handleFitScreen}
+        onActualSize={() => setZoom(100)}
+        foregroundColor={foregroundColor}
+        onOpenColorPicker={(type) => setColorPickerTarget(type)}
       />
 
       {/* WORKSPACE ROW */}
@@ -1849,6 +2069,14 @@ export default function EditorPage({
 
         {/* 3. CENTER PAN & ZOOM CANVAS VIEWPORT */}
         <div className="editor-center-stage">
+          <DocumentTabBar
+            projectName={projectName}
+            zoom={zoom}
+            hasContent={layers.length > 0}
+            onNewDocument={() => setNewProjectModalOpen(true)}
+            onCloseDocument={handleCloseDocument}
+          />
+
           <CanvasViewport
             canvasRef={canvasRef}
             zoom={zoom}
@@ -2160,6 +2388,10 @@ export default function EditorPage({
               ? "Foreground Color"
               : colorPickerTarget === "background"
               ? "Background Color"
+              : colorPickerTarget === "shape-fill"
+              ? "Shape Fill Color"
+              : colorPickerTarget === "shape-stroke"
+              ? "Shape Stroke Color"
               : "Layer Color"
           }
           initialColor={
@@ -2167,15 +2399,51 @@ export default function EditorPage({
               ? foregroundColor
               : colorPickerTarget === "background"
               ? backgroundColor
+              : colorPickerTarget === "shape-fill"
+              ? shapeFill
+              : colorPickerTarget === "shape-stroke"
+              ? shapeStroke
               : selectedLayer?.color || "#e11d48"
           }
           onSelectColor={(color) => {
             if (colorPickerTarget === "foreground") setForegroundColor(color);
             else if (colorPickerTarget === "background") setBackgroundColor(color);
+            else if (colorPickerTarget === "shape-fill") setShapeFill(color);
+            else if (colorPickerTarget === "shape-stroke") setShapeStroke(color);
             else if (selectedLayerId) handleUpdateLayer(selectedLayerId, { color });
           }}
           onClose={() => setColorPickerTarget(null)}
         />
+      )}
+
+      {/* PHOTOPEA MODALS & DIALOGS */}
+      {newProjectModalOpen && (
+        <NewProjectModal
+          onClose={() => setNewProjectModalOpen(false)}
+          onCreateProject={handleCreateProjectFromModal}
+        />
+      )}
+
+      {imageSizeModalOpen && (
+        <ImageSizeModal
+          currentWidth={preset.width}
+          currentHeight={preset.height}
+          onApply={handleApplyImageSize}
+          onClose={() => setImageSizeModalOpen(false)}
+        />
+      )}
+
+      {canvasSizeModalOpen && (
+        <CanvasSizeModal
+          currentWidth={preset.width}
+          currentHeight={preset.height}
+          onApply={handleApplyCanvasSize}
+          onClose={() => setCanvasSizeModalOpen(false)}
+        />
+      )}
+
+      {shortcutsModalOpen && (
+        <ShortcutsModal onClose={() => setShortcutsModalOpen(false)} />
       )}
     </main>
   );

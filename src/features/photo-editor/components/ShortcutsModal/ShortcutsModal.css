@@ -1,0 +1,123 @@
+/* Shortcuts Modal Styling */
+
+.shortcuts-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.shortcuts-modal-dialog {
+  width: 90vw;
+  max-width: 780px;
+  max-height: 85vh;
+  background: #2b2b2b;
+  border: 1px solid #444444;
+  border-radius: 6px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  color: #eeeeee;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  user-select: none;
+  overflow: hidden;
+}
+
+.shortcuts-modal-header {
+  height: 42px;
+  background: #222222;
+  border-bottom: 1px solid #383838;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.shortcuts-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.shortcuts-title-row h3 {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.shortcuts-close-btn {
+  background: transparent;
+  border: none;
+  color: #888888;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+.shortcuts-close-btn:hover {
+  background: #e11d48;
+  color: #ffffff;
+}
+
+.shortcuts-modal-body {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+.shortcuts-section-card {
+  background: #242424;
+  border: 1px solid #383838;
+  border-radius: 5px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shortcuts-section-card h4 {
+  margin: 0;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #60a5fa;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 6px;
+}
+
+.shortcuts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.shortcut-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+}
+
+.shortcut-desc {
+  color: #cccccc;
+}
+
+.shortcut-key {
+  background: #181818;
+  border: 1px solid #444444;
+  border-radius: 3px;
+  color: #ffffff;
+  padding: 1px 6px;
+  font-family: monospace;
+  font-size: 10.5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}

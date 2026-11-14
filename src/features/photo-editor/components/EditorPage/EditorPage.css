@@ -18,84 +18,84 @@
 
 /* Dark Theme (Pro Obsidian & Crimson) */
 .editor-app.theme-dark {
-  background: #121316;
-  color: #f1f5f9;
+  background: #1e1e1e;
+  color: #eeeeee;
 }
 
 .editor-app.theme-dark .editor-workspace-row {
-  background: #0f1013;
+  background: #181818;
 }
 
 .editor-app.theme-dark .editor-left-nav {
-  background: #181920;
-  border-right-color: #272935;
+  background: #262626;
+  border-right-color: #1a1a1a;
 }
 
 .editor-app.theme-dark .left-nav-btn {
-  color: #94a3b8;
+  color: #999999;
 }
 
 .editor-app.theme-dark .left-nav-btn:hover {
-  background: rgba(255, 32, 32, 0.12);
-  color: #ff4040;
+  background: #333333;
+  color: #ffffff;
 }
 
 .editor-app.theme-dark .left-nav-btn.active {
-  background: rgba(255, 32, 32, 0.2);
-  color: #ff2020;
-  border-left-color: #ff2020;
+  background: rgba(0, 120, 212, 0.2);
+  color: #0078d4;
+  border-left-color: #0078d4;
 }
 
 .editor-app.theme-dark .editor-dock-container {
-  background: #181920;
-  border-left-color: #272935;
+  background: #262626;
+  border-left-color: #1a1a1a;
 }
 
 .editor-app.theme-dark .dock-tabs-nav {
-  background: #181920;
-  border-bottom-color: #272935;
+  background: #202020;
+  border-bottom-color: #1a1a1a;
 }
 
 .editor-app.theme-dark .dock-tab-btn {
-  color: #94a3b8;
+  color: #aaaaaa;
 }
 
 .editor-app.theme-dark .dock-tab-btn:hover {
-  color: #f8fafc;
-  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  background: #2e2e2e;
 }
 
 .editor-app.theme-dark .dock-tab-btn.active {
-  color: #ff2020;
-  border-bottom-color: #ff2020;
-  background: rgba(255, 32, 32, 0.1);
+  color: #ffffff;
+  border-bottom-color: #0078d4;
+  background: #2c2c2c;
 }
 
 .editor-app.theme-dark .center-floating-bar {
-  background: rgba(24, 25, 32, 0.92);
-  border-color: #272935;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+  background: rgba(36, 36, 36, 0.94);
+  border-color: #404040;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
 }
 
 .editor-app.theme-dark .center-bar-btn {
-  color: #f1f5f9;
+  color: #dddddd;
 }
 
 .editor-app.theme-dark .center-bar-zoom-val {
-  color: #ff4040;
+  color: #60a5fa;
 }
 
 .editor-app.theme-dark .center-bar-pill {
-  color: #cbd5e1;
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
+  color: #cccccc;
+  background: #2a2a2a;
+  border-color: #444444;
 }
 
 .editor-app.theme-dark .center-bar-pill:hover,
 .editor-app.theme-dark .center-bar-pill.active {
-  background: #ff2020;
+  background: #0078d4;
   color: #ffffff;
-  border-color: #ff2020;
+  border-color: #0078d4;
 }
 
 /* Master Workspace Row: Left Primary Nav | Left Tool Strip | Center Viewport | Right Dock Panel */

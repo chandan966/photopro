@@ -70,3 +70,36 @@
   width: 42px;
   text-align: center;
 }
+/* Photopea Dark Theme for EditorBottomBar */
+
+.editor-app.theme-dark .editor-bottombar {
+  background-color: #262626;
+  border-top: 1px solid #1a1a1a;
+  color: #888888;
+}
+
+.editor-app.theme-dark .bottombar-info-label {
+  color: #777777;
+}
+
+.editor-app.theme-dark .bottombar-info-val {
+  color: #cccccc;
+}
+
+.editor-app.theme-dark .bottombar-tool-hint {
+  color: #60a5fa;
+}
+
+.editor-app.theme-dark .bottombar-btn {
+  color: #aaaaaa;
+}
+
+.editor-app.theme-dark .bottombar-btn:hover {
+  background: #383838;
+  color: #ffffff;
+  border-color: #555555;
+}
+
+.editor-app.theme-dark .bottombar-zoom-text {
+  color: #ffffff;
+}

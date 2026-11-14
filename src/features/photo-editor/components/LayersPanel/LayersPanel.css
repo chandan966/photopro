@@ -215,3 +215,98 @@
   opacity: 0.3;
   cursor: not-allowed;
 }
+/* Photopea Dark Theme for LayersPanel */
+
+.editor-app.theme-dark .layers-panel {
+  background: #262626;
+  color: #eeeeee;
+}
+
+.editor-app.theme-dark .layers-header {
+  border-bottom-color: #383838;
+}
+
+.editor-app.theme-dark .layers-select-label {
+  color: #aaaaaa;
+}
+
+.editor-app.theme-dark .layers-blend-select {
+  background: #1c1c1c;
+  border-color: #3d3d3d;
+  color: #ffffff;
+}
+
+.editor-app.theme-dark .layers-blend-select:focus {
+  border-color: #0078d4;
+}
+
+.editor-app.theme-dark .layers-slider-group {
+  color: #aaaaaa;
+}
+
+.editor-app.theme-dark .layers-slider-group input[type="range"] {
+  accent-color: #0078d4;
+}
+
+.editor-app.theme-dark .layers-slider-val {
+  color: #ffffff;
+}
+
+.editor-app.theme-dark .layer-item {
+  background: #2b2b2b;
+  border-color: #363636;
+}
+
+.editor-app.theme-dark .layer-item:hover {
+  background: #383838;
+}
+
+.editor-app.theme-dark .layer-item.active {
+  background: #0078d4;
+  border-color: #0078d4;
+}
+
+.editor-app.theme-dark .layer-item.active .layer-name-text {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.editor-app.theme-dark .layer-item.active .layer-meta-badge {
+  color: #dbeafe;
+}
+
+.editor-app.theme-dark .layer-item.active .layer-action-icon-btn {
+  color: #ffffff;
+}
+
+.editor-app.theme-dark .layer-name-text {
+  color: #ffffff;
+}
+
+.editor-app.theme-dark .layer-meta-badge {
+  color: #888888;
+}
+
+.editor-app.theme-dark .layer-action-icon-btn {
+  color: #aaaaaa;
+}
+
+.editor-app.theme-dark .layer-action-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.editor-app.theme-dark .layers-bottom-actions {
+  background: #222222;
+  border-top-color: #383838;
+}
+
+.editor-app.theme-dark .layers-footer-btn {
+  color: #aaaaaa;
+}
+
+.editor-app.theme-dark .layers-footer-btn:hover:not(:disabled) {
+  background: #383838;
+  color: #ffffff;
+  border-color: #555555;
+}

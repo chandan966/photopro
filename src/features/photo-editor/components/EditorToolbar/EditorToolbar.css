@@ -154,3 +154,62 @@
 .swatch-reset-btn:hover {
   background: #ff2020; color: #ffffff;
 }
+/* Photopea-Style Dark Theme Overrides for EditorToolbar */
+
+.editor-app.theme-dark .editor-toolbar {
+  background-color: #2c2c2c;
+  border-right: 1px solid #1e1e1e;
+}
+
+.editor-app.theme-dark .toolbar-btn {
+  color: #aaaaaa;
+}
+
+.editor-app.theme-dark .toolbar-btn:hover {
+  background: #383838;
+  color: #ffffff;
+  border-color: #444444;
+}
+
+.editor-app.theme-dark .toolbar-btn.active {
+  background: #0078d4;
+  color: #ffffff;
+  border-color: #0078d4;
+  box-shadow: 0 0 8px rgba(0, 120, 212, 0.4);
+}
+
+.editor-app.theme-dark .toolbar-shortcut-badge {
+  color: #777777;
+}
+
+.editor-app.theme-dark .toolbar-btn.active .toolbar-shortcut-badge {
+  color: #e0f2fe;
+}
+
+.editor-app.theme-dark .toolbar-divider {
+  background: #383838;
+}
+
+.editor-app.theme-dark .swatch-bg {
+  border-color: #555555;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.editor-app.theme-dark .swatch-fg {
+  border-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.editor-app.theme-dark .swatch-swap-btn,
+.editor-app.theme-dark .swatch-reset-btn {
+  background: #202020;
+  border-color: #444444;
+  color: #aaaaaa;
+}
+
+.editor-app.theme-dark .swatch-swap-btn:hover,
+.editor-app.theme-dark .swatch-reset-btn:hover {
+  background: #0078d4;
+  color: #ffffff;
+  border-color: #0078d4;
+}

@@ -1,0 +1,286 @@
+/* Photopea-Style Context-Sensitive Tool Options Bar */
+
+.tool-options-bar {
+  height: 34px;
+  background: #333333;
+  border-bottom: 1px solid #242424;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  color: #cccccc;
+  font-size: 11.5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  user-select: none;
+  box-sizing: border-box;
+  z-index: 15;
+}
+
+.options-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.options-tool-title {
+  font-weight: 600;
+  color: #ffffff;
+  margin-right: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.options-divider {
+  width: 1px;
+  height: 18px;
+  background: #444444;
+  margin: 0 4px;
+}
+
+.options-label {
+  color: #aaaaaa;
+  font-size: 11px;
+}
+
+.options-field {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.options-select {
+  height: 22px;
+  background: #252525;
+  border: 1px solid #444444;
+  border-radius: 3px;
+  color: #f1f5f9;
+  font-size: 11px;
+  padding: 0 6px;
+  outline: none;
+  cursor: pointer;
+}
+
+.options-select:focus {
+  border-color: #0078d4;
+}
+
+.options-mini-slider {
+  width: 75px;
+  height: 4px;
+  accent-color: #0078d4;
+  cursor: pointer;
+}
+
+.options-slider-num {
+  font-size: 11px;
+  color: #f1f5f9;
+  min-width: 32px;
+  font-variant-numeric: tabular-nums;
+}
+
+.options-num-input {
+  width: 48px;
+  height: 22px;
+  background: #252525;
+  border: 1px solid #444444;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 11px;
+  padding: 0 5px;
+  outline: none;
+  text-align: right;
+}
+
+.options-unit {
+  color: #888888;
+  font-size: 10px;
+}
+
+.options-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #cccccc;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.options-checkbox-label input[type="checkbox"] {
+  accent-color: #0078d4;
+  cursor: pointer;
+}
+
+/* Align and Style Buttons */
+.options-align-btns,
+.options-style-btns {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: #282828;
+  border: 1px solid #444444;
+  border-radius: 3px;
+  padding: 1px;
+}
+
+.options-btn-icon {
+  width: 22px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  color: #aaaaaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.options-btn-icon:hover {
+  background: #3e3e3e;
+  color: #ffffff;
+}
+
+.options-btn-icon.active {
+  background: #0078d4;
+  color: #ffffff;
+}
+
+/* Pill Buttons */
+.options-pill-btn {
+  height: 22px;
+  background: #282828;
+  border: 1px solid #444444;
+  border-radius: 3px;
+  color: #cccccc;
+  font-size: 11px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.options-pill-btn:hover {
+  background: #3e3e3e;
+  color: #ffffff;
+}
+
+.options-pill-btn.active {
+  background: #0078d4;
+  border-color: #0078d4;
+  color: #ffffff;
+}
+
+.options-pill-btn.success {
+  background: #0f766e;
+  border-color: #14b8a6;
+  color: #ffffff;
+}
+
+.options-pill-btn.danger {
+  background: #991b1b;
+  border-color: #dc2626;
+  color: #ffffff;
+}
+
+/* Color Swatches */
+.options-color-swatch {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Brush Popover */
+.options-brush-size-box {
+  position: relative;
+}
+
+.options-brush-picker-btn {
+  height: 22px;
+  background: #282828;
+  border: 1px solid #444444;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 6px;
+  color: #f1f5f9;
+  cursor: pointer;
+}
+
+.brush-circle-preview {
+  display: inline-block;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.brush-size-val {
+  font-size: 11px;
+  min-width: 28px;
+}
+
+.brush-dropdown-card {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  width: 200px;
+  background: #2c2c2c;
+  border: 1px solid #4a4a4a;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.brush-dropdown-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 11px;
+  color: #dddddd;
+}
+
+.brush-dropdown-row input[type="range"] {
+  flex: 1;
+}
+
+.brush-dropdown-close {
+  height: 22px;
+  background: #0078d4;
+  border: none;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+/* Right HUD */
+.options-right-hud {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hud-badge {
+  font-size: 10.5px;
+  padding: 2px 6px;
+  background: #242424;
+  border: 1px solid #404040;
+  border-radius: 3px;
+  color: #aaaaaa;
+}
+
+.hud-badge.zoom-indicator {
+  color: #60a5fa;
+  font-weight: 500;
+}
