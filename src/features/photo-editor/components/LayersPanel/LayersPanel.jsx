@@ -67,13 +67,13 @@ export default function LayersPanel({
   const getLayerIcon = (type) => {
     switch (type) {
       case "text":
-        return <Type size={16} color="#ff2020" />;
+        return <Type size={16} color="#0ea5e9" />;
       case "shape":
-        return <Square size={16} color="#e11d48" />;
+        return <Square size={16} color="#0284c7" />;
       case "paint":
-        return <Layers size={16} color="#f43f5e" />;
+        return <Layers size={16} color="#38bdf8" />;
       default:
-        return <ImageIcon size={16} color="#b30000" />;
+        return <ImageIcon size={16} color="#0369a1" />;
     }
   };
 
@@ -119,7 +119,7 @@ export default function LayersPanel({
       {/* Layer Deck */}
       <div className="layers-list">
         {layers.length === 0 ? (
-          <div style={{ textAlign: "center", color: "#b30000", fontSize: "12px", marginTop: "24px" }}>
+          <div style={{ textAlign: "center", color: "#0369a1", fontSize: "12px", marginTop: "24px" }}>
             No layers. Add an image or text.
           </div>
         ) : (

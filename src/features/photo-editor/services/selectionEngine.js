@@ -307,7 +307,7 @@ export class SelectionManager {
     // If bounds exist, draw fast outline
     if (this.bounds) {
       ctx.strokeRect(this.bounds.x, this.bounds.y, this.bounds.width, this.bounds.height);
-      ctx.strokeStyle = "#ff2020";
+      ctx.strokeStyle = "#0ea5e9";
       ctx.lineDashOffset = -(this.marchingAntsOffset + 4) / scale;
       ctx.strokeRect(this.bounds.x, this.bounds.y, this.bounds.width, this.bounds.height);
     }

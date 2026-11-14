@@ -57,7 +57,7 @@ function ExportModal({ type, setType, preview, onClose, onExport, width, height 
               max="100"
               value={quality}
               onChange={(e) => setQuality(Number(e.target.value))}
-              style={{ width: "100%", accentColor: "#e11d48", marginTop: "6px" }}
+              style={{ width: "100%", accentColor: "#0ea5e9", marginTop: "6px" }}
             />
           </label>
         )}

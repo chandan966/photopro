@@ -277,7 +277,7 @@ function renderTextContent(ctx, layer, w, h) {
 
   // Stroke Outline
   if (layer.strokeWidth > 0) {
-    ctx.strokeStyle = layer.strokeColor || "#ff2020";
+    ctx.strokeStyle = layer.strokeColor || "#0ea5e9";
     ctx.lineWidth = layer.strokeWidth;
     ctx.strokeText(text, 0, 0);
   }
@@ -293,7 +293,7 @@ function renderTextContent(ctx, layer, w, h) {
 function renderShapeContent(ctx, layer, w, h) {
   const shapeType = layer.shapeType || "rectangle";
   drawShape(ctx, shapeType, 0, 0, w, h, {
-    color: layer.color || "#e11d48",
+    color: layer.color || "#0ea5e9",
     strokeColor: layer.strokeColor || "#ffffff",
     strokeWidth: layer.strokeWidth || 0,
     cornerRadius: layer.cornerRadius || 12,
@@ -305,7 +305,7 @@ function renderShapeContent(ctx, layer, w, h) {
  */
 function renderStickerContent(ctx, layer, w, h) {
   if (layer.badgeText) {
-    ctx.fillStyle = layer.color || "#e11d48";
+    ctx.fillStyle = layer.color || "#0ea5e9";
     if (typeof ctx.roundRect === "function") {
       ctx.roundRect(0, 0, w, h, h * 0.25);
     } else {
@@ -342,14 +342,14 @@ export function renderBoundingBox(ctx, layer, zoom = 1) {
   ctx.translate(-w / 2, -h / 2);
 
   // Dashed outline
-  ctx.strokeStyle = "#e11d48";
+  ctx.strokeStyle = "#0ea5e9";
   ctx.lineWidth = 2;
   ctx.setLineDash([6, 4]);
   ctx.strokeRect(-2, -2, w + 4, h + 4);
 
   // Corner and edge handles
   ctx.fillStyle = "#ffffff";
-  ctx.strokeStyle = "#e11d48";
+  ctx.strokeStyle = "#0ea5e9";
   ctx.lineWidth = 1.5;
   ctx.setLineDash([]);
   const s = 8;
@@ -374,7 +374,7 @@ export function renderBoundingBox(ctx, layer, zoom = 1) {
   ctx.beginPath();
   ctx.moveTo(w / 2, -2);
   ctx.lineTo(w / 2, -24);
-  ctx.strokeStyle = "#e11d48";
+  ctx.strokeStyle = "#0ea5e9";
   ctx.lineWidth = 1.5;
   ctx.stroke();
 

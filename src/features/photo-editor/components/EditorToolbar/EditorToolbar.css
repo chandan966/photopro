@@ -4,7 +4,7 @@
   align-items: center;
   width: 48px;
   background-color: #ffffff;
-  border-right: 1px solid #fee2e2;
+  border-right: 1px solid #e0f2fe;
   padding: 8px 0;
   user-select: none;
   z-index: 40;
@@ -29,22 +29,22 @@
   height: 36px;
   background: transparent;
   border: 1px solid transparent;
-  color: #b30000;
+  color: #0369a1;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .toolbar-btn:hover {
-  background: #fff1f2;
-  color: #800000;
-  border-color: #fecdd3;
+  background: #f0f9ff;
+  color: #0c4a6e;
+  border-color: #bae6fd;
 }
 
 .toolbar-btn.active {
-  background: #ff2020; color: #ffffff;
-  border-color: #ff4040;
-  box-shadow: 0 0 10px rgba(225, 29, 72, 0.4);
+  background: #0ea5e9; color: #ffffff;
+  border-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.4);
 }
 
 .toolbar-shortcut-badge {
@@ -53,19 +53,19 @@
   right: 3px;
   font-size: 8.5px;
   font-weight: 700;
-  color: #b30000;
+  color: #0369a1;
   text-transform: uppercase;
   pointer-events: none;
 }
 
 .toolbar-btn.active .toolbar-shortcut-badge {
-  color: #ffe4e6;
+  color: #f0f9ff;
 }
 
 .toolbar-divider {
   width: 28px;
   height: 1px;
-  background: #fff5f5;
+  background: #f0f9ff;
   margin: 4px 0;
 }
 
@@ -84,10 +84,10 @@
   right: 0;
   width: 20px;
   height: 20px;
-  border: 2px solid #fecdd3;
+  border: 2px solid #bae6fd;
   border-radius: 3px;
   cursor: pointer;
-  box-shadow: 0 2px 5px #fff5f5;
+  box-shadow: 0 2px 5px #f0f9ff;
   transition: transform 0.15s;
 }
 
@@ -101,7 +101,7 @@
   border-radius: 3px;
   cursor: pointer;
   z-index: 2;
-  box-shadow: 0 2px 6px rgba(255, 32, 32, 0.08);
+  box-shadow: 0 2px 6px rgba(14, 165, 233, 0.08);
   transition: transform 0.15s;
 }
 
@@ -114,8 +114,8 @@
   top: -6px;
   right: -6px;
   background: #ffffff;
-  border: 1.5px solid #fee2e2;
-  color: #990000;
+  border: 1.5px solid #e0f2fe;
+  color: #0c4a6e;
   border-radius: 50%;
   width: 15px;
   height: 15px;
@@ -129,7 +129,7 @@
 }
 
 .swatch-swap-btn:hover {
-  background: #ff2020; color: #ffffff;
+  background: #0ea5e9; color: #ffffff;
 }
 
 .swatch-reset-btn {
@@ -137,8 +137,8 @@
   bottom: -6px;
   left: -4px;
   background: #ffffff;
-  border: 1.5px solid #fee2e2;
-  color: #990000;
+  border: 1.5px solid #e0f2fe;
+  color: #0c4a6e;
   border-radius: 3px;
   width: 12px;
   height: 12px;
@@ -152,7 +152,7 @@
 }
 
 .swatch-reset-btn:hover {
-  background: #ff2020; color: #ffffff;
+  background: #0ea5e9; color: #ffffff;
 }
 /* Photopea-Style Dark Theme Overrides for EditorToolbar */
 

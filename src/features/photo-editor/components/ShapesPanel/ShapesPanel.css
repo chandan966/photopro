@@ -2,17 +2,17 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  background: #fff5f5;
+  background: #f0f9ff;
   padding: 12px;
   border-radius: 8px;
-  color: #800000;
+  color: #0c4a6e;
   user-select: none;
 }
 
 .shapes-panel-title {
   font-size: 13px;
   font-weight: 700;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .shapes-grid {
@@ -28,8 +28,8 @@
   justify-content: center;
   gap: 4px;
   background: #ffffff;
-  border: 1.5px solid #fee2e2;
-  color: #990000;
+  border: 1.5px solid #e0f2fe;
+  color: #0c4a6e;
   padding: 10px 4px;
   border-radius: 6px;
   cursor: pointer;
@@ -38,9 +38,9 @@
 }
 
 .shape-picker-btn:hover {
-  background: #fee2e2;
-  border-color: #ff2020;
-  color: #800000;
+  background: #e0f2fe;
+  border-color: #0ea5e9;
+  color: #0c4a6e;
 }
 
 .shape-prop-row {
@@ -54,12 +54,12 @@
   align-items: center;
   justify-content: space-between;
   font-size: 11px;
-  color: #b30000;
+  color: #0369a1;
 }
 
 .shape-slider {
   width: 100%;
-  accent-color: #ff2020;
+  accent-color: #0ea5e9;
   height: 4px;
   cursor: pointer;
 }

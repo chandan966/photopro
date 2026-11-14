@@ -3,15 +3,15 @@ import { Check, X } from "lucide-react";
 import "./ColorPickerModal.css";
 
 const PRESET_SWATCHES = [
-  "#ffffff", "#fff5f5", "#ffe4e6", "#fecdd3", "#fda4af", "#fb7185",
-  "#ff4040", "#ff2020", "#e60000", "#cc0000", "#b30000", "#800000",
-  "#fff1f2", "#ffe4e6", "#f43f5e", "#e11d48", "#be123c", "#9f1239",
-  "#ff6666", "#ff5555", "#ff3333", "#ff1a1a", "#d90429", "#4d0000",
+  "#ffffff", "#f0f9ff", "#e0f2fe", "#bae6fd", "#7dd3fc", "#38bdf8",
+  "#0ea5e9", "#0284c7", "#0369a1", "#075985", "#0c4a6e", "#082f49",
+  "#f8fafc", "#f1f5f9", "#e2e8f0", "#94a3b8", "#64748b", "#334155",
+  "#1e293b", "#0f172a", "#60a5fa", "#3b82f6", "#2563eb", "#1d4ed8",
 ];
 
 export default function ColorPickerModal({
   title = "Choose Color",
-  initialColor = "#e11d48",
+  initialColor = "#0ea5e9",
   onSelectColor,
   onClose,
 }) {
@@ -57,19 +57,19 @@ export default function ColorPickerModal({
             style={{
               width: "100%",
               height: "40px",
-              border: "1.5px solid #fee2e2",
+              border: "1.5px solid #e0f2fe",
               borderRadius: "6px",
               cursor: "pointer",
               background: "transparent",
             }}
-            value={currentColor.startsWith("#") && currentColor.length === 7 ? currentColor : "#e11d48"}
+            value={currentColor.startsWith("#") && currentColor.length === 7 ? currentColor : "#0ea5e9"}
             onChange={(e) => setCurrentColor(e.target.value)}
           />
         </div>
 
         {/* Preset Color Swatches */}
         <div>
-          <span style={{ fontSize: "10px", color: "#b30000", textTransform: "uppercase", display: "block", marginBottom: "6px" }}>
+          <span style={{ fontSize: "10px", color: "#0369a1", textTransform: "uppercase", display: "block", marginBottom: "6px" }}>
             Palette Swatches
           </span>
           <div className="color-swatches-grid">
@@ -87,7 +87,7 @@ export default function ColorPickerModal({
 
         <button
           style={{
-            background: "linear-gradient(135deg, #e11d48 0%, #be123c 100%)",
+            background: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)",
             color: "#ffffff",
             border: "none",
             fontSize: "12px",

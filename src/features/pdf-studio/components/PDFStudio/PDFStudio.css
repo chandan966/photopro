@@ -52,13 +52,13 @@
 }
 
 .ilove-nav-btn:hover {
-  color: #e11d48;
-  background: #fff1f2;
+  color: #0ea5e9;
+  background: #f0f9ff;
 }
 
 .ilove-nav-btn.active {
-  color: #e11d48;
-  background: #ffe4e6;
+  color: #0ea5e9;
+  background: #f0f9ff;
 }
 
 .ilove-nav-dropdown-wrapper {
@@ -121,7 +121,7 @@
 
 .dropdown-col button:hover {
   background: #f1f5f9;
-  color: #e11d48;
+  color: #0ea5e9;
   transform: translateX(3px);
 }
 
@@ -203,7 +203,7 @@
 }
 
 .mega-tool-item:hover .mega-item-name {
-  color: #e11d48;
+  color: #0ea5e9;
 }
 
 /* ==========================================================================
@@ -362,7 +362,7 @@
 }
 
 .ilove-tool-card:hover .tool-card-title {
-  color: #e11d48;
+  color: #0ea5e9;
 }
 
 .tool-card-desc {
@@ -464,25 +464,25 @@
 }
 
 .ilove-dropzone:hover {
-  border-color: #e11d48;
-  background: #fff1f2;
+  border-color: #0ea5e9;
+  background: #f0f9ff;
 }
 
 .dropzone-btn-big {
-  background: #e11d48;
+  background: #0ea5e9;
   color: #ffffff;
   font-size: 17px;
   font-weight: 700;
   padding: 16px 36px;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(225, 29, 72, 0.3);
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.3);
   pointer-events: none;
   transition: transform 0.15s ease;
 }
 
 .ilove-dropzone:hover .dropzone-btn-big {
   transform: scale(1.03);
-  background: #be123c;
+  background: #0284c7;
 }
 
 .dropzone-hint {
@@ -518,7 +518,7 @@
 .btn-link {
   background: transparent;
   border: none;
-  color: #e11d48;
+  color: #0ea5e9;
   font-weight: 600;
   font-size: 13px;
   cursor: pointer;
@@ -527,7 +527,7 @@
 }
 
 .btn-link:hover {
-  color: #be123c;
+  color: #0284c7;
 }
 
 /* Split Options Tabs */
@@ -557,7 +557,7 @@
 
 .split-tab.active {
   color: #ffffff;
-  background: #e11d48;
+  background: #0ea5e9;
 }
 
 .split-range-config {
@@ -595,7 +595,7 @@
 .options-row-grid select:focus,
 .field-group input:focus,
 .field-group textarea:focus {
-  border-color: #e11d48;
+  border-color: #0ea5e9;
 }
 
 .split-info-banner,
@@ -742,13 +742,13 @@
 }
 
 .page-thumb-box.in-range {
-  border-color: #e11d48;
-  background: #fff1f2;
+  border-color: #0ea5e9;
+  background: #f0f9ff;
 }
 
 .interactive-page-card.selected-marked {
-  border-color: #e11d48;
-  background: #ffe4e6;
+  border-color: #0ea5e9;
+  background: #f0f9ff;
 }
 
 .card-badge-status {
@@ -769,8 +769,8 @@
 }
 
 .interactive-page-card.selected-marked .card-badge-status {
-  background: #e11d48;
-  border-color: #e11d48;
+  background: #0ea5e9;
+  border-color: #0ea5e9;
   color: #ffffff;
 }
 
@@ -795,7 +795,7 @@
 
 .organize-actions-bar button:hover {
   background: #ffffff;
-  color: #e11d48;
+  color: #0ea5e9;
 }
 
 /* Rotate buttons suite */
@@ -822,8 +822,8 @@
 
 .rotate-btn:hover {
   background: #ffffff;
-  border-color: #e11d48;
-  color: #e11d48;
+  border-color: #0ea5e9;
+  color: #0ea5e9;
   transform: translateY(-2px);
 }
 
@@ -852,8 +852,8 @@
 }
 
 .compress-tier-card.active {
-  border-color: #e11d48;
-  background: #fff1f2;
+  border-color: #0ea5e9;
+  background: #f0f9ff;
 }
 
 .tier-tag {
@@ -865,7 +865,7 @@
 }
 
 .tier-tag.popular {
-  color: #e11d48;
+  color: #0ea5e9;
 }
 
 .compress-tier-card h4 {
@@ -917,7 +917,7 @@
 }
 
 .metric.highlight strong {
-  color: #e11d48;
+  color: #0ea5e9;
   font-size: 20px;
 }
 
@@ -1008,7 +1008,7 @@
 }
 
 .btn-solid-coral {
-  background: #e11d48;
+  background: #0ea5e9;
   color: #ffffff;
   border: none;
   font-size: 13px;
@@ -1023,7 +1023,7 @@
 }
 
 .btn-solid-coral:hover {
-  background: #be123c;
+  background: #0284c7;
 }
 
 .images-download-grid {
@@ -1068,7 +1068,7 @@
   padding: 4px 8px;
   font-size: 11px;
   font-weight: 700;
-  color: #e11d48;
+  color: #0ea5e9;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -1076,8 +1076,8 @@
 }
 
 .img-card-bar button:hover {
-  background: #fff1f2;
-  border-color: #e11d48;
+  background: #f0f9ff;
+  border-color: #0ea5e9;
 }
 
 /* Signature Pad */
@@ -1214,7 +1214,7 @@
 }
 
 .ilove-action-btn-huge {
-  background: #e11d48;
+  background: #0ea5e9;
   color: #ffffff;
   border: none;
   font-size: 17px;
@@ -1226,15 +1226,15 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  box-shadow: 0 6px 20px rgba(225, 29, 72, 0.35);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
   transition: all 0.16s cubic-bezier(0.16, 1, 0.3, 1);
   min-width: 220px;
 }
 
 .ilove-action-btn-huge:hover:not(:disabled) {
-  background: #be123c;
+  background: #0284c7;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(225, 29, 72, 0.45);
+  box-shadow: 0 10px 24px rgba(2, 132, 199, 0.45);
 }
 
 .ilove-action-btn-huge:disabled {

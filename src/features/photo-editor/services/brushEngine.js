@@ -39,7 +39,7 @@ export class BrushEngine {
     const {
       size = 20,
       hardness = 0.5, // 0 = soft airbrush, 1 = razor hard round
-      color = "#e11d48",
+      color = "#0ea5e9",
       opacity = 1.0,
       flow = 1.0,
       isEraser = false,

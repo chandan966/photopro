@@ -12,13 +12,13 @@
 .slider-control > span {
   display: flex;
   justify-content: space-between;
-  color: #b30000;
+  color: #0369a1;
   font-size: 10px;
   font-weight: 600;
 }
 
 .slider-control output {
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .slider-control input {
@@ -31,7 +31,7 @@
 .field-label {
   display: grid;
   gap: 6px;
-  color: #b30000;
+  color: #0369a1;
   font-size: 11px;
   font-weight: 600;
   margin: 10px 0;
@@ -40,10 +40,10 @@
 .field-label input:not([type=color]),
 .field-label select {
   width: 100%;
-  border: 1.5px solid #fee2e2;
+  border: 1.5px solid #e0f2fe;
   background: #ffffff;
   border-radius: 8px;
-  color: #800000;
+  color: #0c4a6e;
   padding: 8px 12px;
   font-size: 12px;
 }
@@ -51,7 +51,7 @@
 .field-label input[type=color] {
   height: 34px;
   width: 100%;
-  border: 1.5px solid #fee2e2;
+  border: 1.5px solid #e0f2fe;
   border-radius: 8px;
   background: #ffffff;
   padding: 3px;
@@ -77,9 +77,9 @@
   width: 52px;
   display: grid;
   place-items: center;
-  background: rgba(225, 29, 72, 0.15);
+  background: rgba(2, 132, 199, 0.15);
   color: var(--primary-hover);
-  border: 1px solid rgba(225, 29, 72, 0.35);
+  border: 1px solid rgba(2, 132, 199, 0.35);
   border-radius: 14px;
 }
 
@@ -87,18 +87,18 @@
   font: 800 30px var(--font-display);
   letter-spacing: -1px;
   margin: 4px 0 4px;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .tool-page-heading p {
   font-size: 13px;
-  color: #b30000;
+  color: #0369a1;
   margin: 0;
 }
 
 .dropzone {
   min-height: 290px;
-  border: 2px dashed #fecdd3;
+  border: 2px dashed #bae6fd;
   border-radius: 16px;
   background: #ffffff;
   display: flex;
@@ -106,7 +106,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: #800000;
+  color: #0c4a6e;
   transition: all 0.2s;
 }
 
@@ -119,7 +119,7 @@
   height: 52px;
   width: 52px;
   border-radius: 14px;
-  background: rgba(225, 29, 72, 0.15);
+  background: rgba(2, 132, 199, 0.15);
   color: var(--primary-hover);
   display: grid;
   place-items: center;
@@ -132,12 +132,12 @@
 
 .dropzone > span:not(.drop-icon) {
   font-size: 12px;
-  color: #b30000;
+  color: #0369a1;
 }
 
 .dropzone small {
   font-size: 10px;
-  color: #b30000;
+  color: #0369a1;
   margin-top: 4px;
 }
 
@@ -146,7 +146,7 @@
 }
 
 .tool-workspace-card {
-  border: 1.5px solid #fee2e2;
+  border: 1.5px solid #e0f2fe;
   background: #ffffff;
   border-radius: 16px;
   padding: 22px;
@@ -156,7 +156,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #fee2e2;
+  border-bottom: 1px solid #e0f2fe;
   padding-bottom: 14px;
   margin-bottom: 18px;
 }
@@ -169,16 +169,16 @@
 
 .checkerboard {
   background-color: #ffffff;
-  background-image: linear-gradient(45deg, #fee2e2 25%, transparent 25%),
-    linear-gradient(-45deg, #fee2e2 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #fee2e2 75%),
-    linear-gradient(-45deg, transparent 75%, #fee2e2 75%);
+  background-image: linear-gradient(45deg, #e0f2fe 25%, transparent 25%),
+    linear-gradient(-45deg, #e0f2fe 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #e0f2fe 75%),
+    linear-gradient(-45deg, transparent 75%, #e0f2fe 75%);
   background-size: 20px 20px;
   background-position: 0 0, 0 10px, 10px -10px, -10px 0;
 }
 
 .tool-controls {
-  border: 1.5px solid #fee2e2;
+  border: 1.5px solid #e0f2fe;
   background: #ffffff;
   border-radius: 12px;
   padding: 18px;
@@ -187,13 +187,13 @@
 .tool-controls h3 {
   font-size: 13px;
   font-weight: 700;
-  color: #800000;
+  color: #0c4a6e;
   margin: 0 0 8px;
 }
 
 .tool-controls > p {
   font-size: 10px;
-  color: #b30000;
+  color: #0369a1;
   line-height: 1.6;
   margin: 0 0 12px;
 }
@@ -211,9 +211,9 @@
   margin-top: 14px;
   padding: 10px 14px;
   border-radius: 8px;
-  background: #3b1915;
-  border: 1px solid #753328;
-  color: #ffc4ba;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  color: #bae6fd;
   font-size: 11px;
   line-height: 1.5;
 }

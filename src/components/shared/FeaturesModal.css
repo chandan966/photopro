@@ -3,13 +3,13 @@
   max-width: 980px;
   max-height: 85vh;
   background: #ffffff;
-  border: 1px solid #fee2e2;
+  border: 1.5px solid #e0f2fe;
   border-radius: 20px;
   padding: 28px;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  box-shadow: 0 30px 80px rgba(255, 32, 32, 0.08);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
   animation: modal-pop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -28,13 +28,13 @@
   margin: 6px 0 4px;
   font-size: 26px;
   font-weight: 800;
-  color: #ffffff;
+  color: #0c4a6e;
 }
 
 .features-modal-top p {
   margin: 0;
   font-size: 13px;
-  color: #cc5555;
+  color: #0369a1;
 }
 
 .features-search-bar {
@@ -42,7 +42,7 @@
   align-items: center;
   gap: 10px;
   background: #ffffff;
-  border: 1px solid #fee2e2;
+  border: 1.5px solid #e0f2fe;
   border-radius: 10px;
   padding: 6px 14px;
 }
@@ -56,7 +56,7 @@
   flex: 1;
   border: 0;
   background: transparent;
-  color: #ffffff;
+  color: #0c4a6e;
   font-size: 13px;
   outline: none;
 }
@@ -69,9 +69,9 @@
 }
 
 .cat-pill {
-  border: 1px solid #fee2e2;
+  border: 1.5px solid #e0f2fe;
   background: #ffffff;
-  color: #cc5555;
+  color: #0369a1;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 11px;
@@ -82,13 +82,13 @@
 
 .cat-pill:hover {
   background: #202735;
-  color: #ffffff;
+  color: #0c4a6e;
 }
 
 .cat-pill.active {
   background: var(--primary);
   border-color: var(--primary);
-  color: #ffffff;
+  color: #0c4a6e;
   box-shadow: 0 0 12px var(--primary-glow);
 }
 
@@ -123,7 +123,7 @@
   font-size: 10px;
   font-weight: 800;
   color: var(--primary-hover);
-  background: rgba(225, 29, 72, 0.12);
+  background: rgba(2, 132, 199, 0.12);
   padding: 2px 6px;
   border-radius: 4px;
 }
@@ -138,12 +138,12 @@
 .feature-name {
   font-size: 12px;
   font-weight: 600;
-  color: #fee2e2;
+  color: #0c4a6e;
 }
 
 .feature-cat-tag {
   font-size: 9px;
-  color: #b30000;
+  color: #0369a1;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -160,7 +160,7 @@
   border-top: 1px solid #232c3a;
   padding-top: 16px;
   font-size: 12px;
-  color: #cc5555;
+  color: #0369a1;
 }
 
 @media (max-width: 860px) {

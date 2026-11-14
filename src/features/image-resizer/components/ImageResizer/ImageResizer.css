@@ -5,14 +5,14 @@
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  color: #800000;
+  color: #0c4a6e;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .resizer-header {
   height: 60px;
   background: #ffffff;
-  border-bottom: 1px solid #fee2e2;
+  border-bottom: 1px solid #e0f2fe;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,8 +31,8 @@
   align-items: center;
   gap: 6px;
   background: transparent;
-  border: 1px solid #fee2e2;
-  color: #b30000;
+  border: 1px solid #e0f2fe;
+  color: #0369a1;
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 12px;
@@ -41,8 +41,8 @@
 }
 
 .resizer-exit-btn:hover {
-  color: #800000;
-  border-color: #b30000;
+  color: #0c4a6e;
+  border-color: #0369a1;
   background: rgba(255, 255, 255, 0.04);
 }
 
@@ -50,7 +50,7 @@
   margin: 0;
   font-size: 16px;
   font-weight: 700;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .resizer-badge {
@@ -94,8 +94,8 @@
 }
 
 .resizer-empty-dropzone:hover {
-  border-color: #e11d48;
-  background: rgba(225, 29, 72, 0.03);
+  border-color: #0ea5e9;
+  background: rgba(2, 132, 199, 0.03);
 }
 
 .resizer-workspace {
@@ -109,7 +109,7 @@
   display: flex;
   flex-direction: column;
   min-height: 0;
-  border-right: 1px solid #fee2e2;
+  border-right: 1px solid #e0f2fe;
   background: #ffffff;
 }
 
@@ -134,7 +134,7 @@
   max-width: 100%;
   max-height: calc(100vh - 270px);
   border-radius: 8px;
-  box-shadow: 0 8px 24px #fff5f5;
+  box-shadow: 0 8px 24px #f0f9ff;
   object-fit: contain;
 }
 
@@ -142,9 +142,9 @@
   display: flex;
   gap: 16px;
   font-size: 11px;
-  color: #b30000;
+  color: #0369a1;
   background: #ffffff;
-  border: 1px solid #fee2e2;
+  border: 1px solid #e0f2fe;
   padding: 6px 14px;
   border-radius: 20px;
 }
@@ -152,7 +152,7 @@
 .resizer-strip {
   height: 74px;
   background: #ffffff;
-  border-top: 1px solid #fee2e2;
+  border-top: 1px solid #e0f2fe;
   display: flex;
   align-items: center;
   padding: 0 16px;
@@ -166,7 +166,7 @@
   align-items: center;
   gap: 8px;
   background: #ffffff;
-  border: 1px solid #fee2e2;
+  border: 1px solid #e0f2fe;
   border-radius: 6px;
   padding: 6px 10px;
   cursor: pointer;
@@ -174,8 +174,8 @@
 }
 
 .strip-card.active {
-  border-color: #e11d48;
-  background: rgba(225, 29, 72, 0.08);
+  border-color: #0ea5e9;
+  background: rgba(2, 132, 199, 0.08);
 }
 
 .strip-thumb {
@@ -193,7 +193,7 @@
 
 .strip-name {
   font-size: 11px;
-  color: #800000;
+  color: #0c4a6e;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -201,7 +201,7 @@
 
 .strip-dim {
   font-size: 10px;
-  color: #b30000;
+  color: #0369a1;
 }
 
 /* Sidebar */
@@ -229,15 +229,15 @@
 
 .dim-label {
   font-size: 10px;
-  color: #b30000;
+  color: #0369a1;
   text-transform: uppercase;
 }
 
 .dim-input {
   width: 100%;
   background: #ffffff;
-  border: 1px solid #fee2e2;
-  color: #800000;
+  border: 1px solid #e0f2fe;
+  color: #0c4a6e;
   padding: 8px 10px;
   border-radius: 6px;
   font-size: 13px;
@@ -246,8 +246,8 @@
 
 .aspect-toggle-btn {
   background: #ffffff;
-  border: 1px solid #fee2e2;
-  color: #b30000;
+  border: 1px solid #e0f2fe;
+  color: #0369a1;
   width: 36px;
   height: 36px;
   border-radius: 6px;
@@ -259,9 +259,9 @@
 }
 
 .aspect-toggle-btn.active {
-  color: #f43f5e;
-  border-color: #e11d48;
-  background: rgba(225, 29, 72, 0.1);
+  color: #38bdf8;
+  border-color: #0ea5e9;
+  background: rgba(2, 132, 199, 0.1);
 }
 
 .pct-buttons-row {
@@ -272,8 +272,8 @@
 
 .pct-btn {
   background: #ffffff;
-  border: 1px solid #fee2e2;
-  color: #990000;
+  border: 1px solid #e0f2fe;
+  color: #0c4a6e;
   padding: 6px 0;
   border-radius: 6px;
   font-size: 11.5px;
@@ -281,8 +281,8 @@
 }
 
 .pct-btn:hover {
-  border-color: #e11d48;
-  color: #800000;
+  border-color: #0ea5e9;
+  color: #0c4a6e;
 }
 
 .presets-accordion {
@@ -299,7 +299,7 @@
 
 .preset-cat-title {
   font-size: 10px;
-  color: #b30000;
+  color: #0369a1;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -312,7 +312,7 @@
 
 .preset-pill-btn {
   background: #ffffff;
-  border: 1px solid #fee2e2;
+  border: 1px solid #e0f2fe;
   border-radius: 6px;
   padding: 6px 8px;
   text-align: left;
@@ -322,18 +322,18 @@
 }
 
 .preset-pill-btn:hover {
-  border-color: #fecdd3;
+  border-color: #bae6fd;
   background: #1a202a;
 }
 
 .preset-pill-btn span {
   font-size: 11px;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .preset-pill-btn small {
   font-size: 9px;
-  color: #b30000;
+  color: #0369a1;
 }
 
 .sidebar-bottom-action {

@@ -611,7 +611,7 @@ export const applyHDREffect = (canvas) => {
 /**
  * Duotone Effect (2-Color Gradient Mapping)
  */
-export const applyDuotoneEffect = (canvas, color1 = "#ff2020", color2 = "#ffffff") => {
+export const applyDuotoneEffect = (canvas, color1 = "#0ea5e9", color2 = "#ffffff") => {
   const ctx = canvas.getContext("2d");
   const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   const d = imgData.data;
@@ -938,7 +938,7 @@ export const applyPosterizeEffect = (canvas, levels = 5) => {
  * Real Neon Glow Effect
  * Edge detection + saturated fluorescent tint + Gaussian bloom
  */
-export const applyNeonEffect = (canvas, neonColor = "#ff2020") => {
+export const applyNeonEffect = (canvas, neonColor = "#0ea5e9") => {
   const ctx = canvas.getContext("2d");
   const w = canvas.width;
   const h = canvas.height;

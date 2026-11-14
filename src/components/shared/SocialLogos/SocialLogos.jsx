@@ -76,7 +76,7 @@ export const OFFICIAL_LOGOS = {
           <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#25f4ee" flood-opacity="0.4"/>
         </filter>
       </defs>
-      <rect x="4" y="4" width="40" height="40" rx="12" fill="#ff2020" stroke="#fecdd3" stroke-width="1.5" filter="url(#ttGlow)"/>
+      <rect x="4" y="4" width="40" height="40" rx="12" fill="#0f172a" stroke="#e0f2fe" stroke-width="1.5" filter="url(#ttGlow)"/>
       <!-- Cyan Shadow -->
       <path d="M29.5 13.8c1.3 1.5 3 2.4 5 2.6v4.3c-1.8-.1-3.6-.7-5.1-1.7v10.5c0 4.9-4 8.9-8.9 8.9-3.7 0-6.9-2.3-8.2-5.6 1.4.3 2.9.1 4.2-.6 2.3-1.2 3.8-3.6 3.8-6.2v-17h4.8c.1 1.7.9 3.4 2.2 4.6l2.2.2z" fill="#25f4ee" opacity="0.9"/>
       <!-- Red Shadow -->

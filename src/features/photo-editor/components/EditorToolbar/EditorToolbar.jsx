@@ -22,7 +22,7 @@ import "./EditorToolbar.css";
 export default function EditorToolbar({
   activeTool,
   setActiveTool,
-  foregroundColor = "#ff2020",
+  foregroundColor = "#0ea5e9",
   backgroundColor = "#ffffff",
   onSwapColors,
   onResetColors,

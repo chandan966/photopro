@@ -6,26 +6,26 @@
   flex-direction: column;
   gap: 20px;
   font-size: 13px;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .bg-panel-header h3 {
   margin: 0 0 4px;
   font-size: 15px;
   font-weight: 800;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .bg-panel-header p {
   margin: 0;
   font-size: 11px;
-  color: #b30000;
+  color: #0369a1;
   opacity: 0.85;
 }
 
 .bg-section {
-  background: #fff5f5;
-  border: 1px solid #fee2e2;
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
   border-radius: 12px;
   padding: 14px;
   display: flex;
@@ -39,7 +39,7 @@
   gap: 8px;
   font-size: 12px;
   font-weight: 700;
-  color: #800000;
+  color: #0c4a6e;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -47,7 +47,7 @@
 .section-hint {
   margin: 0;
   font-size: 11.5px;
-  color: #b30000;
+  color: #0369a1;
   line-height: 1.4;
 }
 
@@ -75,8 +75,8 @@
 }
 
 .bg-swatch-btn.selected {
-  border: 2px solid #ff2020;
-  box-shadow: 0 0 8px rgba(255, 32, 32, 0.4);
+  border: 2px solid #0ea5e9;
+  box-shadow: 0 0 8px rgba(14, 165, 233, 0.4);
 }
 
 .custom-color-row {
@@ -107,12 +107,12 @@
 .hex-text-input {
   width: 80px;
   padding: 6px 8px;
-  border: 1.5px solid #fee2e2;
+  border: 1.5px solid #e0f2fe;
   border-radius: 6px;
   font-family: monospace;
   font-size: 12px;
   background: #ffffff;
-  color: #800000;
+  color: #0c4a6e;
   text-transform: uppercase;
 }
 
@@ -140,8 +140,8 @@
 }
 
 .gradient-card-btn.selected {
-  border: 2px solid #ff2020;
-  box-shadow: 0 0 10px rgba(255, 32, 32, 0.35);
+  border: 2px solid #0ea5e9;
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.35);
 }
 
 .grad-label {
@@ -156,18 +156,18 @@
   justify-content: space-between;
   font-size: 12px;
   font-weight: 600;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .slider-val {
   font-family: monospace;
-  color: #ff2020;
+  color: #0ea5e9;
   font-weight: 700;
 }
 
 .panel-slider {
   width: 100%;
-  accent-color: #ff2020;
+  accent-color: #0ea5e9;
   cursor: pointer;
 }
 
@@ -178,7 +178,7 @@
   font-size: 12px;
   cursor: pointer;
   user-select: none;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .wand-actions-grid {

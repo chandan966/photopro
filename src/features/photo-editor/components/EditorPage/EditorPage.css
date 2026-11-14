@@ -12,8 +12,8 @@
 
 /* Light Theme (Red & White) */
 .editor-app.theme-light {
-  background: #fff5f5;
-  color: #800000;
+  background: #f0f9ff;
+  color: #0c4a6e;
 }
 
 /* Dark Theme (Pro Obsidian & Crimson) */
@@ -105,14 +105,14 @@
   display: flex;
   overflow: hidden;
   position: relative;
-  background: #fff5f5;
+  background: #f0f9ff;
 }
 
 /* 1. Left Primary Category Sidebar */
 .editor-left-nav {
   width: 68px;
   background: #ffffff;
-  border-right: 1px solid #fee2e2;
+  border-right: 1px solid #e0f2fe;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -134,7 +134,7 @@
   background: transparent;
   border: none;
   border-left: 3px solid transparent;
-  color: #b30000;
+  color: #0369a1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,14 +156,14 @@
 }
 
 .left-nav-btn:hover {
-  background: rgba(255, 32, 32, 0.06);
-  color: #ff2020;
+  background: rgba(14, 165, 233, 0.06);
+  color: #0ea5e9;
 }
 
 .left-nav-btn.active {
-  border-left-color: #ff2020;
-  background: rgba(255, 32, 32, 0.12);
-  color: #ff2020;
+  border-left-color: #0ea5e9;
+  background: rgba(14, 165, 233, 0.12);
+  color: #0ea5e9;
 }
 
 /* 2. Center Stage & Floating Controls */
@@ -186,10 +186,10 @@
   gap: 8px;
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(8px);
-  border: 1.5px solid #fee2e2;
+  border: 1.5px solid #e0f2fe;
   border-radius: 24px;
   padding: 4px 12px;
-  box-shadow: 0 4px 16px rgba(128, 0, 0, 0.12);
+  box-shadow: 0 4px 16px rgba(12, 74, 110, 0.12);
   z-index: 50;
 }
 
@@ -201,7 +201,7 @@
   border: none;
   font-size: 16px;
   font-weight: 700;
-  color: #800000;
+  color: #0c4a6e;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -210,14 +210,14 @@
 }
 
 .center-bar-btn:hover {
-  background: rgba(255, 32, 32, 0.1);
+  background: rgba(14, 165, 233, 0.1);
 }
 
 .center-bar-zoom-val {
   font-family: monospace;
   font-size: 12px;
   font-weight: 800;
-  color: #ff2020;
+  color: #0ea5e9;
   min-width: 44px;
   text-align: center;
 }
@@ -225,13 +225,13 @@
 .center-bar-divider {
   width: 1px;
   height: 16px;
-  background: #fee2e2;
+  background: #e0f2fe;
 }
 
 .center-bar-pill {
-  background: #fff5f5;
-  border: 1px solid #fee2e2;
-  color: #800000;
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
+  color: #0c4a6e;
   font-size: 11px;
   font-weight: 700;
   padding: 4px 10px;
@@ -242,16 +242,16 @@
 
 .center-bar-pill:hover,
 .center-bar-pill.active {
-  background: #ff2020;
+  background: #0ea5e9;
   color: #ffffff;
-  border-color: #ff2020;
+  border-color: #0ea5e9;
 }
 
 /* Right Dock Container (Photoshop / Lightroom Inspector Drawer) */
 .editor-dock-container {
   width: 330px;
   background: #ffffff;
-  border-left: 1px solid #fee2e2;
+  border-left: 1px solid #e0f2fe;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -267,7 +267,7 @@
   overflow-x: auto;
   scrollbar-width: none;
   background: #ffffff;
-  border-bottom: 1px solid #fee2e2;
+  border-bottom: 1px solid #e0f2fe;
   padding: 0 4px;
   flex-shrink: 0;
   height: 40px;
@@ -281,7 +281,7 @@
   background: transparent;
   border: none;
   border-bottom: 2px solid transparent;
-  color: #b30000;
+  color: #0369a1;
   font-size: 11.5px;
   font-weight: 600;
   padding: 0 12px;
@@ -295,14 +295,14 @@
 }
 
 .dock-tab-btn:hover {
-  color: #800000;
+  color: #0c4a6e;
   background: rgba(255, 255, 255, 0.02);
 }
 
 .dock-tab-btn.active {
-  color: #800000;
-  border-bottom-color: #ff2020;
-  background: rgba(225, 29, 72, 0.06);
+  color: #0c4a6e;
+  border-bottom-color: #0ea5e9;
+  background: rgba(2, 132, 199, 0.06);
 }
 
 /* Dock Content Scrollable Area */
@@ -322,19 +322,19 @@
 }
 
 .dock-content-body::-webkit-scrollbar-thumb {
-  background: #fff5f5;
+  background: #f0f9ff;
   border-radius: 4px;
 }
 
 .dock-content-body::-webkit-scrollbar-thumb:hover {
-  background: #ff2020;
+  background: #0ea5e9;
 }
 
 /* Modal Backdrops & Dialogs (Shared across Editor) */
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(128, 0, 0, 0.22);
+  background: rgba(12, 74, 110, 0.22);
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
@@ -355,7 +355,7 @@
   margin: 0;
   font-size: 18px;
   font-weight: 700;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .eyebrow {
@@ -365,7 +365,7 @@
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.8px;
-  color: #f43f5e;
+  color: #38bdf8;
   text-transform: uppercase;
   margin-bottom: 4px;
 }
@@ -373,14 +373,14 @@
 .eyebrow-line {
   width: 14px;
   height: 2px;
-  background: #f43f5e;
+  background: #38bdf8;
   border-radius: 2px;
 }
 
 .icon-btn {
   background: transparent;
   border: none;
-  color: #b30000;
+  color: #0369a1;
   padding: 6px;
   border-radius: 6px;
   cursor: pointer;
@@ -391,7 +391,7 @@
 }
 
 .icon-btn:hover {
-  color: #800000;
+  color: #0c4a6e;
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -410,26 +410,26 @@
 }
 
 .button-primary {
-  background: linear-gradient(135deg, #ff2020 0%, #be123c 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
 }
 
 .button-primary:hover {
-  background: linear-gradient(135deg, #f43f5e 0%, #ff2020 100%);
-  box-shadow: 0 6px 16px rgba(225, 29, 72, 0.45);
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.45);
 }
 
 .button-outline {
   background: transparent;
-  border-color: #fecdd3;
-  color: #990000;
+  border-color: #bae6fd;
+  color: #0c4a6e;
 }
 
 .button-outline:hover {
   background: rgba(255, 255, 255, 0.05);
-  border-color: #b30000;
-  color: #800000;
+  border-color: #0369a1;
+  color: #0c4a6e;
 }
 
 .full-width {
@@ -442,14 +442,14 @@
   gap: 6px;
   font-size: 11px;
   font-weight: 600;
-  color: #b30000;
+  color: #0369a1;
   margin-bottom: 12px;
 }
 
 .field-label select {
-  background: #fff5f5;
-  border: 1px solid #fee2e2;
-  color: #800000;
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
+  color: #0c4a6e;
   padding: 8px 10px;
   border-radius: 6px;
   font-size: 12px;
@@ -457,12 +457,12 @@
 }
 
 .field-label select:focus {
-  border-color: #ff2020;
+  border-color: #0ea5e9;
 }
 
 .small-note {
   font-size: 10px;
-  color: #b30000;
+  color: #0369a1;
   margin: 8px 0 14px;
   line-height: 1.4;
 }
@@ -498,7 +498,7 @@
     width: 100%;
     height: 260px;
     border-left: none;
-    border-top: 1px solid #fee2e2;
+    border-top: 1px solid #e0f2fe;
   }
 }
 
@@ -516,14 +516,14 @@
   z-index: 500;
   font-size: 14px;
   font-weight: 600;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .editor-processing-spinner {
   width: 40px;
   height: 40px;
-  border: 3.5px solid #fecdd3;
-  border-top-color: #ff2020;
+  border: 3.5px solid #bae6fd;
+  border-top-color: #0ea5e9;
   border-radius: 50%;
   animation: editorSpin 0.75s linear infinite;
 }

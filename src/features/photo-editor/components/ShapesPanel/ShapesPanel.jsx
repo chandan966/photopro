@@ -66,7 +66,7 @@ export default function ShapesPanel({
                 cursor: "pointer",
                 background: "transparent",
               }}
-              value={selectedLayer.color || "#e11d48"}
+              value={selectedLayer.color || "#0ea5e9"}
               onChange={(e) => onUpdateShape?.({ color: e.target.value })}
             />
           </div>
@@ -93,7 +93,7 @@ export default function ShapesPanel({
           <div className="shape-prop-row">
             <div className="shape-prop-label-row">
               <span>Stroke Width</span>
-              <span style={{ fontFamily: "monospace", color: "#f43f5e" }}>
+              <span style={{ fontFamily: "monospace", color: "#0284c7" }}>
                 {selectedLayer.strokeWidth || 0}px
               </span>
             </div>
@@ -111,7 +111,7 @@ export default function ShapesPanel({
             <div className="shape-prop-row">
               <div className="shape-prop-label-row">
                 <span>Corner Radius</span>
-                <span style={{ fontFamily: "monospace", color: "#f43f5e" }}>
+                <span style={{ fontFamily: "monospace", color: "#0284c7" }}>
                   {selectedLayer.cornerRadius || 16}px
                 </span>
               </div>

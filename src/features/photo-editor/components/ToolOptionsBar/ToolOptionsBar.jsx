@@ -128,7 +128,7 @@ export default function ToolOptionsBar({
   // Shape
   shapeType = "rectangle",
   onChangeShapeType,
-  shapeFill = "#e11d48",
+  shapeFill = "#0ea5e9",
   onChangeShapeFill,
   shapeStroke = "#ffffff",
   onChangeShapeStroke,
@@ -145,7 +145,7 @@ export default function ToolOptionsBar({
   onFitScreen,
   onActualSize,
   // Colors
-  foregroundColor = "#ff2020",
+  foregroundColor = "#0ea5e9",
   onOpenColorPicker,
 }) {
   const [brushDropdownOpen, setBrushDropdownOpen] = useState(false);

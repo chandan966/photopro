@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: #fff5f5;
-  color: #800000;
+  background: #f0f9ff;
+  color: #0c4a6e;
   user-select: none;
 }
 
 .layers-header {
   padding: 10px 12px;
-  border-bottom: 1px solid #fecdd3;
+  border-bottom: 1px solid #bae6fd;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -23,15 +23,15 @@
 
 .layers-select-label {
   font-size: 11px;
-  color: #b30000;
+  color: #0369a1;
   width: 50px;
 }
 
 .layers-blend-select {
   flex: 1;
   background: #ffffff;
-  border: 1.5px solid #fee2e2;
-  color: #800000;
+  border: 1.5px solid #e0f2fe;
+  color: #0c4a6e;
   font-size: 12px;
   padding: 4px 8px;
   border-radius: 4px;
@@ -40,7 +40,7 @@
 }
 
 .layers-blend-select:focus {
-  border-color: #ff2020;
+  border-color: #0ea5e9;
 }
 
 .layers-slider-group {
@@ -48,19 +48,19 @@
   align-items: center;
   gap: 8px;
   font-size: 11px;
-  color: #b30000;
+  color: #0369a1;
 }
 
 .layers-slider-group input[type="range"] {
   flex: 1;
-  accent-color: #ff2020;
+  accent-color: #0ea5e9;
   height: 4px;
 }
 
 .layers-slider-val {
   font-family: monospace;
   font-size: 11px;
-  color: #800000;
+  color: #0c4a6e;
   width: 32px;
   text-align: right;
 }
@@ -87,12 +87,12 @@
 }
 
 .layer-item:hover {
-  background: #fee2e2;
+  background: #e0f2fe;
 }
 
 .layer-item.active {
-  background: #fecdd3;
-  border-color: #ff2020;
+  background: #bae6fd;
+  border-color: #0ea5e9;
 }
 
 .layer-item.locked {
@@ -103,8 +103,8 @@
   position: relative;
   width: 36px;
   height: 36px;
-  background: #fff5f5;
-  border: 1.5px solid #fee2e2;
+  background: #f0f9ff;
+  border: 1.5px solid #e0f2fe;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -128,9 +128,9 @@
 }
 
 .layer-name-input {
-  background: #fff5f5;
-  border: 1px solid #ff2020;
-  color: #800000;
+  background: #f0f9ff;
+  border: 1px solid #0ea5e9;
+  color: #0c4a6e;
   font-size: 12px;
   padding: 2px 4px;
   border-radius: 3px;
@@ -141,7 +141,7 @@
 .layer-name-text {
   font-size: 12px;
   font-weight: 500;
-  color: #800000;
+  color: #0c4a6e;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -149,7 +149,7 @@
 
 .layer-meta-badge {
   font-size: 10px;
-  color: #b30000;
+  color: #0369a1;
   text-transform: capitalize;
 }
 
@@ -162,7 +162,7 @@
 .layer-action-icon-btn {
   background: transparent;
   border: none;
-  color: #b30000;
+  color: #0369a1;
   width: 22px;
   height: 22px;
   display: flex;
@@ -174,12 +174,12 @@
 }
 
 .layer-action-icon-btn:hover {
-  background: #fee2e2;
-  color: #800000;
+  background: #e0f2fe;
+  color: #0c4a6e;
 }
 
 .layer-action-icon-btn.active {
-  color: #f43f5e;
+  color: #38bdf8;
 }
 
 .layers-bottom-actions {
@@ -187,14 +187,14 @@
   align-items: center;
   justify-content: space-between;
   padding: 8px 12px;
-  border-top: 1px solid #fecdd3;
+  border-top: 1px solid #bae6fd;
   background: #ffffff;
 }
 
 .layers-footer-btn {
   background: transparent;
   border: 1px solid transparent;
-  color: #b30000;
+  color: #0369a1;
   width: 28px;
   height: 28px;
   border-radius: 4px;
@@ -206,9 +206,9 @@
 }
 
 .layers-footer-btn:hover:not(:disabled) {
-  background: #fff1f2;
-  color: #800000;
-  border-color: #990000;
+  background: #f0f9ff;
+  color: #0c4a6e;
+  border-color: #0c4a6e;
 }
 
 .layers-footer-btn:disabled {

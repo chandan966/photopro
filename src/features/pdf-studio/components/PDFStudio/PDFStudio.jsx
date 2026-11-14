@@ -141,7 +141,7 @@ function PDFStudio({ notify }) {
 
   // 10. Watermark State
   const [watermarkText, setWatermarkText] = useState("CONFIDENTIAL");
-  const [watermarkColor, setWatermarkColor] = useState("#e11d48");
+  const [watermarkColor, setWatermarkColor] = useState("#0284c7");
   const [watermarkOpacity, setWatermarkOpacity] = useState(24);
   const [watermarkAngle, setWatermarkAngle] = useState(45);
   const [watermarkImageFile, setWatermarkImageFile] = useState(null);
@@ -165,7 +165,7 @@ function PDFStudio({ notify }) {
     if (activeToolId === "sign-pdf" && sigMode === "draw" && sigCanvasRef.current) {
       const canvas = sigCanvasRef.current;
       const ctx = canvas.getContext("2d");
-      ctx.strokeStyle = "#e11d48";
+      ctx.strokeStyle = "#0284c7";
       ctx.lineWidth = 3;
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
@@ -651,7 +651,7 @@ function PDFStudio({ notify }) {
     const pos = getCanvasPos(e, canvas);
     if (!pos) return;
     const ctx = canvas.getContext("2d");
-    ctx.strokeStyle = "#e11d48";
+    ctx.strokeStyle = "#0284c7";
     ctx.lineWidth = 3;
     ctx.lineCap = "round";
     ctx.lineJoin = "round";

@@ -46,7 +46,7 @@ function EffectsPanel({ onApplyEffect, activeEffect, isProcessing, onImportLUT }
     {
       id: "duotone",
       label: "Duotone",
-      desc: "Two-tone gradient mapping (Ruby & Obsidian)",
+      desc: "Two-tone gradient mapping (Azure & White)",
       icon: Layers,
     },
     {

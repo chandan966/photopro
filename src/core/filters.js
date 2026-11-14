@@ -564,7 +564,7 @@ export const applyHDREffect = (canvas) => {
 /**
  * Duotone Effect (2-Color Gradient Mapping)
  */
-export const applyDuotoneEffect = (canvas, color1 = "#ff2020", color2 = "#ffffff") => {
+export const applyDuotoneEffect = (canvas, color1 = "#0ea5e9", color2 = "#ffffff") => {
   const ctx = canvas.getContext("2d");
   const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   const d = imgData.data;

@@ -5,7 +5,7 @@
   background: #ffffff;
   padding: 12px;
   border-radius: 8px;
-  border: 1.5px solid #fee2e2;
+  border: 1.5px solid #e0f2fe;
 }
 
 .curves-header {
@@ -20,9 +20,9 @@
 }
 
 .curves-tab-btn {
-  background: #fff5f5;
-  border: 1.5px solid #fee2e2;
-  color: #b30000;
+  background: #f0f9ff;
+  border: 1.5px solid #e0f2fe;
+  color: #0369a1;
   font-size: 11px;
   font-weight: 600;
   padding: 3px 8px;
@@ -32,9 +32,9 @@
 }
 
 .curves-tab-btn.active-rgb {
-  background: #ff2020;
+  background: #0ea5e9;
   color: #ffffff;
-  border-color: #ff2020;
+  border-color: #0ea5e9;
 }
 
 .curves-tab-btn.active-red {
@@ -50,15 +50,15 @@
 }
 
 .curves-tab-btn.active-blue {
-  background: #ff4040;
+  background: #38bdf8;
   color: #ffffff;
-  border-color: #ff6666;
+  border-color: #7dd3fc;
 }
 
 .curves-reset-btn {
   background: transparent;
   border: none;
-  color: #b30000;
+  color: #0369a1;
   font-size: 11px;
   cursor: pointer;
   padding: 2px 6px;
@@ -66,16 +66,16 @@
 }
 
 .curves-reset-btn:hover {
-  background: #fff5f5;
-  color: #ff2020;
+  background: #f0f9ff;
+  color: #0ea5e9;
 }
 
 .curves-canvas-wrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 1;
-  background: #fff5f5;
-  border: 1.5px solid #fee2e2;
+  background: #f0f9ff;
+  border: 1.5px solid #e0f2fe;
   border-radius: 6px;
   overflow: hidden;
   cursor: crosshair;
@@ -89,6 +89,6 @@
 
 .curves-hint {
   font-size: 10px;
-  color: #b30000;
+  color: #0369a1;
   text-align: center;
 }

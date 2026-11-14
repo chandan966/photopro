@@ -28,7 +28,7 @@ export default function CurvesEditor({ curves = DEFAULT_CURVES, onChange, histog
     ctx.clearRect(0, 0, w, h);
 
     // 1. Grid lines (4x4)
-    ctx.strokeStyle = "#fee2e2";
+    ctx.strokeStyle = "#e0f2fe";
     ctx.lineWidth = 1;
     for (let i = 1; i <= 3; i++) {
       const pos = Math.round((i / 4) * w);
@@ -44,7 +44,7 @@ export default function CurvesEditor({ curves = DEFAULT_CURVES, onChange, histog
     }
 
     // 2. Diagonal neutral baseline
-    ctx.strokeStyle = "#fecdd3";
+    ctx.strokeStyle = "#bae6fd";
     ctx.setLineDash([4, 4]);
     ctx.beginPath();
     ctx.moveTo(0, h);
@@ -69,10 +69,10 @@ export default function CurvesEditor({ curves = DEFAULT_CURVES, onChange, histog
 
     // 4. Calculate Spline LUT and plot curve
     const lut = buildSplineLUT(currentPoints);
-    let curveColor = "#ff2020";
+    let curveColor = "#0ea5e9";
     if (activeChannel === "red") curveColor = "#ef4444";
     if (activeChannel === "green") curveColor = "#22c55e";
-    if (activeChannel === "blue") curveColor = "#e11d48";
+    if (activeChannel === "blue") curveColor = "#0ea5e9";
 
     ctx.strokeStyle = curveColor;
     ctx.lineWidth = 2.5;

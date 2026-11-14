@@ -62,8 +62,8 @@ export default function TextPanel({
               style={{
                 width: "100%",
                 background: "#ffffff",
-                border: "1.5px solid #fee2e2",
-                color: "#800000",
+                border: "1.5px solid #e0f2fe",
+                color: "#0c4a6e",
                 fontSize: "12px",
                 padding: "6px",
                 borderRadius: "4px",
@@ -95,7 +95,7 @@ export default function TextPanel({
           <div className="text-prop-row">
             <div className="text-prop-label-row">
               <span>Font Size</span>
-              <span style={{ fontFamily: "monospace", color: "#f43f5e" }}>
+              <span style={{ fontFamily: "monospace", color: "#0284c7" }}>
                 {selectedLayer.fontSize || 36}px
               </span>
             </div>
@@ -158,7 +158,7 @@ export default function TextPanel({
               style={{
                 width: "100%",
                 height: "32px",
-                border: "1.5px solid #fee2e2",
+                border: "1.5px solid #e0f2fe",
                 borderRadius: "4px",
                 cursor: "pointer",
                 background: "transparent",
@@ -172,7 +172,7 @@ export default function TextPanel({
           <div className="text-prop-row">
             <div className="text-prop-label-row">
               <span>Stroke Outline Width</span>
-              <span style={{ fontFamily: "monospace", color: "#f43f5e" }}>
+              <span style={{ fontFamily: "monospace", color: "#0284c7" }}>
                 {selectedLayer.strokeWidth || 0}px
               </span>
             </div>

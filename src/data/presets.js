@@ -242,21 +242,21 @@ export const BLEND_MODES = [
 ];
 
 export const GRADIENT_PRESETS = [
-  { id: "crimson-ruby", label: "Crimson Ruby", stops: ["#ff4040", "#800000"] },
-  { id: "rose-gold", label: "Rose Gold", stops: ["#f43f5e", "#ff8080"] },
-  { id: "white-rose", label: "White Rose", stops: ["#ffffff", "#fee2e2"] },
-  { id: "sunset-fire", label: "Sunset Fire", stops: ["#ff512f", "#dd2476"] },
-  { id: "ruby-gradient", label: "Vibrant Ruby", stops: ["#ff2020", "#b30000"] },
-  { id: "blush-pink", label: "Soft Blush", stops: ["#fff5f5", "#fecdd3"] },
-  { id: "deep-garnet", label: "Deep Garnet", stops: ["#990000", "#4d0000"] },
-  { id: "cherry-pop", label: "Cherry Pop", stops: ["#ff3366", "#e60000"] },
+  { id: "sky-azure", label: "Sky Azure", stops: ["#38bdf8", "#0284c7"] },
+  { id: "ocean-breeze", label: "Ocean Breeze", stops: ["#0ea5e9", "#0369a1"] },
+  { id: "ice-white", label: "Ice White", stops: ["#ffffff", "#e0f2fe"] },
+  { id: "deep-sapphire", label: "Deep Sapphire", stops: ["#0284c7", "#0c4a6e"] },
+  { id: "cyan-glow", label: "Cyan Glow", stops: ["#06b6d4", "#0284c7"] },
+  { id: "soft-sky", label: "Soft Sky", stops: ["#f0f9ff", "#bae6fd"] },
+  { id: "midnight-blue", label: "Midnight Blue", stops: ["#0369a1", "#082f49"] },
+  { id: "electric-blue", label: "Electric Blue", stops: ["#60a5fa", "#2563eb"] },
 ];
 
 export const SOLID_COLORS = [
-  "#ffffff", "#fff5f5", "#ffe4e6", "#fecdd3",
-  "#ff6666", "#ff4040", "#ff2020", "#e60000",
-  "#cc0000", "#b30000", "#990000", "#800000",
-  "#4d0000", "#f43f5e", "#fda4af", "#be123c",
+  "#ffffff", "#f0f9ff", "#e0f2fe", "#bae6fd",
+  "#7dd3fc", "#38bdf8", "#0ea5e9", "#0284c7",
+  "#0369a1", "#075985", "#0c4a6e", "#082f49",
+  "#000000", "#3b82f6", "#60a5fa", "#1d4ed8",
 ];
 
 export const FONT_OPTIONS = [
@@ -283,23 +283,23 @@ export const SHAPE_OPTIONS = [
 ];
 
 export const STICKER_LIBRARY = [
-  { id: "verified", label: "Verified", icon: "✓", color: "#ff2020" },
+  { id: "verified", label: "Verified", icon: "✓", color: "#0ea5e9" },
   { id: "fire", label: "Hot Fire", icon: "🔥", color: "#f97316" },
   { id: "sparkles", label: "Sparkles", icon: "✨", color: "#fbbf24" },
-  { id: "sale", label: "SALE! Tag", icon: "🏷️", color: "#e11d48", text: "SALE!" },
-  { id: "new", label: "NEW Badge", icon: "⚡", color: "#f43f5e", text: "NEW" },
-  { id: "heart", label: "Love Heart", icon: "❤️", color: "#f43f5e" },
+  { id: "sale", label: "SALE! Tag", icon: "🏷️", color: "#0284c7", text: "SALE!" },
+  { id: "new", label: "NEW Badge", icon: "⚡", color: "#0ea5e9", text: "NEW" },
+  { id: "heart", label: "Love Heart", icon: "❤️", color: "#0ea5e9" },
   { id: "star", label: "Gold Star", icon: "⭐", color: "#eab308" },
-  { id: "discount", label: "-50% OFF", icon: "🎯", color: "#be123c", text: "-50% OFF" },
+  { id: "discount", label: "-50% OFF", icon: "🎯", color: "#0369a1", text: "-50% OFF" },
   { id: "crown", label: "VIP Crown", icon: "👑", color: "#f59e0b" },
-  { id: "thunder", label: "Flash Bolt", icon: "⚡", color: "#ff4040" },
+  { id: "thunder", label: "Flash Bolt", icon: "⚡", color: "#0284c7" },
   { id: "warning", label: "Alert", icon: "⚠️", color: "#facc15" },
-  { id: "diamond", label: "Pro Gem", icon: "💎", color: "#ff6666" },
+  { id: "diamond", label: "Pro Gem", icon: "💎", color: "#38bdf8" },
 ];
 
 export const FILTER_PRESETS = [
   { name: "None", label: "Normal", filter: "" },
-  { name: "CrimsonGlow", label: "Ruby Crimson", filter: "contrast(1.2) saturate(1.3) sepia(0.2) hue-rotate(-15deg)" },
+  { name: "CrimsonGlow", label: "Azure Glow", filter: "contrast(1.2) saturate(1.3) sepia(0.2) hue-rotate(180deg)" },
   { name: "TealOrange", label: "Teal & Orange", filter: "contrast(1.25) saturate(1.2) sepia(0.25) hue-rotate(-12deg)" },
   { name: "Cyberpunk", label: "Cyber Neon", filter: "hue-rotate(180deg) saturate(1.8) contrast(1.2)" },
   { name: "Golden", label: "Golden Hour", filter: "sepia(0.4) saturate(1.35) brightness(1.05) contrast(1.1)" },
@@ -357,7 +357,7 @@ export const PHOTO_150_FEATURES = [
 
   // 3. Filters & Effects (36-55)
   { num: 36, name: "Vintage Filter", cat: "Effects" },
-  { num: 37, name: "Cinematic Ruby Filter", cat: "Effects" },
+  { num: 37, name: "Cinematic Azure Filter", cat: "Effects" },
   { num: 38, name: "Black & White Film", cat: "Effects" },
   { num: 39, name: "Sepia Tone", cat: "Effects" },
   { num: 40, name: "Retro 70s", cat: "Effects" },

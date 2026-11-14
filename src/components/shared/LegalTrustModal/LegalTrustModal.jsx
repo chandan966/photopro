@@ -110,13 +110,13 @@ export default function LegalTrustModal({ initialTab = "privacy", onClose }) {
                   </li>
                   <li>
                     You may opt out of personalized advertising at any time by visiting the{" "}
-                    <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" style={{ color: "#e11d48", textDecoration: "underline" }}>
+                    <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" style={{ color: "#0284c7", textDecoration: "underline" }}>
                       Google Ads Settings page
                     </a>.
                   </li>
                   <li>
                     Alternatively, you can opt out of third-party vendors' use of cookies for personalized advertising by visiting{" "}
-                    <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" style={{ color: "#e11d48", textDecoration: "underline" }}>
+                    <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" style={{ color: "#0284c7", textDecoration: "underline" }}>
                       www.aboutads.info
                     </a>.
                   </li>
@@ -182,7 +182,7 @@ export default function LegalTrustModal({ initialTab = "privacy", onClose }) {
                 <p>
                   You can configure your browser to refuse all cookies or notify you when a cookie is sent.
                   To manage or opt out of Google's advertising cookies, visit{" "}
-                  <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" style={{ color: "#e11d48", textDecoration: "underline" }}>
+                  <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" style={{ color: "#0284c7", textDecoration: "underline" }}>
                     Google Ad Settings
                   </a>.
                 </p>
@@ -248,7 +248,7 @@ export default function LegalTrustModal({ initialTab = "privacy", onClose }) {
                 </p>
                 <div className="contact-info-cards">
                   <div className="contact-card">
-                    <Mail size={16} color="#e11d48" />
+                    <Mail size={16} color="#0284c7" />
                     <div>
                       <strong>Official Developer Email</strong>
                       <span>contactchandan0101@gmail.com</span>

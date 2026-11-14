@@ -5,14 +5,14 @@
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  color: #800000;
+  color: #0c4a6e;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .brandkit-header {
   height: 60px;
   background: #ffffff;
-  border-bottom: 1px solid #fee2e2;
+  border-bottom: 1px solid #e0f2fe;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,8 +31,8 @@
   align-items: center;
   gap: 6px;
   background: transparent;
-  border: 1px solid #fee2e2;
-  color: #b30000;
+  border: 1px solid #e0f2fe;
+  color: #0369a1;
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 12px;
@@ -41,8 +41,8 @@
 }
 
 .brandkit-exit-btn:hover {
-  color: #800000;
-  border-color: #b30000;
+  color: #0c4a6e;
+  border-color: #0369a1;
   background: rgba(255, 255, 255, 0.04);
 }
 
@@ -50,7 +50,7 @@
   margin: 0;
   font-size: 16px;
   font-weight: 700;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .brandkit-badge {
@@ -83,7 +83,7 @@
 
 .brandkit-card {
   background: #ffffff;
-  border: 1px solid #fee2e2;
+  border: 1px solid #e0f2fe;
   border-radius: 12px;
   padding: 20px;
   display: flex;
@@ -94,7 +94,7 @@
 .card-section-title {
   font-size: 12px;
   font-weight: 700;
-  color: #990000;
+  color: #0c4a6e;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -102,8 +102,8 @@
 .brand-name-input {
   width: 100%;
   background: #ffffff;
-  border: 1px solid #fee2e2;
-  color: #800000;
+  border: 1px solid #e0f2fe;
+  color: #0c4a6e;
   padding: 10px 14px;
   border-radius: 8px;
   font-size: 14px;
@@ -112,7 +112,7 @@
 }
 
 .brand-name-input:focus {
-  border-color: #e11d48;
+  border-color: #0ea5e9;
 }
 
 /* Logo Box */
@@ -130,15 +130,15 @@
   justify-content: center;
   gap: 8px;
   cursor: pointer;
-  color: #b30000;
+  color: #0369a1;
   font-size: 12.5px;
   transition: all 0.15s ease;
 }
 
 .logo-placeholder-drop:hover {
-  border-color: #e11d48;
-  color: #800000;
-  background: rgba(225, 29, 72, 0.04);
+  border-color: #0ea5e9;
+  color: #0c4a6e;
+  background: rgba(2, 132, 199, 0.04);
 }
 
 .logo-preview-frame {
@@ -154,13 +154,13 @@
   background: #ffffff;
   padding: 8px;
   border-radius: 6px;
-  border: 1px solid #fee2e2;
+  border: 1px solid #e0f2fe;
 }
 
 .remove-logo-btn {
   background: transparent;
   border: 1px solid #3a4559;
-  color: #f43f5e;
+  color: #38bdf8;
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 11.5px;
@@ -179,7 +179,7 @@
 
 .swatch-card {
   background: #ffffff;
-  border: 1px solid #fee2e2;
+  border: 1px solid #e0f2fe;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -210,7 +210,7 @@
 
 .swatch-label {
   font-size: 10.5px;
-  color: #b30000;
+  color: #0369a1;
 }
 
 .swatch-hex-row {
@@ -223,18 +223,18 @@
   font-family: monospace;
   font-size: 12px;
   font-weight: 700;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .swatch-copy-btn {
   background: transparent;
   border: none;
-  color: #b30000;
+  color: #0369a1;
   cursor: pointer;
 }
 
 .swatch-copy-btn:hover {
-  color: #800000;
+  color: #0c4a6e;
 }
 
 /* Fonts */
@@ -252,13 +252,13 @@
 
 .font-role {
   font-size: 11px;
-  color: #b30000;
+  color: #0369a1;
 }
 
 .font-select {
   background: #ffffff;
-  border: 1px solid #fee2e2;
-  color: #800000;
+  border: 1px solid #e0f2fe;
+  color: #0c4a6e;
   padding: 8px 12px;
   border-radius: 6px;
   font-size: 12.5px;
@@ -266,5 +266,5 @@
 }
 
 .font-select:focus {
-  border-color: #e11d48;
+  border-color: #0ea5e9;
 }

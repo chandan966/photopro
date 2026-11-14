@@ -6,62 +6,74 @@
 
 :root {
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #800000;
+  color: #0c4a6e;
   background: #ffffff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Pure Red & Light Rose Palette */
-  --red-50: #fff5f5;
-  --red-100: #ffe4e6;
-  --red-200: #fecdd3;
-  --red-300: #fda4af;
-  --red-400: #ff6666;
-  --red-500: #ff4040;
-  --red-600: #ff2020;
-  --red-700: #e60000;
-  --red-800: #b30000;
-  --red-900: #800000;
+  /* Light Blue & Sky Palette */
+  --blue-50: #f0f9ff;
+  --blue-100: #e0f2fe;
+  --blue-200: #bae6fd;
+  --blue-300: #7dd3fc;
+  --blue-400: #38bdf8;
+  --blue-500: #0ea5e9;
+  --blue-600: #0284c7;
+  --blue-700: #0369a1;
+  --blue-800: #075985;
+  --blue-900: #0c4a6e;
 
-  --primary: #ff2020;
-  --primary-hover: #e60000;
-  --primary-light: #fff5f5;
-  --primary-glow: rgba(255, 32, 32, 0.25);
-  --primary-gradient: linear-gradient(135deg, #ff4040 0%, #ff2020 50%, #cc0000 100%);
+  /* Backward Compatibility Aliases so all components automatically switch to Light Blue */
+  --red-50: #f0f9ff;
+  --red-100: #e0f2fe;
+  --red-200: #bae6fd;
+  --red-300: #7dd3fc;
+  --red-400: #38bdf8;
+  --red-500: #0ea5e9;
+  --red-600: #0284c7;
+  --red-700: #0369a1;
+  --red-800: #075985;
+  --red-900: #0c4a6e;
 
-  /* Pure Red & White Surfaces (ZERO BLACK, ZERO DARK BLUE) */
+  --primary: #0284c7;
+  --primary-hover: #0369a1;
+  --primary-light: #f0f9ff;
+  --primary-glow: rgba(2, 132, 199, 0.25);
+  --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%);
+
+  /* Light Blue & White Surfaces */
   --bg-dark: #ffffff;
   --bg-card: #ffffff;
   --bg-surface: #ffffff;
-  --bg-panel: #fff5f5;
-  --border-subtle: #fee2e2;
-  --border-active: #ff2020;
-  --border-light-red: #fecdd3;
+  --bg-panel: #f0f9ff;
+  --border-subtle: #e0f2fe;
+  --border-active: #0ea5e9;
+  --border-light-red: #bae6fd;
 
-  /* Red & White Typography */
-  --text-main: #800000;
-  --text-muted: #b30000;
-  --text-subtle: #cc5555;
+  /* Light Blue & Navy Typography */
+  --text-main: #0c4a6e;
+  --text-muted: #0369a1;
+  --text-subtle: #0284c7;
 
   --font-display: "Manrope", "DM Sans", sans-serif;
 
   /* Centralized Design System Tokens */
-  --color-primary: #ff2020;
-  --color-secondary: #ff4040;
-  --color-accent: #ff6666;
+  --color-primary: #0284c7;
+  --color-secondary: #0ea5e9;
+  --color-accent: #38bdf8;
   --color-background: #ffffff;
   --color-surface: #ffffff;
-  --color-surface-hover: #fff5f5;
-  --color-text: #800000;
-  --color-muted: #b30000;
-  --color-subtle: #cc5555;
-  --color-border: #fee2e2;
-  --color-button: #ff2020;
-  --color-hover: #e60000;
-  --color-success: #ff2020;
-  --color-warning: #ff4040;
+  --color-surface-hover: #f0f9ff;
+  --color-text: #0c4a6e;
+  --color-muted: #0369a1;
+  --color-subtle: #0284c7;
+  --color-border: #e0f2fe;
+  --color-button: #0284c7;
+  --color-hover: #0369a1;
+  --color-success: #0284c7;
+  --color-warning: #38bdf8;
 }
 
 * {
@@ -76,7 +88,7 @@ body {
   margin: 0;
   min-width: 320px;
   background: #ffffff;
-  background-image: radial-gradient(circle at 50% -10%, #fff1f2 0%, #ffffff 60%);
+  background-image: radial-gradient(circle at 50% -10%, #f0f9ff 0%, #ffffff 60%);
   background-attachment: fixed;
   color: var(--text-main);
   overflow-x: hidden;
@@ -88,10 +100,10 @@ body {
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #fff5f5;
+  background: #f0f9ff;
 }
 ::-webkit-scrollbar-thumb {
-  background: #fecdd3;
+  background: #bae6fd;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -118,8 +130,8 @@ button:focus-visible, input:focus-visible, select:focus-visible {
 }
 
 ::selection {
-  background: rgba(255, 32, 32, 0.2);
-  color: #ff2020;
+  background: rgba(14, 165, 233, 0.2);
+  color: #0284c7;
 }
 
 .app-shell {
@@ -132,7 +144,7 @@ button:focus-visible, input:focus-visible, select:focus-visible {
 .brand {
   border: 0;
   background: none;
-  color: #800000;
+  color: #0c4a6e;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -189,31 +201,31 @@ button:focus-visible, input:focus-visible, select:focus-visible {
 }
 
 .button-primary:hover:not(:disabled) {
-  background: linear-gradient(135deg, #ff5555 0%, #ff2020 50%, #b30000 100%);
-  box-shadow: 0 6px 20px rgba(255, 32, 32, 0.4);
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
 }
 
 .button-outline {
   background: #ffffff;
-  color: #ff2020;
-  border: 1.5px solid #fecdd3;
-  box-shadow: 0 2px 6px rgba(255, 32, 32, 0.05);
+  color: #0284c7;
+  border: 1.5px solid #bae6fd;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.05);
 }
 
 .button-outline:hover:not(:disabled) {
-  background: #fff5f5;
-  border-color: #ff2020;
-  color: #b30000;
+  background: #f0f9ff;
+  border-color: #0284c7;
+  color: #0369a1;
 }
 
 .button-quiet {
   background: transparent;
-  color: #b30000;
+  color: #0369a1;
 }
 
 .button-quiet:hover:not(:disabled) {
-  background: #fff5f5;
-  color: #ff2020;
+  background: #f0f9ff;
+  color: #0284c7;
 }
 
 .button-large {
@@ -245,11 +257,11 @@ button:focus-visible, input:focus-visible, select:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  background: #fff5f5;
-  border: 1.5px solid #fecdd3;
+  background: #f0f9ff;
+  border: 1.5px solid #bae6fd;
   border-radius: 20px;
   padding: 4px 12px;
-  color: #ff2020;
+  color: #0284c7;
   font-size: 11px;
   font-weight: 700;
 }
@@ -279,13 +291,13 @@ button:focus-visible, input:focus-visible, select:focus-visible {
   border: 1.5px solid var(--primary);
   border-radius: 10px;
   padding: 12px 20px;
-  color: #800000;
+  color: #0c4a6e;
   font-size: 13px;
   font-weight: 700;
   display: flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 14px 35px rgba(255, 32, 32, 0.15);
+  box-shadow: 0 14px 35px rgba(2, 132, 199, 0.15);
   animation: slide-up 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -297,7 +309,7 @@ button:focus-visible, input:focus-visible, select:focus-visible {
 .icon-btn {
   border: 0;
   background: transparent;
-  color: #b30000;
+  color: #0369a1;
   border-radius: 8px;
   display: grid;
   place-items: center;
@@ -308,7 +320,7 @@ button:focus-visible, input:focus-visible, select:focus-visible {
 
 .icon-btn:hover {
   color: var(--primary);
-  background: #fff5f5;
+  background: #f0f9ff;
 }
 
 .icon-btn.active {

@@ -15,48 +15,48 @@ import "./BackgroundPanel.css";
 const SOLID_PRESETS = [
   { label: "Transparent", value: "transparent" },
   { label: "Pure White", value: "#ffffff" },
-  { label: "Light Rose", value: "#fff5f5" },
-  { label: "Soft Pink", value: "#fee2e2" },
-  { label: "Ruby Red", value: "#ff2020" },
-  { label: "Deep Crimson", value: "#800000" },
-  { label: "Dark Obsidian", value: "#121316" },
-  { label: "Studio Charcoal", value: "#1f222e" },
+  { label: "Ice Blue", value: "#f0f9ff" },
+  { label: "Light Sky", value: "#e0f2fe" },
+  { label: "Bright Azure", value: "#0ea5e9" },
+  { label: "Deep Sapphire", value: "#0284c7" },
+  { label: "Navy Slate", value: "#0c4a6e" },
+  { label: "Midnight Sky", value: "#082f49" },
   { label: "Slate Gray", value: "#475569" },
   { label: "Soft Sand", value: "#fef3c7" },
   { label: "Mint Mist", value: "#d1fae5" },
-  { label: "Ocean Breeze", value: "#e0f2fe" },
+  { label: "Ocean Breeze", value: "#bae6fd" },
 ];
 
 const GRADIENT_OPTIONS = [
   {
-    id: "ruby-sunset",
-    name: "Ruby Sunset",
-    css: "linear-gradient(135deg, #ff4040 0%, #ff2020 50%, #800000 100%)",
+    id: "sky-azure",
+    name: "Sky Azure",
+    css: "linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%)",
   },
   {
-    id: "crimson-flow",
-    name: "Crimson Flow",
-    css: "linear-gradient(135deg, #ff2020 0%, #ffffff 100%)",
+    id: "ocean-flow",
+    name: "Ocean Flow",
+    css: "linear-gradient(135deg, #0ea5e9 0%, #ffffff 100%)",
   },
   {
-    id: "soft-rose",
-    name: "Soft Rose Pearl",
-    css: "linear-gradient(135deg, #fff5f5 0%, #fecdd3 100%)",
+    id: "soft-ice",
+    name: "Soft Ice Blue",
+    css: "linear-gradient(135deg, #f0f9ff 0%, #bae6fd 100%)",
   },
   {
-    id: "dark-radiance",
-    name: "Dark Radiance",
-    css: "linear-gradient(135deg, #1f222e 0%, #ff2020 100%)",
+    id: "dark-azure",
+    name: "Dark Azure",
+    css: "linear-gradient(135deg, #0f172a 0%, #0ea5e9 100%)",
   },
   {
     id: "studio-pure",
     name: "Studio Light",
-    css: "linear-gradient(180deg, #ffffff 0%, #fff1f2 100%)",
+    css: "linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%)",
   },
   {
-    id: "neon-crimson",
-    name: "Neon Glow",
-    css: "linear-gradient(90deg, #ff2020 0%, #b30000 50%, #121316 100%)",
+    id: "neon-blue",
+    name: "Neon Blue Glow",
+    css: "linear-gradient(90deg, #0ea5e9 0%, #0284c7 50%, #0c4a6e 100%)",
   },
 ];
 
@@ -115,7 +115,7 @@ export default function BackgroundPanel({
                 {isSelected && (
                   <Check
                     size={14}
-                    color={p.value === "#ffffff" || p.value === "transparent" ? "#ff2020" : "#ffffff"}
+                    color={p.value === "#ffffff" || p.value === "transparent" ? "#0ea5e9" : "#ffffff"}
                   />
                 )}
               </button>

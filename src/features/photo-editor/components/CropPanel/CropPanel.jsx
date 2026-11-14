@@ -55,7 +55,7 @@ export default function CropPanel({
       <div className="crop-straighten-row">
         <div className="crop-straighten-header">
           <span>Straighten Angle</span>
-          <span style={{ fontFamily: "monospace", fontSize: "11px", color: "#f43f5e" }}>
+          <span style={{ fontFamily: "monospace", fontSize: "11px", color: "#0284c7" }}>
             {straightenAngle}°
           </span>
         </div>

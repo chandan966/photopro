@@ -5,14 +5,14 @@
   display: flex;
   flex-direction: column;
   background: #ffffff;
-  color: #800000;
+  color: #0c4a6e;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .converter-header {
   height: 60px;
   background: #ffffff;
-  border-bottom: 1px solid #fee2e2;
+  border-bottom: 1px solid #e0f2fe;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,8 +31,8 @@
   align-items: center;
   gap: 6px;
   background: transparent;
-  border: 1px solid #fee2e2;
-  color: #b30000;
+  border: 1px solid #e0f2fe;
+  color: #0369a1;
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 12px;
@@ -41,8 +41,8 @@
 }
 
 .converter-exit-btn:hover {
-  color: #800000;
-  border-color: #b30000;
+  color: #0c4a6e;
+  border-color: #0369a1;
   background: rgba(255, 255, 255, 0.04);
 }
 
@@ -50,7 +50,7 @@
   margin: 0;
   font-size: 16px;
   font-weight: 700;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .converter-badge {
@@ -96,21 +96,21 @@
 }
 
 .converter-empty-dropzone:hover {
-  border-color: #e11d48;
-  background: rgba(225, 29, 72, 0.03);
+  border-color: #0ea5e9;
+  background: rgba(2, 132, 199, 0.03);
 }
 
 .converter-empty-dropzone h3 {
   margin: 0 0 8px 0;
   font-size: 20px;
   font-weight: 700;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .converter-empty-dropzone p {
   margin: 0 0 24px 0;
   font-size: 13px;
-  color: #b30000;
+  color: #0369a1;
 }
 
 /* Active Workspace */
@@ -127,7 +127,7 @@
 
 .converter-controls-bar {
   background: #ffffff;
-  border: 1px solid #fee2e2;
+  border: 1px solid #e0f2fe;
   border-radius: 10px;
   padding: 14px 20px;
   display: flex;
@@ -145,15 +145,15 @@
 .control-label {
   font-size: 12px;
   font-weight: 700;
-  color: #b30000;
+  color: #0369a1;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .converter-select {
   background: #ffffff;
-  border: 1px solid #fee2e2;
-  color: #800000;
+  border: 1px solid #e0f2fe;
+  color: #0c4a6e;
   padding: 8px 12px;
   border-radius: 6px;
   font-size: 12.5px;
@@ -161,7 +161,7 @@
 }
 
 .converter-select:focus {
-  border-color: #e11d48;
+  border-color: #0ea5e9;
 }
 
 .quality-item {
@@ -177,13 +177,13 @@
 .quality-val {
   font-family: monospace;
   font-size: 12px;
-  color: #f43f5e;
+  color: #38bdf8;
   font-weight: 700;
 }
 
 .converter-slider {
   flex: 1;
-  accent-color: #e11d48;
+  accent-color: #0ea5e9;
 }
 
 .action-btn {
@@ -193,7 +193,7 @@
 /* Table */
 .converter-table-container {
   background: #ffffff;
-  border: 1px solid #fee2e2;
+  border: 1px solid #e0f2fe;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -208,17 +208,17 @@
 .converter-table th {
   background: #12151b;
   padding: 12px 16px;
-  color: #b30000;
+  color: #0369a1;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border-bottom: 1px solid #fee2e2;
+  border-bottom: 1px solid #e0f2fe;
 }
 
 .converter-table td {
   padding: 12px 16px;
   border-bottom: 1px solid #171c24;
-  color: #990000;
+  color: #0c4a6e;
 }
 
 .converter-table tr:last-child td {
@@ -230,7 +230,7 @@
   align-items: center;
   gap: 10px;
   font-weight: 600;
-  color: #800000;
+  color: #0c4a6e;
   max-width: 280px;
   white-space: nowrap;
   overflow: hidden;
@@ -254,12 +254,12 @@
 
 .format-badge.original {
   background: rgba(148, 163, 184, 0.1);
-  color: #b30000;
+  color: #0369a1;
 }
 
 .format-badge.target {
-  background: rgba(225, 29, 72, 0.15);
-  color: #f43f5e;
+  background: rgba(2, 132, 199, 0.15);
+  color: #38bdf8;
 }
 
 .result-size {
@@ -267,7 +267,7 @@
 }
 
 .pending-text {
-  color: #b30000;
+  color: #0369a1;
   font-style: italic;
 }
 
@@ -276,8 +276,8 @@
   align-items: center;
   gap: 6px;
   background: #ffffff;
-  border: 1px solid #fee2e2;
-  color: #800000;
+  border: 1px solid #e0f2fe;
+  color: #0c4a6e;
   font-size: 11px;
   font-weight: 600;
   padding: 6px 12px;
@@ -287,8 +287,8 @@
 }
 
 .table-download-btn:hover:not(:disabled) {
-  border-color: #e11d48;
-  background: #e11d48;
+  border-color: #0ea5e9;
+  background: #0ea5e9;
 }
 
 .table-download-btn:disabled {

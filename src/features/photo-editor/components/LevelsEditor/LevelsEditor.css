@@ -5,7 +5,7 @@
   background: #ffffff;
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #fecdd3;
+  border: 1px solid #bae6fd;
 }
 
 .levels-header {
@@ -17,27 +17,27 @@
 .levels-title {
   font-size: 12px;
   font-weight: 600;
-  color: #800000;
+  color: #0c4a6e;
 }
 
 .levels-reset-btn {
   background: transparent;
   border: none;
-  color: #b30000;
+  color: #0369a1;
   cursor: pointer;
   padding: 2px 6px;
   border-radius: 4px;
 }
 
 .levels-reset-btn:hover {
-  background: #fecdd3;
-  color: #f43f5e;
+  background: #bae6fd;
+  color: #38bdf8;
 }
 
 .levels-section-label {
   font-size: 11px;
   font-weight: 500;
-  color: #b30000;
+  color: #0369a1;
   margin-bottom: 4px;
 }
 
@@ -56,14 +56,14 @@
 
 .levels-input-box span {
   font-size: 10px;
-  color: #b30000;
+  color: #0369a1;
 }
 
 .levels-num-input {
   width: 52px;
-  background: #fff5f5;
-  border: 1.5px solid #fee2e2;
-  color: #800000;
+  background: #f0f9ff;
+  border: 1.5px solid #e0f2fe;
+  color: #0c4a6e;
   font-size: 11px;
   font-family: monospace;
   text-align: center;
@@ -73,10 +73,10 @@
 }
 
 .levels-num-input:focus {
-  border-color: #ff2020;
+  border-color: #0ea5e9;
 }
 
 .levels-slider {
   width: 100%;
-  accent-color: #ff2020;
+  accent-color: #0ea5e9;
 }

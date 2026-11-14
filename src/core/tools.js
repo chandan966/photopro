@@ -90,7 +90,7 @@ export class CanvasToolManager {
   }
 
   // Draw Brush Stroke
-  drawBrushStroke(fromX, fromY, toX, toY, color = "#e11d48", size = 12, opacity = 1) {
+  drawBrushStroke(fromX, fromY, toX, toY, color = "#0ea5e9", size = 12, opacity = 1) {
     if (!this.ctx) return;
     this.ctx.save();
     this.ctx.strokeStyle = color;
@@ -121,7 +121,7 @@ export class CanvasToolManager {
   }
 
   // Render Lens Flare Overlay
-  renderLensFlare(x, y, radius = 120, color = "#f43f5e") {
+  renderLensFlare(x, y, radius = 120, color = "#38bdf8") {
     if (!this.ctx) return;
     this.ctx.save();
     this.ctx.globalCompositeOperation = "screen";

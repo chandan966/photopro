@@ -450,7 +450,7 @@ export default function AdjustmentsPanel({
 
             <div className="adjustment-control-row">
               <div className="adjustment-label-row">
-                <span style={{ color: "#ff2020" }}>Cyan / Red</span>
+                <span style={{ color: "#0ea5e9" }}>Cyan / Red</span>
                 <span className="adjustment-val-text">{currentBalance[0]}</span>
               </div>
               <input

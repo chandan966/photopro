@@ -21,12 +21,12 @@ const DEFAULT_BRAND_KIT = {
   brandName: "My Brand",
   logoUrl: null,
   colors: [
-    { id: "primary", label: "Primary Red", hex: "#ff2020" },
-    { id: "secondary", label: "Deep Ruby Red", hex: "#800000" },
+    { id: "primary", label: "Primary Blue", hex: "#0ea5e9" },
+    { id: "secondary", label: "Deep Slate Blue", hex: "#0c4a6e" },
     { id: "surface", label: "Pure White Surface", hex: "#ffffff" },
-    { id: "rose", label: "Soft Rose Tint", hex: "#fff5f5" },
-    { id: "border", label: "Rose Border", hex: "#fee2e2" },
-    { id: "accent", label: "Coral Red Accent", hex: "#ff6666" },
+    { id: "ice", label: "Soft Ice Tint", hex: "#f0f9ff" },
+    { id: "border", label: "Sky Border", hex: "#e0f2fe" },
+    { id: "accent", label: "Bright Azure Accent", hex: "#38bdf8" },
   ],
   fonts: {
     heading: "Montserrat",

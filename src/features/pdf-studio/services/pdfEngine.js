@@ -433,7 +433,7 @@ export const convertPDFToWordDoc = async (pdfFile) => {
     <head><meta charset='utf-8'><title>${pdfFile.name}</title>
     <style>
       body { font-family: 'Segoe UI', Calibri, Arial, sans-serif; font-size: 11pt; line-height: 1.6; color: #1e293b; margin: 36pt; }
-      h1 { color: #e11d48; font-size: 18pt; border-bottom: 2pt solid #fee2e2; padding-bottom: 6pt; }
+      h1 { color: #0284c7; font-size: 18pt; border-bottom: 2pt solid #e0f2fe; padding-bottom: 6pt; }
       h2 { color: #334155; font-size: 13pt; margin-top: 18pt; }
       p { margin-bottom: 8pt; }
     </style>
@@ -567,7 +567,7 @@ export const addPageNumbersToPDF = async (pdfFile, options = {}) => {
 
 // 20. Add Watermark (Text or Logo Image)
 export const addWatermarkToPDF = async (pdfFile, watermarkText = "CONFIDENTIAL", options = {}) => {
-  const { opacity = 0.22, color = "#e11d48", angle = 45, imageFile = null } = options;
+  const { opacity = 0.22, color = "#0284c7", angle = 45, imageFile = null } = options;
 
   const arrayBuffer = await readFileAsArrayBuffer(pdfFile);
   const pdfDoc = await PDFDocument.load(arrayBuffer, { ignoreEncryption: true });
@@ -650,7 +650,7 @@ export const editPDFPage = async (pdfFile, options = {}) => {
   const {
     targetPage = 1,
     text = "",
-    textColor = "#e11d48",
+    textColor = "#0284c7",
     textSize = 14,
     xRatio = 0.1,
     yRatio = 0.9,

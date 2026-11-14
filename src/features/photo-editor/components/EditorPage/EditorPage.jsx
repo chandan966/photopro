@@ -179,7 +179,7 @@ export default function EditorPage({
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
   // Swatches & Brushes
-  const [foregroundColor, setForegroundColor] = useState("#ff2020");
+  const [foregroundColor, setForegroundColor] = useState("#0ea5e9");
   const [backgroundColor, setBackgroundColor] = useState("#ffffff");
   const [brushSettings, setBrushSettings] = useState({
     size: 24,
@@ -232,7 +232,7 @@ export default function EditorPage({
   const [shortcutsModalOpen, setShortcutsModalOpen] = useState(false);
   const [showTransformControls, setShowTransformControls] = useState(true);
   const [shapeType, setShapeType] = useState("rectangle");
-  const [shapeFill, setShapeFill] = useState("#e11d48");
+  const [shapeFill, setShapeFill] = useState("#0ea5e9");
   const [shapeStroke, setShapeStroke] = useState("#ffffff");
   const [shapeStrokeWidth, setShapeStrokeWidth] = useState(2);
 
@@ -596,7 +596,7 @@ export default function EditorPage({
       y: Math.round((preset.height - size) / 2),
       width: size,
       height: shapeType === "rounded" ? Math.round(size * 0.65) : size,
-      color: foregroundColor || "#e11d48",
+      color: foregroundColor || "#0ea5e9",
       strokeColor: "#ffffff",
       strokeWidth: 2,
       cornerRadius: 12,
@@ -967,14 +967,14 @@ export default function EditorPage({
         else if (effectType === "hdr") applyHDREffect(c);
         else if (effectType === "sepia") applySepiaEffect(c);
         else if (effectType === "glitch") applyGlitchEffect(c);
-        else if (effectType === "duotone") applyDuotoneEffect(c, "#ff2020", "#ffffff");
+        else if (effectType === "duotone") applyDuotoneEffect(c, "#0ea5e9", "#ffffff");
         else if (effectType === "pixelate") applyPixelateEffect(c, 14);
         else if (effectType === "emboss") applyEmbossEffect(c);
         else if (effectType === "gaussian") applyGaussianBlur(c, 10);
         else if (effectType === "motion") applyMotionBlur(c, 24, 0);
         else if (effectType === "colorsplash") applyColorSplash(c, 0, 45);
         else if (effectType === "posterize") applyPosterizeEffect(c, 5);
-        else if (effectType === "neon") applyNeonEffect(c, "#ff2020");
+        else if (effectType === "neon") applyNeonEffect(c, "#0ea5e9");
         else if (effectType === "glow") applyGlowBloomEffect(c, 180, 14);
         else if (effectType === "rgbsplit") applyRGBSplitEffect(c, 12);
         else if (effectType === "doubleexposure") {
@@ -1285,7 +1285,7 @@ export default function EditorPage({
   };
 
   const handleResetColors = () => {
-    setForegroundColor("#ff2020");
+    setForegroundColor("#0ea5e9");
     setBackgroundColor("#ffffff");
   };
 
@@ -2403,7 +2403,7 @@ export default function EditorPage({
               ? shapeFill
               : colorPickerTarget === "shape-stroke"
               ? shapeStroke
-              : selectedLayer?.color || "#e11d48"
+              : selectedLayer?.color || "#0ea5e9"
           }
           onSelectColor={(color) => {
             if (colorPickerTarget === "foreground") setForegroundColor(color);
